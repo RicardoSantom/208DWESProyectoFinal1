@@ -1,11 +1,4 @@
 <?php
-if(isset($_REQUEST['registrarse'])){
-    $_SESSION['paginaEnCurso']='wip';
-    
-    $_SESSION['User204DWESProyectoFinal']=null;
-    header("Location: index.php"); 
-    exit();
-}
 if (isset($_REQUEST['salir'])){
     $_SESSION['paginaEnCurso']='inicioPublico';
     $_SESSION['User204DWESProyectoFinal']=null;
@@ -19,5 +12,28 @@ if(isset($_REQUEST['detalle'])){
     header("Location: index.php"); 
     exit();
 }
+if(isset($_REQUEST['error'])){
+    $_SESSION['paginaEnCurso']='wip';
+    $_SESSION['paginaAnterior']='inicioPrivado';
+    header("Location: index.php"); 
+    exit();
+}
+if(isset($_REQUEST['editar_Perfil'])){
+    $_SESSION['paginaEnCurso']='wip';
+    $_SESSION['paginaAnterior']='inicioPrivado';
+    header("Location: index.php"); 
+    exit();
+}
+if(isset($_REQUEST['mant_departamentos'])){
+    $_SESSION['paginaEnCurso']='wip';
+    $_SESSION['paginaAnterior']='inicioPrivado';
+    header("Location: index.php"); 
+    exit();
+}
+if(isset($_REQUEST['rest'])){
+    $_SESSION['paginaEnCurso']='wip';
+    $_SESSION['paginaAnterior']='inicioPrivado';
+    header("Location: index.php"); 
+    exit();
+}
 require_once $aVistas['layout'];
-

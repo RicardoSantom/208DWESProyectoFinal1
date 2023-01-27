@@ -7,15 +7,21 @@
  *
  */
 ?>
+<header id="headerId">
+    <h1>Aplicación LoginLogoff</h1>
+    <h3>Vista Work In Progress</h3>
+</header>
 <main>
-        <article>
-            <h1>WIP</h1>
-             <section>
-                 <h2>Esta vista está aún en desarrollo</h2>
-                 <form action="action">
-                    <button type="submit" name="volver" id="volver" value="volver">Volver</button>
-                </form>
-             </section>>
-        </article>
-       
+    <article>
+        <h1>WIP</h1>
+        <section>
+            <h2>Esta vista está aún en desarrollo</h2>
+            <form id="formWip" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                <button type="submit" name="volver" id="volver" value="volver">Volver</button>
+            </form>
+
+            <?php echo ("<h3>Página anterior</h3>" . $_SESSION['paginaAnterior']); ?>
+            <?php echo ("<h3>Página en curso</h3>" . $_SESSION['paginaEnCurso']); ?>
+        </section>
+    </article>
 </main>
