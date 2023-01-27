@@ -1,4 +1,4 @@
-body{
+/*body{
     margin: 0;
 }
 .encabezado{
@@ -18,10 +18,10 @@ body{
     height: 45px;
     padding: 1em;
     margin-left: 2em;
-    transition: transform .3s; 
+    transition: transform .3s;
 }
 #logo:hover{
-    transform: scale(1.1); 
+    transform: scale(1.1);
     padding: 1em;
 }
 .encabezado > a, .container a{
@@ -33,7 +33,7 @@ body{
     padding: 1em;
 }
 .container a{
-    color: #6CD7BD; 
+    color: #6CD7BD;
     margin: 0;
     padding: 0;
 }
@@ -83,7 +83,180 @@ p{
     font-weight: bolder;
     color: grey;
     text-align: left;
+}*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato-Regular';
 }
+body{
+    background-color: #fff;
+    font-family: 'LatoRegular';
+    width: 100vw;
+    height: 100%;
+    min-height: 950px;
+}
+header h1,header h2,header h3{
+    width: 80%;
+    margin: 0 auto;
+}
+#headerInicioPublico{
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 1rem;
+    position: absolute;
+    top: 0%;
+}
+#headerInicioPublico p{
+    background-color: #344079;
+    font-family: 'LatoBold';
+    color: white;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 13px;
+}
+#headerInicioPublico h1{
+    font-family: 'LatoBlackItalic';
+    font-weight: bold;
+    font-size: 30px;
+}
+/*#labelInicioPublico{
+    position: absolute;
+    width: 80px;
+    height: 180px;
+    display: block;
+    border-radius: 5px;
+    top: -30px;
+    left: 18px;
+}
+#labelInicioPublico::before{
+    content: "";
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #344079;
+    position: absolute;
+    left: 4px;
+    top: 70px;
+    box-shadow: 0 8px 0 #344079,
+        0 16px 0 #344079;
+}*/
+#formInicioPublico{
+    height: 3rem;
+    position: absolute;
+    top: 30px;
+    right: 60px;
+}
+#fieldsetInicioPublico{
+    border: none;
+    position: relative;
+}
+#login {
+    background: url(../media/persona1.png);
+    color: transparent !important;
+    display: flex;
+    height: 35px;
+    width: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    position: absolute;
+    top: 5px;
+}
+#divReloj{
+    background-color: #ffe4d7;
+    padding: 3px;
+    border: 6px solid #00609c;
+}
+footer img{
+    height: 30px;
+    width: 20px;
+    background-color: transparent;
+}
+.puntos{
+    height: 25px;
+    width: 15px;
+}
+#enlaceSecundario,#enlacePrincipal {
+    color: #666666;
+    font-size: 20px;
+}
+#github,#linkedin,#curriculum{
+    clear: both;
+    text-decoration: none;
+}
+#github:before{
+    font-family: 'Fontawesome';
+    content:'\f09b';
+    background-color:#FFC9B5;
+    font-size: 2em;
+    border-radius: 50%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#linkedin:before,#login{
+    color: #FFC9B5;
+    font-family: 'FontaWesome';
+    content: '\f08c';
+    font-size: 2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#curriculum:before{
+    color: #FFC9B5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#linkedin{
+    color: #FFC9B5;
+}
+#curriculum span{
+    color: #FFC9B5;
+    font-size: 30px;
+    padding-top: 10px;
+}
+#github,#linkedin{
+    padding-top: 10px;
+}
+footer p{
+    padding-top: 15px;
+    font-size: 20px;
+}
+#ganso{
+    font-size: 24px;
+    color: #666666;
+}
+footer {
+    clear: both;
+    height: 90px;
+    position: fixed;
+    justify-content: space-evenly;
+    display: flex;
+    float: left;
+    bottom: 0;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #516D99;
+    color: #F5FEFF;
+    opacity: 0.9;
+    /*background: rgb(2,0,40);
+    background: linear-gradient(90deg, rgba(2,0,40,1) 0%, rgba(81,109,153,1) 100%, rgba(251,250,248,1) 100%);*/
+    align-content: stretch;
+    flex-direction: row;
+    align-items: center;
+    z-index: 20;
+    color:#666666;
+    background-color: white;
+    z-index: 100 !important;
+}
+/*Footer manu
+
 footer{
     width: 100%;
     height: 54px;
@@ -120,4 +293,4 @@ footer p{
 #portadadwes{
     width: 32em;
     height: 32em;
-}
+}*/

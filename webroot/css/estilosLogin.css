@@ -1,0 +1,100 @@
+/* 
+    Created on : 17 ene 2023, 7:00:06
+    Author     : Ricardo Santiago Tomé <https://github.com/RicardoSantom>
+*/
+#headerId{
+    text-align: center;
+    width: 100%;
+    height: 3.5rem;
+}
+#haderID p{
+    background-color: #344079;
+    font-family: 'LatoBold';
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    font-size: 13px;
+}
+#headerId h1{
+    font-family: 'LatoItalic';
+    font-weight: bold;
+    font-size: 30px;
+}
+#headerId h3{
+    color:  #83839a;
+}
+#formLogin fieldset{
+    display: flex;
+    height: 300px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+    flex-wrap: wrap;
+}
+#formLogin{
+     position: relative;
+    padding-bottom: 2rem;
+    display: flex;
+    height: 370px !important;
+}
+.divRegistroCancelar{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color:  #83839a;
+}
+.divRegistroCancelar input{
+    width: 500px;
+    height: 38px;
+}
+#password,.inicarSesionLogin input:nth-child(1){
+    margin-top: 20px;
+}
+.divRegistroCancelar:last-of-type input{
+    width: 300px;
+}
+#iniciarsesion,#registrarse{
+    background-color: #344079;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+}
+#login:hover,#registrarse:hover{
+    background-color: white;
+    color: #344079
+}
+.divRegistroCancelar h2{
+    display: flex;
+    padding: 10px;
+    width: 120%;
+    margin: 20px 20px;
+    border-bottom: dashed 1px #00295A;
+    opacity: 1;
+    font-size: 22px !important;
+    font-weight: 300 !important;
+    text-align: center;
+    justify-content: center;
+}
+#cancelar{
+    background-color: #d9c7c7;
+    font-weight: bold;
+    font-size: 22px;
+    color: #344079;
+}
+#cancelar:hover{
+     background-color: #344079;
+     color: #d9c7c7;
+}
+#divIdioma{
+     position: relative;
+    background-color: #e7e7e7;
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0000cc;
+}

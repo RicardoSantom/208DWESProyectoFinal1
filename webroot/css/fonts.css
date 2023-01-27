@@ -1,0 +1,44 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 15 ene 2023, 19:02:37
+    Author     : desar
+*/
+@font-face{
+    font-family: "LatoBlack";
+    src:url(../fonts/Lato/Lato-Black.ttf);
+}
+@font-face{
+    font-family: "LatoBlackItalic";
+    src:url(../fonts/Lato/Lato-BlackItalic.ttf);
+}
+@font-face{
+    font-family: "LatoBold";
+    src:url(../fonts/Lato/Lato-Bold.ttf);
+}
+@font-face{
+    font-family: "LatoItalic";
+    src:url(../fonts/Lato/Lato-Italic.ttf);
+}
+@font-face{
+    font-family: "LatoLight";
+    src:url(../fonts/Lato/Lato-Light.ttf);
+}
+@font-face{
+    font-family: "LatoLightItalic";
+    src:url(../fonts/Lato/Lato-LightItalic.ttf);
+}
+@font-face{
+    font-family: "LatoRegular";
+    src:url(../fonts/Lato/Lato-Regular.ttf);
+}
+@font-face{
+    font-family: "LatoThin";
+    src:url(../fonts/Lato/Lato-Thin.ttf);
+}
+@font-face{
+    font-family: "LatoThinItalic";
+    src:url(../fonts/Lato/Lato-ThinItalic.ttf);
+}
