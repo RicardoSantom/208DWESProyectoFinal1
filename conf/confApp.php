@@ -20,6 +20,7 @@ $aControladores=[
     "miCuenta"=>"controller/cMiCuenta.php",
     "cambiarPassword"=>"controller/cCambiarPassword.php",
     "borrarCuenta"=>"controller/cBorrarCuenta.php",
+    "rest" => "controller/cREST.php"
 ];
 
 $aVistas=[
@@ -34,5 +35,6 @@ $aVistas=[
     "miCuenta"=>"view/vMiCuenta.php",
     "cambiarCassword"=>"view/vCambiarPassword.php",
     "borrarCuenta"=>"view/vBorrarCuenta.php",
+    "rest" => "view/vREST.php"
 ];
 ?>

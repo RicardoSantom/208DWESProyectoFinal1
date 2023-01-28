@@ -31,7 +31,7 @@ if(isset($_REQUEST['mant_departamentos'])){
     exit();
 }
 if(isset($_REQUEST['rest'])){
-    $_SESSION['paginaEnCurso']='wip';
+    $_SESSION['paginaEnCurso']='rest';
     $_SESSION['paginaAnterior']='inicioPrivado';
     header("Location: index.php"); 
     exit();
