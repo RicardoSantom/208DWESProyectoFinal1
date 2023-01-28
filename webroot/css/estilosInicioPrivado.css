@@ -1,0 +1,90 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 21 ene 2023, 12:09:58
+    Author     : desar
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato-Regular';
+}
+body{
+    background-color: #fff;
+    font-family: 'LatoRegular';
+    width: 100vw;
+    height: 100vh;
+}
+main{
+    width: 100%;
+}
+#bienvenida{
+    text-align: center;
+    font-family: 'LatoLightItalic';
+    font-weight: bold;
+    font-size: 36px;
+    color: #3367ac;
+    margin-top: 2.5rem;
+    margin-bottom: 3.5rem;
+}
+#formInicioPrivado{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-end;
+
+    margin-top: 0.75rem;
+    margin-right: 2rem;
+}
+#detalle,#salirInicioPrivado{
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    width: 6rem;
+    height: 2rem;
+    border: none;
+    background-color: transparent;
+    color: #99a0a1;
+    font-size: 20px;
+}
+#salir{
+    margin-top: 1rem;
+}
+#divBienvenida{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+#divBienvenida h3{
+    font-family: 'LatoLight';
+    font-size: 24px;
+    font-weight: 400;
+    color: #99a0a1;
+    border-bottom: 2px solid #99a0a1 ;
+    margin-bottom: 2.5rem;
+    width: 400px;
+}
+#divBienvenidaTabla,#divBienvenidaInicio,#divBienvenidaConexiones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-end;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+table caption{
+    font-family: 'LatoLight';
+    font-size: 24px;
+    font-weight: 400;
+    color: #333333;
+    text-decoration:underline solid  #333333;
+    padding-bottom: 1rem;
+}
+table{
+    color: #99a0a1;
+}

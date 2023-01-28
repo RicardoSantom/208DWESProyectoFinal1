@@ -1,13 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MMA - App Login-Logoff</title>
-        <link rel="icon" type="image/ico" sizes="32x32" href="webroot/media/favicon.ico">
-        <link href="webroot/css/estilos.css" rel="stylesheet" type="text/css"/>
-        <style>
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Ricardo Santiago Tomé">
+        <meta name="copyright" content="Ricardo Santiago Tomé" />
+        <meta name="keywords" content="desarrollo,software,servidor,cliente,PHP,HTML,CSS,JavaScript,MySQL,aplicacion,web"/>
+        <meta name="description" content="Aplicacion de control de acceso y navegación LoginLogoff, práctica 2ºDAW IES Los Sauces, Benavente"/>
+        <link href="webroot/css/fonts.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" type="image/png" sizes="96x96" href="../webroot/images/favicon-96x96.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="webroot/css/estilos.css"/>
+        <link rel="stylesheet" href="webroot/css/estilosVistaDetalle.css"/>
+        <link rel="stylesheet" href="webroot/css/estilosLogin.css"/>
+        <link rel="stylesheet" href="webroot/css/estilos<?php echo ucfirst($_SESSION['paginaEnCurso']) ?>.css"/>
+        <title><?php echo ucfirst($_SESSION['paginaEnCurso']) ?></title>
+    <style>
             .volver {
                 width: 33px;
                 height: 33px;
@@ -32,42 +43,21 @@
                 flex-direction: column;
                 justify-content: flex-start;
             }
-            /*Estilos reloj*/
-            .puntos {
-                font-size: 30px;
-                letter-spacing: -2px;
-                color: #fff;
-                text-shadow: 0 0 5px #fff, 0 0 10px rgb(133, 192, 215), 0 0 15px rgb(100, 160, 234), 0 0 20px #3464e6, 0 0 25px #2314eb;
-                -webkit-text-fill-color: #F4ECFF;
-                -webkit-text-stroke-color: #2314eb;
-                -webkit-text-stroke-width: 0.2px;
-            }
-
-            #numeros {
-                display: flex;
-                align-items: center;
-                align-content: center;
-            }
-            img{
-                width: 30px;height: 30px;
-            }
         </style>
-        <script defer src="webroot/js/Reloj.js"></script>
     </head>
     <body>
-        <header>
-            <div class="encabezado-layout">
-                <h1>204DWESProyectoFinal</h1>
-                <h2>Aplicacion multicapa y orientada a objetos</h2>
-            </div>
-            <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; ?>
-        </header>
-        <footer>
-            <div><a href="../../204DWESProyectoDWES/indexProyectoDWES.php"><img style="padding: 0em 1em;" src="webroot/media/logo_propio.png" alt="logo" id="logo"></a></div>
-            2022-23 Manuel Martín Alonso. ©Todos los derechos reservados.
-            <a href="https://github.com/Manuel0119/204DWESProyectoFinal" target="_blank"><img src="webroot/media/github-logo.png" alt="github" id="g"></a>
-            <a href="doc/CV - Manuel Martín Alonso.pdf" target="_blank"><img src="webroot/media/curriculum-logo.png" alt="curriculum" id="curricu"></a>
-        </footer>
+         <footer>
+            <p>2022-23 IES LOS SAUCES. <a href="../../../index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé </a> © Todos los derechos reservados</p>
+            <p>|</p>
+            <a href="https://github.com/RicardoSantom/208DWESProyectoFinal1" target="blank" id="github" title="RicardoSantom en GitHub"></a>
+            <p>|</p>
+            <a href="https://www.linkedin.com/in/ricardo-santiago-tom%C3%A9/" id="linkedin" title="Ricardo Santiago Tomé en Linkedim"  target="_blank"></a>
+            <p>|</p>
+            <a href="http://daw208.ieslossauces.es/doc/curriculumRicardo.pdf"  title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
+            <p>|</p>
+            <div>Esta página <strong>pretende</strong> emular a: <a href="https://www.elganso.com/es/" id="ganso" target="_blank" title="Enlace a página web El Ganso">"El Ganso"</a></div>
+        </footer>      
+        <script defer src="webroot/js/Reloj.js"></script>
     </body>
 </html>
 
