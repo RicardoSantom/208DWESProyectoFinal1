@@ -39,28 +39,28 @@ var segundoDerecho = document.createElement("img");
 var segundoIzquierdo = document.createElement("img");
 //Añadido de las etiquetas imagen como hijos del bloque div
 divReloj.append(horaIzquierdo, horaDerecho, dosPuntos, minutoIzquierdo, minutoDerecho,
-    dosPuntos2, segundoIzquierdo, segundoDerecho);
+        dosPuntos2, segundoIzquierdo, segundoDerecho);
 //Variable con el comienzo de la ruta donde se alojan las imágenes.
 //Si la ruta cambiara para todas las imágenes, bastaría con cambiar esta variable
 var ruta = "webroot/media/img/";
 //Añadido de atributos de origen de las imágenes de dos puntos y texto alternativo
-//para todos los elementos img
+//con el valor del dígito de la hora para todos los elementos img
 //--------------------PUNTOS----------------------
 dosPuntos2.setAttribute("src", ruta.concat("puntos.gif"));
-dosPuntos2.setAttribute("alt", "Imagen dos puntos");
+dosPuntos2.setAttribute("alt", " : ");
 dosPuntos2.setAttribute("class", "puntos");
 dosPuntos.setAttribute("src", ruta.concat("puntos.gif"));
-dosPuntos.setAttribute("alt", "Imagen dos puntos");
+dosPuntos.setAttribute("alt", " : ");
 dosPuntos.setAttribute("class", "puntos");
 //---------------------HORAS----------------------
-horaDerecho.setAttribute("alt", "hora derecha");
-horaIzquierdo.setAttribute("alt", "hora izquierda");
+horaDerecho.setAttribute("alt", unidadHoras);
+horaIzquierdo.setAttribute("alt", decenaHoras);
 //---------------------MINUTOS----------------------
-minutoDerecho.setAttribute("alt", "minuto derecho");
-minutoIzquierdo.setAttribute("alt", "minuto izquierdo");
+minutoDerecho.setAttribute("alt", unidadMinutos);
+minutoIzquierdo.setAttribute("alt", decenaMinutos);
 //---------------------SEGUNDOS----------------------
-segundoIzquierdo.setAttribute("alt", "segundo izquierdo");
-segundoDerecho.setAttribute("alt", "segundo derecho");
+segundoDerecho.setAttribute("alt", unidadSegundos);
+segundoIzquierdo.setAttribute("alt", decenaSegundos);
 /**
  * Función que re-calcula de la hora actual y actualiza
  *  de los dígitos para horas, minutos y segundos.
@@ -69,7 +69,9 @@ segundoDerecho.setAttribute("alt", "segundo derecho");
  * he establecido como nombre del archivo
  */
 function actualizarReloj() {
+    //Actualización de hora
     horaActual = new Date();
+    //Actualización de cada uno de los dígitos
     //-----------HORAS-------------
     decenaHoras = parseInt((horaActual.getHours()) / 10);
     unidadHoras = horaActual.getHours() % 10;
@@ -79,7 +81,16 @@ function actualizarReloj() {
     //-----------SEGUNDOS-------------
     decenaSegundos = parseInt((horaActual.getSeconds()) / 10);
     unidadSegundos = horaActual.getSeconds() % 10;
-    //----------------------------------------------
+    //Cambio de atributo alt
+    horaDerecho.setAttribute("alt", unidadHoras);
+    horaIzquierdo.setAttribute("alt", decenaHoras);
+//---------------------MINUTOS----------------------
+    minutoDerecho.setAttribute("alt", unidadMinutos);
+    minutoIzquierdo.setAttribute("alt", decenaMinutos);
+//---------------------SEGUNDOS----------------------
+    segundoDerecho.setAttribute("alt", unidadSegundos);
+    segundoIzquierdo.setAttribute("alt", decenaSegundos);
+    //Cambio de atributo src
     //---------------------HORAS----------------------
     horaIzquierdo.setAttribute("src", ruta.concat(decenaHoras, ".jpg"));
     horaDerecho.setAttribute("src", ruta.concat(unidadHoras, ".jpg"));
@@ -91,7 +102,7 @@ function actualizarReloj() {
     segundoDerecho.setAttribute("src", ruta.concat(unidadSegundos, ".jpg"));
 }
 /**
- * Función con intervalo que actualiza la fecha cada 1000 mili-segundos
+ * Función con intervalo que actualiza el reloj cada 1000 mili-segundos
  * ejecutando la anterior función 'actualizarReloj'.
  */
 var intervalo = setInterval(() => {

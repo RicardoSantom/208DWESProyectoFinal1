@@ -100,7 +100,13 @@
         </table>
     </form>
     <article>
-        <h2 id="bienvenida"><?php echo "Bienvenido " . $_SESSION['User204DWESProyectoFinal']->getDescUsuario(); ?> -</h2>
+        <h2 id="bienvenida"><?php 
+        if($_SESSION['User204DWESProyectoFinal']){
+             echo "Bienvenido " . $_SESSION['User204DWESProyectoFinal']->getDescUsuario();
+        }else{
+            echo "<h2>Aún no ha iniciado sesión.</h2>";
+        }?>
+        </h2>
         <div id="divBienvenida">
             <div id="divBienvenidaInicio">
                 <h3>Ultimo inicio de sesión: </h3>

@@ -167,9 +167,11 @@ header h1,header h2,header h3{
     top: 5px;
 }
 #divReloj{
-    background-color: #ffe4d7;
+    background-color: #00cea7;
+    background-color: transparent;
     padding: 3px;
-    border: 6px solid #00609c;
+    border: 3px solid #F5FEFF;
+    font-family: 'Digital Numbers';
 }
 footer img{
     height: 30px;

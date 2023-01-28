@@ -49,7 +49,7 @@
          <footer>
             <p>2022-23 IES LOS SAUCES. <a href="../../../index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé </a> © Todos los derechos reservados</p>
             <p>|</p>
-            <a href="https://github.com/RicardoSantom/208DWESLoginLogoff" target="blank" id="github" title="RicardoSantom en GitHub"></a>
+            <a href="https://github.com/RicardoSantom/208DWESProyectoFinal1" target="blank" id="github" title="RicardoSantom en GitHub"></a>
             <p>|</p>
             <a href="https://www.linkedin.com/in/ricardo-santiago-tom%C3%A9/" id="linkedin" title="Ricardo Santiago Tomé en Linkedim"  target="_blank"></a>
             <p>|</p>
