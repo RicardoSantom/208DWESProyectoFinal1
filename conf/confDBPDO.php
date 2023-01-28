@@ -26,10 +26,10 @@ define("PASSWORD", 'paso');
 
 //ENTORNO DE EXPLOTACION 1&1
 // IP del servidor y Nombre de la base de datos
-//define('DSN', 'mysql:host=db5010845912.hosting-data.io; dbname=dbs9174079;');
+define('DSN', 'mysql:host=db5010845912.hosting-data.io; dbname=dbs9174079;');
 // Usuario con el que se conecta 
-//define("USER",  'dbu1353928');
+define("USER",  'dbu1353928');
 // Contraseña con la que conectarse a la base de datos 
-//define("PASSWORD", 'daw2_Sauces');
+define("PASSWORD", 'daw2_Sauces');
 
 ?>
