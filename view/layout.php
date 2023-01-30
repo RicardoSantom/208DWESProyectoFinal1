@@ -14,36 +14,8 @@
         <link rel="icon" type="image/png" sizes="96x96" href="../webroot/images/favicon-96x96.png">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="webroot/css/estilos.css"/>
-        <link rel="stylesheet" href="webroot/css/estilosVistaDetalle.css"/>
-        <link rel="stylesheet" href="webroot/css/estilosLogin.css"/>
         <link rel="stylesheet" href="webroot/css/estilos<?php echo ucfirst($_SESSION['paginaEnCurso']) ?>.css"/>
         <title><?php echo ucfirst($_SESSION['paginaEnCurso']) ?></title>
-    <style>
-            .volver {
-                width: 33px;
-                height: 33px;
-                margin-top: 15px;
-            }
-            .formulario{
-                border: none;
-            }
-            header{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-            tbody {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-            .encabezado-layout {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-            }
-        </style>
     </head>
     <body>
          <footer>

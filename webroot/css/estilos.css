@@ -1,89 +1,3 @@
-/*body{
-    margin: 0;
-}
-.encabezado{
-    background-color: #2D3E52;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    height: 6em;
-    flex-wrap: nowrap;
-    padding-left: 2em;
-}
-.container{
-    margin: 6em 16em;
-}
-#logo{
-    width: 45px;
-    height: 45px;
-    padding: 1em;
-    margin-left: 2em;
-    transition: transform .3s;
-}
-#logo:hover{
-    transform: scale(1.1);
-    padding: 1em;
-}
-.encabezado > a, .container a{
-    color: white;
-    text-decoration: none;
-    margin: 1em;
-    font-size: 1.22em;
-    font-weight: bold;
-    padding: 1em;
-}
-.container a{
-    color: #6CD7BD;
-    margin: 0;
-    padding: 0;
-}
-.encabezado > a:hover{
-    color: black;
-    background-color: white;
-    border-radius: 5cm;
-}
-::marker{
-    color: white;
-}
-ul{
-    text-align: left;
-    margin: 0;
-}
-li{
-    margin-bottom: 1em;
-}
-h1 {
-    font-size: 1.8em;
-    font-weight: bolder;
-    color: #6CD7BD;
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-bottom: 0.5em;
-}
-.cabecera{
-    font-size: 1.8em;
-    font-weight: bolder;
-    text-align: center;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin-bottom: 0.5em;
-}
-hr{
-    width: 9em;
-    height: 0.2em;
-    background-color: #bbbbbb;
-}
-p{
-    font-size: 1.3em;
-    font-weight: bolder;
-    color: grey;
-    text-align: center;
-}
-.temas{
-    font-size: 1.3em;
-    font-weight: bolder;
-    color: grey;
-    text-align: left;
-}*/
 *{
     margin: 0;
     padding: 0;
@@ -97,17 +11,22 @@ body{
     height: 100%;
     min-height: 950px;
 }
+main,article{
+    margin-bottom: 6rem;
+}
 header h1,header h2,header h3{
     width: 80%;
     margin: 0 auto;
 }
-#headerInicioPublico{
+#headerInicioPublico,#headerId{
     display: flex;
     text-align: center;
     width: 100%;
-    height: 1rem;
+    height: 4rem;
     position: absolute;
     top: 0%;
+    flex-direction: column;
+    margin-bottom: 2rem;
 }
 #headerInicioPublico p{
     background-color: #344079;
@@ -117,12 +36,12 @@ header h1,header h2,header h3{
     padding-bottom: 2px;
     font-size: 13px;
 }
-#headerInicioPublico h1{
+#headerInicioPublico h1,#headerId h1{
     font-family: 'LatoBlackItalic';
     font-weight: bold;
     font-size: 30px;
 }
-/*#labelInicioPublico{
+#labelInicioPublico{
     position: absolute;
     width: 80px;
     height: 180px;
@@ -143,7 +62,7 @@ header h1,header h2,header h3{
     top: 70px;
     box-shadow: 0 8px 0 #344079,
         0 16px 0 #344079;
-}*/
+}
 #formInicioPublico{
     height: 3rem;
     position: absolute;
@@ -172,6 +91,7 @@ header h1,header h2,header h3{
     padding: 3px;
     border: 3px solid #F5FEFF;
     font-family: 'Digital Numbers';
+    min-width: 165px;
 }
 footer img{
     height: 30px;
@@ -247,8 +167,6 @@ footer {
     background-color: #516D99;
     color: #F5FEFF;
     opacity: 0.9;
-    /*background: rgb(2,0,40);
-    background: linear-gradient(90deg, rgba(2,0,40,1) 0%, rgba(81,109,153,1) 100%, rgba(251,250,248,1) 100%);*/
     align-content: stretch;
     flex-direction: row;
     align-items: center;
@@ -257,42 +175,3 @@ footer {
     background-color: white;
     z-index: 100 !important;
 }
-/*Footer manu
-
-footer{
-    width: 100%;
-    height: 54px;
-    font-size: 1.3em;
-    font-weight: bolder;
-    color: white;
-    background: #2D3E52;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-}
-footer p{
-    margin: 0;
-    width: 30%;
-}
-#imagenfondo{
-    display: block;
-    margin: auto;
-    width: 1500px;
-    height: 610px;
-}
-#g{
-    width: 4em;
-    float: right;
-    height: auto;
-}
-#curricu{
-    width: 2em;
-    margin-right: 1em;
-    float: right;
-}
-#portadadwes{
-    width: 32em;
-    height: 32em;
-}*/

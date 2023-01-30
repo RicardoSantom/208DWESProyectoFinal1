@@ -38,6 +38,7 @@
     padding-bottom: 2rem;
     display: flex;
     height: 370px !important;
+    top: 8rem;
 }
 .divRegistroCancelar{
     display: flex;

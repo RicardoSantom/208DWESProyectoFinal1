@@ -1,7 +1,7 @@
 <?php
 if (isset($_REQUEST['salir'])){
     $_SESSION['paginaEnCurso']='inicioPublico';
-    $_SESSION['User204DWESProyectoFinal']=null;
+    $_SESSION['User208DWESProyectoFinal']=null;
     session_destroy();
     header("Location: index.php"); 
     exit();

@@ -173,7 +173,7 @@
         <header id="headerInicioPublico">
             <h1>Aplicación Final</h1>
             <h2>Multicapa, orientada a objetos, incluye microservicios</h2>
-            <h3><?php echo ucfirst($_SESSION['paginaEnCurso']) ?? '' ?></h3>
+            <h3>Página en curso: <?php echo ucfirst($_SESSION['paginaEnCurso']) ?? '' ?></h3>
             <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; ?>            
             <form id="formInicioPublico" method="post">
                 <fieldset id="fieldsetInicioPublico">

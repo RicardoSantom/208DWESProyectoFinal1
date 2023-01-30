@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Description Clase que declara atributos para un objeto usuario, implementa su
+ * constructor con todos los parámetros,
+ * también implementa los getters y setters de cada uno de los atributos
+ */
 class Usuario {
 
     private $codUsuario;
@@ -76,6 +80,14 @@ class Usuario {
 
     function setPerfil($perfil) {
         $this->perfil = $perfil;
+    }
+    
+    public function getImagenUsuario() {
+        return $this->imagenUsuario;
+    }
+
+    public function setImagenUsuario($imagenUsuario) {
+        $this->imagenUsuario = $imagenUsuario;
     }
 
 }
