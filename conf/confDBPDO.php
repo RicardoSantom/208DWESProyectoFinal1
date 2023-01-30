@@ -2,6 +2,7 @@
 /*
  * Fichero de configuracion que contiene la conexion a la base de datos
  * @author Manuel Martín Alonso
+ * @author Ricardo Santiago Tomé
  * @since:  12-01-2023
  * Última modificación: 12-01-2023
  */
