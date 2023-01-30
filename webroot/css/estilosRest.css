@@ -1,0 +1,45 @@
+/* 
+    Created on : 30 ene 2023, 0:46:03
+    Author     : Ricardo Santiago Tomé
+*/
+#divRest{
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    top: 7rem;
+    height: 18rem;
+}
+#divRest h2{
+    text-align: center;
+    font-family: 'LatoLightItalic';
+    font-weight: bold;
+    font-size: 36px;
+    color: #3367ac;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+}
+#divRest h3{
+    font-family: 'LatoLight';
+    font-size: 24px;
+    font-weight: 400;
+    color: #99a0a1;
+    border-bottom: 2px solid #99a0a1 ;
+    width: 400px;
+    margin: 2.5rem auto;
+}
+#volver{
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    padding: 0 2rem;
+    cursor: pointer;
+    background-color: #344079;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+}
+#volver:hover{
+    background-color: white;
+    color: #344079
+}

@@ -1,6 +1,7 @@
 <header id="headerId">
-    <h1>Aplicación LoginLogoff</h1>
-    <h3>Vista Login</h3>
+    <h1>Aplicación Final</h1>
+    <h2>Multicapa, orientada a objetos, incluye microservicios</h2>
+    <h3>Página en curso: <?php echo ucfirst($_SESSION['paginaEnCurso']) ?? '' ?></h3>
     <form id="formInicioPublico" method="post">
         <fieldset id="fieldsetInicioPublico">
             <input type="submit"  id="login" value="login" name="login2">

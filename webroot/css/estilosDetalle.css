@@ -1,0 +1,199 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+    min-width: 290px;
+    text-align: center;
+    width: 100vw;
+    /*display: flex;
+    flex-direction: column;
+    align-items: center;*/
+}
+body{
+    background-color: #fbfaf8;
+    text-align: center;
+    display: flex;
+}
+main{
+    padding-bottom: 6em;
+    position: relative;
+    width: 100vw;
+}
+article{
+    width: 100%;
+    position: absolute;
+    margin:6rem auto;
+}
+article *{
+    margin: 0 auto;
+}
+#divReloj{
+    display: flex;
+}
+article h3,article h4{
+    width: 60%;
+    text-align: center;
+    vertical-align: middle;
+    margin-left: 20%;
+}
+#volverPrograma{
+    background-color: #d9c7c7;
+    font-weight: bold;
+    font-size: 22px;
+    color: #344079;
+    width: 16rem;
+}
+#volverPrograma:hover{
+    box-shadow: 2px 2px 2px 2px gray;
+}
+h1{
+    text-align: center;
+    margin: 0 auto;
+}
+h2{
+    text-align: center;
+    margin: 0 auto;
+}
+.headerPropio h2{
+    text-align: center;
+    background-color: #CCB3AF;
+    color: #516D99;
+    line-height: 1.5em;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-shadow: 2px 2px 2px white;
+}
+h3{
+    text-align: center;
+    font-variant-caps: all-small-caps;
+    color: #00006A;
+    margin: 1em 0;
+}
+h4,h5{
+    margin: 1em 0 1em 1em;
+    color: #00006A;
+    text-decoration: underline solid  #00006A;
+}
+.tablaGlobales{
+    width: 90%;
+    border-collapse: collapse;
+    text-align: center;
+    color: #516D99;
+    margin: 2rem auto;
+    box-shadow: 12px 8px 2px 2px #516D99;
+    border: groove;
+}
+table{
+     border: 2px #666666 solid;
+     box-shadow: 6px 20px 10px black;
+}
+table:last-of-type{
+    height: 250px;
+}
+.tablaGlobales caption{
+    padding-bottom: 22px;
+    font-size: x-large;
+    font-weight: bold;
+    color: #00006a;
+    font-variant-caps: all-small-caps;
+}
+.tablaGlobales thead td,th{
+    color: #00006A;
+    font-variant-caps: all-small-caps;
+    font-size: larger;
+}
+.tablaGlobales td:first-child{
+    text-align: justify;
+    text-indent: 2%;
+    line-height: 2em;
+}
+.tablaGlobales td,th{
+    border: 2px #666666 solid;
+    height: 2em;
+    font-weight: bold;
+    font-size: 18px;
+}
+t.tablaGlobalesd a{
+    color: #666666;
+}
+.tablaGlobalestd a:hover{
+    color: #666666;
+    color: #FFC9B5;
+}
+#enlaceSecundario,#enlacePrincipal {
+    color: #666666;
+    font-size: 20px;
+}
+#github,#linkedin,#curriculum{
+    clear: both;
+    text-decoration: none;
+}
+#github:before{
+    font-family: 'Fontawesome';
+    content:'\f09b';
+    background-color:#FFC9B5;
+    font-size: 2em;
+    border-radius: 50%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#linkedin:before{
+    color: #FFC9B5;
+    font-family: 'FontaWesome';
+    content: '\f08c';
+    font-size: 2em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#curriculum:before{
+    color: #FFC9B5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#linkedin{
+    color: #FFC9B5;
+}
+#curriculum span{
+    color: #FFC9B5;
+    font-size: 30px;
+    padding-top: 10px;
+}
+#github,#linkedin{
+    padding-top: 10px;
+}
+footer p{
+    padding-top: 15px;
+    font-size: 20px;
+}
+#ganso{
+    font-size: 24px;
+    color: #666666;
+}
+footer {
+    clear: both;
+    height: 90px;
+    position: fixed;
+    justify-content: space-evenly;
+    display: flex;
+    float: left;
+    bottom: 0;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #516D99;
+    color: #F5FEFF;
+    opacity: 0.9;
+    align-content: stretch;
+    flex-direction: row;
+    align-items: center;
+    z-index: 20;
+    color:#666666;
+    background-color: white;
+}

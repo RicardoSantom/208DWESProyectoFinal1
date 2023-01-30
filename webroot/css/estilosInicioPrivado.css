@@ -17,18 +17,77 @@ body{
     font-family: 'LatoRegular';
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
 }
 main{
     width: 100%;
 }
+article{
+    position: absolute;
+    top: 16rem;
+}
+aside{
+    width:14rem;
+}
+.formulario{
+    position: absolute;
+    right: 5px;
+    top: 0.5rem;
+    display: flex;
+    border: none;
+    justify-content: space-between;
+    flex-direction: column;
+}
+input{
+    margin-bottom: 0.25rem;
+    width: 14rem;
+}
+#detalle,#editar_Perfil,#mant_departamentos,#rest{
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    padding: 0 2rem;
+    cursor: pointer;
+    background-color: #344079;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+}
+#detalle:hover,#editar_Perfil:hover,#mant_departamentos:hover,#rest:hover{
+    background-color: white;
+    color: #344079
+}
+#salir,#error{
+    background-color: #d9c7c7;
+    font-weight: bold;
+    font-size: 22px;
+    color: #344079;
+}
+#salir:hover,#error:hover{
+    background-color: #344079;
+    color: #d9c7c7;
+}
+.imgUsuario{
+    position: absolute;
+    top: 4.5rem;
+    right: 3rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
 #bienvenida{
+    position: absolute;
+    top: 4rem;
     text-align: center;
     font-family: 'LatoLightItalic';
     font-weight: bold;
     font-size: 36px;
     color: #3367ac;
-    margin-top: 2.5rem;
-    margin-bottom: 3.5rem;
+    margin: 2.5rem auto;
+    width: 60%;
 }
 #formInicioPrivado{
     display: flex;
@@ -36,11 +95,10 @@ main{
     flex-wrap: wrap;
     align-content: center;
     align-items: flex-end;
-
     margin-top: 0.75rem;
     margin-right: 2rem;
 }
-#detalle,#salirInicioPrivado{
+#salirInicioPrivado{
     display: flex;
     justify-content: flex-end;
     align-items: stretch;
@@ -51,14 +109,12 @@ main{
     color: #99a0a1;
     font-size: 20px;
 }
-#salir{
-    margin-top: 1rem;
-}
 #divBienvenida{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     text-align: center;
+    width: 98vw;
 }
 #divBienvenida h3{
     font-family: 'LatoLight';
@@ -87,4 +143,8 @@ table caption{
 }
 table{
     color: #99a0a1;
+}
+footer{
+    position: fixed;
+    bottom: 0;
 }

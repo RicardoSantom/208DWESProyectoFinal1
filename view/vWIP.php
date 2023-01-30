@@ -12,16 +12,13 @@
     <h3>Vista Work In Progress</h3>
 </header>
 <main>
-    <article>
-        <h1>WIP</h1>
-        <section>
-            <h2>Esta vista está aún en desarrollo</h2>
-            <form id="formWip" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                <button type="submit" name="volver" id="volver" value="volver">Volver</button>
-            </form>
-
-            <?php echo ("<h3>Página anterior</h3>" . $_SESSION['paginaAnterior']); ?>
-            <?php echo ("<h3>Página en curso</h3>" . $_SESSION['paginaEnCurso']); ?>
-        </section>
-    </article>
+    <div id="divWip">
+        <h2>WIP</h2>
+        <p>Esta vista está aún en desarrollo</p>
+        <h3>Página anterior: <span><?php echo ($_SESSION['paginaAnterior']); ?></span></h3>
+        <h3>Página en curso: <span><?php echo ( $_SESSION['paginaEnCurso']); ?></span></h3>            
+        <form id="formWip" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <button type="submit" name="volver" id="volver" value="volver">Volver</button>
+        </form>
+    </div>
 </main>
