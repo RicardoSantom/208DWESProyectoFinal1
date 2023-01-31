@@ -1,8 +1,3 @@
-<!--<form name = "formInicioPrivado" action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">
-    <input type="submit"  id="login" value="" name="login">
-    <input type="submit" id="detalle" value="Detalle" name="detalle">
-    <input type="submit" id="salirInicioPrivado" value="Salir" name="salir">
-</form>-->
 <header id="headerId">
     <h1>Proyecto Final</h1>
     <h2>Aplicación multicapa POO, MVC incluyendo llamadas a API Rest</h2>

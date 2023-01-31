@@ -8,7 +8,7 @@
  */
 ?>
 <header id="headerId">
-    <h1>Aplicación LoginLogoff</h1>
+    <h1>Proyecto Final</h1>
     <h3>Vista REST</h3>
 </header>
 <main>

@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="webroot/css/estilos.css"/>
         <link rel="stylesheet" href="webroot/css/estilosVistaDetalle.css"/>
         <link rel="stylesheet" href="webroot/css/estilosLogin.css"/>
+        <link rel="stylesheet" href="webroot/css/estilosInicioPublico.css"/>
         <link rel="stylesheet" href="webroot/css/estilos<?php echo ucfirst($_SESSION['paginaEnCurso']) ?>.css"/>
         <title><?php echo ucfirst($_SESSION['paginaEnCurso']) ?></title>
         <style>
@@ -169,73 +170,75 @@
             }
         </style>
     </head>
-    <body>
-        <header id="headerInicioPublico">
-            <h1>Aplicación Final</h1>
-            <h2>Multicapa, orientada a objetos, incluye microservicios</h2>
-            <h3>Página en curso: <?php echo ucfirst($_SESSION['paginaEnCurso']) ?? '' ?></h3>
-            <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; ?>            
-            <form id="formInicioPublico" method="post">
-                <fieldset id="fieldsetInicioPublico">
-                    <input type="submit"  id="login" value="login" name="login">
-                </fieldset>
-            </form>
-        </header>
-        <div class="slider">
-            <div class="slides">
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4">
-                <input type="radio" name="radio-btn" id="radio5">
-                <input type="radio" name="radio-btn" id="radio6">
-                <div class="slide first">
-                    <img src="webroot/media/Imagen-ArbolNavegacion.PNG" alt="">
-                </div>
-                <div class="slide">
-                    <img src="webroot/media/Imagen-DiagramaDeClasesLoginLogoff.PNG" alt="">
-                </div>
-                <div class="slide">
-                    <img src="webroot/media/Imagen-DiagramaDeClasesMulticapa.PNG" alt="">
-                </div>
-                <div class="slide">
-                    <img src="webroot/media/Imagen-FicherosLoginLogoff.PNG" alt="">
-                </div>
-                <div class="slide">
-                    <img src="webroot/media/Imagen-ModeloFisicoDeDatos.PNG" alt="">
-                </div>
-                <div class="slide">
-                    <img src="webroot/media/Imagen-RelacionDeFicheros.PNG" alt="">
-                </div>
-                <div class="navigation-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                    <div class="auto-btn4"></div>
-                    <div class="auto-btn5"></div>
-                    <div class="auto-btn6"></div>
-                </div>
+
+    <header id="headerInicioPublico">
+        <p>Aplicación multicapa y orientada a objetos - 2ºDAW IES Los Sauces - Vista actual: Inicio Público</p>
+        <h1>Aplicación Final</h1>
+        <h2>Multicapa, orientada a objetos, incluye microservicios</h2>
+        <h3>Página en curso: <?php echo ucfirst($_SESSION['paginaEnCurso']) ?? '' ?></h3>
+        <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; ?>            
+        <form id="formInicioPublico" method="post">
+            <fieldset id="fieldsetInicioPublico">
+                <input type="submit"  id="login" value="login" name="login">
+            </fieldset>
+        </form>
+    </header>
+    <div class="diapositiva">
+        <div class="diapositivaInterior">
+            <input class="diapositivaAbrir" type="radio" id="diapositiva1" 
+                   name="slide" aria-hidden="true" hidden="" checked="checked">
+            <div class="diapositivaItem">
+                <label>Ficheros LoginLogoff</label>
+                <img src="./webroot/media/Imagen-RelacionDeFicheros.PNG">
             </div>
-            <div class="navigation-manual">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
-                <label for="radio5" class="manual-btn"></label>
-                <label for="radio6" class="manual-btn"></label>
+            <input class="diapositivaAbrir" type="radio" id="diapositiva2" 
+                   name="slide" aria-hidden="true" hidden="">
+            <div class="diapositivaItem">
+                <label>Diagrama de clases LoginLogoff</label>
+                <img src="./webroot/media/Imagen-DiagramaDeClasesMulticapa.PNG">
             </div>
+            <input class="diapositivaAbrir" type="radio" id="diapositiva3" 
+                   name="slide" aria-hidden="true" hidden="">
+            <div class="diapositivaItem">
+                <label>Árbol de navegación LoginLogoff</label>
+                <img src="./webroot/media/Imagen-ArbolDeNavegación.png">
+            </div>
+
+            <input class="diapositivaAbrir" type="radio" id="diapositiva4" 
+                   name="slide" aria-hidden="true" hidden="">
+            <div class="diapositivaItem">
+                <label>Diagrama Casos de Uso</label>
+                <img src="./webroot/media/Imagen-DiagramaDeCasosDeUso.png">
+            </div>
+             <!--<input class="diapositivaAbrir" type="radio" id="diapositiva5" 
+                   name="slide" aria-hidden="true" hidden="">
+            <div class="diapositivaItem">
+                <label>Diagrama De Clases</label>
+                <img src="./webroot/media/Imagen-DiagramaDeClases.png">
+            </div>-->
+            <label for="diapositiva4" class="diapositivaControl next control-3">‹</label>
+            <label for="diapositiva3" class="diapositivaControl next control-2">‹</label>
+            <label for="diapositiva2" class="diapositivaControl prev control-3">›</label>
+            <label for="diapositiva1" class="diapositivaControl next control-4">‹</label>
+            <label for="diapositiva4" class="diapositivaControl prev control-1">‹</label>
+            <label for="diapositiva3" class="diapositivaControl prev control-4">›</label>
+            <label for="diapositiva2" class="diapositivaControl next control-1">‹</label>
+            <label for="diapositiva1" class="diapositivaControl prev control-2">›</label>
+            <ol class="diapositivaIndicador">
+                <li>
+                    <label for="diapositiva1" class="diapositivaCirculo">•</label>
+                </li>
+                <li>
+                    <label for="diapositiva2" class="diapositivaCirculo">•</label>
+                </li>
+                <li>
+                    <label for="diapositiva3" class="diapositivaCirculo">•</label>
+                </li>
+                <li>
+                    <label for="diapositiva4" class="diapositivaCirculo">•</label>
+                </li>
+            </ol>
         </div>
-        <script>
-            var totalRadios = 6;
-            var contador = 1;
-            setInterval(function () {
-                var radio = document.getElementById('radio' + contador);
-                if (radio) {
-                    radio.checked = true;
-                    contador = (contador % totalRadios) + 1;
-                }
-            }, 5000);
-        </script>
-    </body>
+    </div>
 </html>
 

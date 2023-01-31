@@ -1,8 +1,12 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
 /* 
-    Created on : 30 ene 2023, 0:46:03
+    Created on : 31 ene 2023, 1:25:11
     Author     : Ricardo Santiago Tomé
 */
-#divRest{
+#divError{
     text-align: center;
     width: 90%;
     margin: 0 auto;
@@ -10,7 +14,7 @@
     top: 7rem;
     height: 18rem;
 }
-#divRest h2{
+#divError h2{
     text-align: center;
     font-family: 'LatoLightItalic';
     font-weight: bold;
@@ -19,7 +23,7 @@
     margin-top: 2.5rem;
     margin-bottom: 2rem;
 }
-#divRest h3{
+#divError h3{
     font-family: 'LatoLight';
     font-size: 24px;
     font-weight: 400;
@@ -42,4 +46,24 @@
 #volver:hover{
     background-color: #344079;
     color: #d9c7c7;
+}
+form{
+    position: relative;
+}
+table caption{
+    font-family: 'LatoLight';
+    font-size: 24px;
+    font-weight: 400;
+    color: #333333;
+    text-decoration:underline solid  #333333;
+    padding-bottom: 1rem;
+}
+table{
+    position: absolute;
+    margin-top: 6rem;
+    border: 2px solid #99a0a1;
+    color: #99a0a1;
+    width: 60%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
 }
