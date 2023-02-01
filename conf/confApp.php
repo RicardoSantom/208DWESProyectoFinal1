@@ -7,6 +7,7 @@ require_once 'model/Usuario.php';
 require_once 'model/UsuarioPDO.php';
 require_once 'model/DBPDO.php';
 require_once 'model/ErrorApp.php';
+//require_once 'model/REST.php';
 define("OBLIGATORIO", 1);
 
 $aControladores=[

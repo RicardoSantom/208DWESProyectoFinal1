@@ -1,0 +1,126 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 31 ene 2023, 3:16:46
+    Author     : Ricardo Santiago Tomé
+*/
+.diapositiva {
+    text-align: center;
+    position: relative;
+    display: flex;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+    top: 80px;
+    background-color:#fff;
+    padding-bottom: 6rem;
+    width: 90%;
+    margin: 3rem auto;
+    height: 50%;
+}
+.diapositivaInterior {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: calc( 800px + 3em);
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.diapositivaAbrir:checked + .diapositivaItem {
+    position: static;
+    opacity: 100;
+}
+.diapositivaItem {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+}
+.diapositivaItem img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+img{
+    background-position-x: center;
+    background-position-y: center;
+}
+.diapositivaItem label{
+    font-family: 'LatoBlackItalic';
+    font-weight: 700;
+    font-size: 24px;
+    color: #428bca;
+}
+.diapositivaControl {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+.diapositivaControl.prev {
+    left: 2%;
+}
+.diapositivaControl.next {
+    right: 2%;
+}
+.diapositivaControl:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+#diapositiva1:checked ~ .control-1,
+#diapositiva2:checked ~ .control-2,
+#diapositiva3:checked ~ .control-3,
+#diapositiva4:checked ~ .control-4{
+    display: block;
+}
+.diapositivaIndicador {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+.diapositivaIndicador li {
+    display: inline-block;
+    margin: 0 5px;
+}
+.diapositivaCirculo {
+    color: #828282;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+.diapositivaCirculo:hover {
+    color: #aaaaaa;
+}
+#diapositiva1:checked ~ .control-1 ~ .diapositivaIndicador
+li:nth-child(1) .diapositivaCirculo,
+#diapositiva2:checked ~ .control-2 ~ .diapositivaIndicador
+li:nth-child(2) .diapositivaCirculo,
+#diapositiva3:checked ~ .control-3 ~ .diapositivaIndicador
+li:nth-child(3) .diapositivaCirculo,
+#diapositiva4:checked ~ .control-4 ~ .diapositivaIndicador
+li:nth-child(4) .diapositivaCirculo{
+    color: #428bca;
+}

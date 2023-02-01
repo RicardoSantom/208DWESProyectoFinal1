@@ -34,12 +34,12 @@
     min-height: 2.5rem;
     padding: 0 2rem;
     cursor: pointer;
-    background-color: #344079;
-    color: white;
+   background-color: #d9c7c7;
     font-weight: bold;
     font-size: 22px;
+    color: #344079;
 }
 #volver:hover{
-    background-color: white;
-    color: #344079
+    background-color: #344079;
+    color: #d9c7c7;
 }

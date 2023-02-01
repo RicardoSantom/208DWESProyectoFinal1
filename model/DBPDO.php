@@ -1,10 +1,14 @@
 <?php
-//Fichero con constantes para conexión a base de datos
+
+//Inclusión de fichero con constantes para conexión a base de datos
 require_once 'conf/confDBPDO.php';
+
 /**
  * Description of DBPDO
- * Función en la que se implementa el método abstracto declarado en la interface DB *
+ * Función en la que se implementa el método abstracto declarado en la interface DB 
  * @author Ricardo Santiago Tomé - RicardoSantom en Github <https://github.com/RicardoSantom>
+ * @since 25/01/2023
+ * @version 0.1
  */
 class DBPDO implements DB {
 
@@ -26,14 +30,13 @@ class DBPDO implements DB {
 //Devolución del resultado de la consulta
             return $oResultado;
         } catch (PDOException $excepcion) {
-            /*Investigar porqué no funciona guardar la página en curso como página anterior
-             * $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
-             * 
+            /* Si hay errores construye un objeto ErrorApp y lo guarda en la sesión junto
+             * con la página anterior(inicioPrivado) a la que navegará para mostrar los errores.
              */
-//Si hay errores nos informa con un mensaje
-// $_SESSION['error']= $excepcion->getMessage();
-//$_SESSION['paginaEnCurso'] = 'error';
-//Y nos devuelve al index
+            $_SESSION['error'] = new ErrorApp($excepcion->getCode(), $excepcion->getMessage(),
+                    $excepcion->getFile(), $excepcion->getLine(), $_SESSION['paginaAnterior']);
+            //Navegación hasta páina de error para ver los mensajes de errores.
+            $_SESSION['paginaEnCurso'] = 'error';
             header('Location: index.php');
             exit();
         } finally {
@@ -59,4 +62,5 @@ class DBPDO implements DB {
     }
 
 }
+
 ?>
