@@ -13,8 +13,8 @@
 
     class Palabra{
         public $palabra;
-        public $origen;
-        public $significados;
+       /* public $origen;
+        public $significados;*/
 
         /**
         * Constructor de objetos palabra
@@ -25,10 +25,10 @@
         * @param String $origen Origen de la palabra
         * @param String $significados Significados y sinonimos de la palabra
         */
-        public function __construct($palabra, $origen, $significados){
+        public function __construct($palabra/*, $origen, $significados*/){
             $this->palabra=$palabra;
-            $this->origen=$origen;
-            $this->significados=$significados;
+            /*$this->origen=$origen;
+            $this->significados=$significados;*/
         }
     }
 ?>

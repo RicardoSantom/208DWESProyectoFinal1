@@ -14,11 +14,23 @@
 <main>
     <div id="divRest">
         <h2>REST</h2>
-        <p>Esta vista está aún en desarrollo</p>
-        <h3>Página anterior: <span><?php echo ($_SESSION['paginaAnterior']); ?></span></h3>
-        <h3>Página en curso: <span><?php echo ($_SESSION['paginaEnCurso']); ?></span></h3>
-        <form id="formRest" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <button type="submit" name="volver" id="volver" value="volver">Volver</button>
-        </form>
+            <p>Esta vista está aún en desarrollo</p>
+            <h3>Página anterior: <span><?php echo ($_SESSION['paginaAnterior']); ?></span></h3>
+            <h3>Página en curso: <span><?php echo ($_SESSION['paginaEnCurso']); ?></span></h3>
+            <form id="formRest" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                <button type="submit" name="volver" id="volver" value="volver">Volver</button>
+                <legend><h2>Diccionario:</h2></legend>
+
+            <label>Palabra:</label><br>
+            <input type='text' name='palabra' value="<?php
+            //Mostrar los datos correctos introducidos en un intento anterior
+            echo isset($_REQUEST["palabra"]) ?? "No hay resultado";
+            ?>"/><p><?php
+            //Mostrar los errores en el codDepartamento, si los hay
+            //echo $aErrores["palabra"]!=null ? $aErrores["palabra"] : "";
+            ?></p>
+            <br><br>
+            <input type='submit' name='buscar' value='Buscar'/>
+            </form>
     </div>
 </main>
