@@ -20,7 +20,7 @@ class REST {
      */
     public static function buscarPalabra($palabra) {
         $oDevolucion = @file_get_contents("https://api.dictionaryapi.dev/api/v2/entries/en/{$palabra}");
-        //
+        //Trabajando en los comentarios
         $aSalida = $oDevolucion ? json_decode($oDevolucion)[0] : '' ;
 
         if (is_object($aSalida)) {
