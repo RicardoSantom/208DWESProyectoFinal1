@@ -38,6 +38,19 @@ main{
     width: 400px;
     margin: 2.5rem auto;
 }
+fieldset{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+}
+#palabra{
+    height: 40px;
+}
+#labelPalabra{
+    font-family: 'LatoLight';
+    font-weight: bold;
+    font-size: 24px;
+}
 #volver{
     align-items: center;
     justify-content: center;
@@ -52,6 +65,21 @@ main{
 #volver:hover{
     background-color: #344079;
     color: #d9c7c7;
+}
+#buscar{
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    padding: 0 2rem;
+    cursor: pointer;
+    background-color: #344079;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+}
+#buscar:hover{
+    background-color: white;
+    color: #344079;
 }
 #formRest{
     width: 70%;

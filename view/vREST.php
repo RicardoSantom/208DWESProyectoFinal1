@@ -23,11 +23,11 @@ $contador = 0;
         <form id="formRest" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <fieldset>
                 <legend><h2>Diccionario inglés:</h2></legend>
-                <label>Introduzca palabra:</label>
-                <input type='text' name='palabra' value="<?php
+                <label id="labelPalabra">Introduzca palabra:</label>
+                <input type='text' name='palabra' id="palabra" value="<?php
                 echo isset($_REQUEST["palabra"]) ?? "No hay resultado";
                 ?>"/>
-                <input type='submit' name='buscar' value='Buscar'/>
+                <input type='submit' name='buscar' id="buscar" value='Buscar'/>
                 <button type="submit" name="volver" id="volver" value="volver">Volver</button>
             </fieldset>
         </form>
