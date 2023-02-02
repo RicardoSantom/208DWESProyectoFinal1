@@ -31,19 +31,20 @@ $contador = 0;
                 <button type="submit" name="volver" id="volver" value="volver">Volver</button>
             </fieldset>
         </form>
-        <!--<?php
+        <?php
         $ruta;
         if (isset($aVPalabra)) {
-            foreach ($aVPalabra["audio"] as $aPhonetics) {
-                foreach ($aPhonetics->audio as $aAudio) {
-                   $ruta=$aPhonetics->audio;
-                }
-            }
-            ?>-->
-            <h3>Palabra buscada: <strong><?php print_r($aVPalabra["palabra"]); ?></strong></h3>?>
-            <!--<p><?php echo"$aVPalabra[1]" ?></p>
+            /* foreach ($aVPalabra["audio"] as $aPhonetics) {
+              foreach ($aPhonetics->audio as $aAudio) {
+              $ruta=$aPhonetics->audio;
+              }
+              }
+             */
+            ?>
+            <h3>Palabra buscada: <strong><?php print_r($aVPalabra["palabra"]); ?></strong></h3>
+            <!--<p><?php /* echo"$aVPalabra[1]" */ ?></p>
             <audio controls autoplay >
-                <source src='<?php $ruta ?>'>
+                <source src='<?php /* $ruta */ ?>'>
             </audio>-->
             <table>
                 <caption>Tabla de resultados consulta palabra</caption>
