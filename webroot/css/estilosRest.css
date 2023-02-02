@@ -2,13 +2,23 @@
     Created on : 30 ene 2023, 0:46:03
     Author     : Ricardo Santiago Tomé
 */
+*{
+    list-style: none;
+}
+main{
+    height: 80%;
+}
 #divRest{
     text-align: center;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
-    top: 7rem;
-    height: 18rem;
+    top: 4rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
 }
 #divRest h2{
     text-align: center;
@@ -34,7 +44,7 @@
     min-height: 2.5rem;
     padding: 0 2rem;
     cursor: pointer;
-   background-color: #d9c7c7;
+    background-color: #d9c7c7;
     font-weight: bold;
     font-size: 22px;
     color: #344079;
@@ -42,4 +52,31 @@
 #volver:hover{
     background-color: #344079;
     color: #d9c7c7;
+}
+#formRest{
+    width: 70%;
+    height: 20%;
+}
+table caption{
+    font-family: 'LatoLight';
+    font-size: 24px;
+    font-weight: 400;
+    color: #333333;
+    text-decoration:underline solid  #333333;
+    padding-bottom: 1rem;
+}
+table{
+    color: #99a0a1;
+    width: 70%;
+    height: 80%;
+}
+table,td,th{
+    border: 1px solid #99a0a1;
+    border-collapse: collapse;
+}
+th{
+    text-transform: capitalize;
+}
+td,th{
+    height: 2rem;
 }

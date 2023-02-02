@@ -32,13 +32,13 @@ if (isset($_REQUEST['buscar'])) {
 }
 
 if ($entradaOk) {
-    $oPalabra = REST::buscarPalabra( $_REQUEST["palabra"]);
+    $oPalabra = REST::buscarPalabra($_REQUEST["palabra"]);
 
-   /* $aVPalabra = [
+    $aVPalabra = [
         'palabra' => $oPalabra->palabra,
-        'origen' => $oPalabra->origen,
-        'significados' => $oPalabra->significados
-    ];*/
+        'significados' => $oPalabra->significados,
+        'audio' => $oPalabra->audio
+    ];
 }
 
 require_once $aVistas['layout'];
