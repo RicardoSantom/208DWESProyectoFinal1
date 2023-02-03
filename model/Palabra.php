@@ -1,14 +1,15 @@
 <?php
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/PHPClass.php to edit this template
- */
-
 /**
- * Description of Palabra
+ * Summary Clase con atributos y constructor para instanciar un objeto Palabra
+ * 
+ * Description Molde para construir objetos Palabra con 3 atributos recibidos
+ * como parámetros en la función constructora.
  *
- * @author desar
+ * @author Ricardo Santiago Tomé
+ * @since 28/01/2023
+ * @version 0.3
+ * 
  */
 class Palabra {
 
@@ -17,13 +18,14 @@ class Palabra {
     public $audio;
 
     /**
-     * Constructor de objetos palabra
+     * Summary Constructor de objetos palabra
      * 
-     * Obtiene la palabra, origen y significados y crea un objeto
+     * Description Obtiene como parámetros los atributos palabra, origen y 
+     * significados y crea un objeto Palabra con ellos.
      * 
      * @param String palabra Palabra a buscar en el diccionario
-     * @param String origen Origen de la palabra
-     * @param String significados Significados y sinonimos de la palabra
+     * @param String significados Distintas acepciones del término palabra
+     * @param String audio Audio requerido de la palabra
      */
     public function __construct($palabra, $significados, $audio) {
         $this->palabra = $palabra;
@@ -32,5 +34,3 @@ class Palabra {
     }
 
 }
-
-?>
