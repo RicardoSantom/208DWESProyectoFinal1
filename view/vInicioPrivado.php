@@ -6,7 +6,7 @@
 <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" class="formulario" method = "post">
     <input type="submit" id="detalle" value="Detalle" name="detalle">
     <input type="submit" id="editar_Perfil" value="Editar Perfil" name="editar_Perfil">
-    <input type="submit" id="mant_departamentos" value="Mto.Departamentos" name="mant_departamentos">
+    <input type="submit" id="mtoDepartamentos" value="Mto.Departamentos" name="mtoDepartamentos">
     <input type="submit" id="rest" value="Rest" name="rest">
     <input type="submit" id="error" value="Error" name="error">
     <input type="submit" id="salir" value="Cerrar Sesion" name="salir">

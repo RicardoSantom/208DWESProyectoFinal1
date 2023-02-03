@@ -21,8 +21,8 @@ if(isset($_REQUEST['editar_Perfil'])){
     header("Location: index.php"); 
     exit();
 }
-if(isset($_REQUEST['mant_departamentos'])){
-    $_SESSION['paginaEnCurso']='wip';
+if(isset($_REQUEST['mtoDepartamentos'])){
+    $_SESSION['paginaEnCurso']='mtoDepartamentos';
     $_SESSION['paginaAnterior']='inicioPrivado';
     header("Location: index.php"); 
     exit();

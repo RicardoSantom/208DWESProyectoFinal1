@@ -45,7 +45,7 @@ input{
     margin-bottom: 0.25rem;
     width: 14rem;
 }
-#detalle,#editar_Perfil,#mant_departamentos,#rest{
+#detalle,#editar_Perfil,#mtoDepartamentos,#rest{
     align-items: center;
     justify-content: center;
     min-height: 2.5rem;
@@ -56,7 +56,7 @@ input{
     font-weight: bold;
     font-size: 22px;
 }
-#detalle:hover,#editar_Perfil:hover,#mant_departamentos:hover,#rest:hover{
+#detalle:hover,#editar_Perfil:hover,#mtoDepartamentos:hover,#rest:hover{
     background-color: white;
     color: #344079
 }
