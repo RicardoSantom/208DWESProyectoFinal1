@@ -1,7 +1,11 @@
 <?php
-
 /**
- * Description Controlador para la vista de REST
+ * Summary Controlador para la vista de REST
+ * 
+ * Description Actúa en función a las decisiones tomadas por el usuario
+ * en la vista vREST, valida la entrada del input del formulario y realiza
+ * con los valores en él recogidos una llamada a una API externa que consiste
+ * en un diccionario de palabras en idioma inglés.
  * 
  * @author Ricardo Santiago Tomé
  * @since 28/01/2023
@@ -13,33 +17,34 @@ if (isset($_REQUEST['volver'])) {
     header("Location: index.php");
     exit();
 }
-//Definir array para almacenar errores
+//Array para almacenar errores(DE MOMENTO,) con un solo campo.
 $aErrores = [
     "palabra" => null
 ];
-
+//Si se pulsa buscar, el usuario ha interactuado con el formulario.
 if (isset($_REQUEST['buscar'])) {
     $entradaOk = true;
-
-    $aErrores["palabra"] = validacionFormularios::comprobarAlfaNumerico($_REQUEST["palabra"], 255, 1, OBLIGATORIO);
-
+//Y se valida lo tipeado en el input
+    $aErrores["palabra"] = validacionFormularios::comprobarAlfaNumerico($_REQUEST["palabra"], 255, 1, 1);
+//Si no hay errores en lo tipeado en el input
     if ($aErrores["palabra"] != null) {
         $entradaOk = false;
     }
 } else {
-    //El formulario no se ha rellenado nunca
+    //Si si hay errores, el formulario no se ha rellenado nunca, booleano a false
     $entradaOk = false;
 }
-
+//Si el booleano está a true
 if ($entradaOk) {
+    //Se guarda en $oPalabra el resultado de la llamada a la API
     $oPalabra = REST::buscarPalabra($_REQUEST["palabra"]);
-
-    $aVPalabra = [
+    //Array para guardar los datos a mostrar de la respuesta
+    $aRespuestas = [
         'palabra' => $oPalabra->palabra,
         'significados' => $oPalabra->significados,
         'audio' => $oPalabra->audio
     ];
 }
-
+//
 require_once $aVistas['layout'];
 ?>

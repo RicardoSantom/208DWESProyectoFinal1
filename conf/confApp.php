@@ -9,6 +9,8 @@ require_once 'model/DBPDO.php';
 require_once 'model/ErrorApp.php';
 require_once 'model/REST.php';
 require_once 'model/Palabra.php';
+require_once 'model/Departamento.php';
+require_once 'model/DepartamentoPDO.php';
 define("OBLIGATORIO", 1);
 
 $aControladores=[
@@ -23,7 +25,8 @@ $aControladores=[
     "cambiarPassword"=>"controller/cCambiarPassword.php",
     "borrarCuenta"=>"controller/cBorrarCuenta.php",
     "rest" => "controller/cREST.php",
-    "error"=> "controller/cError.php"
+    "error"=> "controller/cError.php",
+    "mtoDepartamentos"=>"controller/cMtoDepartamentos.php"
 ];
 
 $aVistas=[
@@ -39,6 +42,7 @@ $aVistas=[
     "cambiarCassword"=>"view/vCambiarPassword.php",
     "borrarCuenta"=>"view/vBorrarCuenta.php",
     "rest" => "view/vREST.php",
-    "error" => "view/vError.php"
+    "error" => "view/vError.php",
+    "mtoDepartamentos"=>"view/vMtoDepartamentos.php"
 ];
 ?>

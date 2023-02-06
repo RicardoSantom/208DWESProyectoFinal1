@@ -3,11 +3,11 @@
  * Summary Vista REST búsqueda significado palabras con llamada a ApI
  * 
  * Description A través de un formulario se recoge la palabra introducida por
- * el usuario en input, se llama a una API externa que contiene datos sobre
+ * el usuario en un input, se llama a una API externa que contiene datos sobre
  * palabras en lengua inglesa, y se imprime una tabla mostrando los datos seleccionados.
  * 
  * @author Ricardo Santiago Tomé
- * @since 27/01/2023
+ * @since 28/01/2023
  * @version 0.1
  *
  */
@@ -23,44 +23,68 @@ $contador = 0;
         <form id="formRest" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <fieldset>
                 <legend><h2>Diccionario inglés:</h2></legend>
-                <label id="labelPalabra">Introduzca palabra:</label>
-                <input type='text' name='palabra' id="palabra" value="<?php
-                echo isset($_REQUEST["palabra"]) ?? "No hay resultado";
-                ?>"/>
+                <div id="divPalabra">
+                    <label id="labelPalabra">Introduzca palabra:</label>
+                    <input type='text' name='palabra' id="palabra" value="<?php
+                    echo isset($_REQUEST["palabra"]) ? $_REQUEST["palabra"] : '';
+                    ?>"/>
+                </div>
                 <input type='submit' name='buscar' id="buscar" value='Buscar'/>
                 <button type="submit" name="volver" id="volver" value="volver">Volver</button>
             </fieldset>
         </form>
         <?php
-        $ruta;
-        if (isset($aVPalabra)) {
-            /* foreach ($aVPalabra["audio"] as $aPhonetics) {
+        //Variable string que guarda la url del audio.
+        // $sRuta;
+        //Si el array de respuestas tiene contenido
+        if (isset($aRespuestas)) {
+            /* En desarrollo mostrar botón de audio para escuchar pronunciación.
+             * foreach ($aVPalabra["audio"] as $aPhonetics) {
               foreach ($aPhonetics->audio as $aAudio) {
-              $ruta=$aPhonetics->audio;
+              $sRuta=$aPhonetics->audio;
               }
               }
              */
             ?>
-            <h3>Palabra buscada: <strong><?php print_r($aVPalabra["palabra"]); ?></strong></h3>
-            <!--<p><?php /* echo"$aVPalabra[1]" */ ?></p>
+
+            <h3>Palabra buscada: <strong><?php
+                    //Impresión de la palabra introducida en el input
+                    print_r($aRespuestas["palabra"]);
+                    ?></strong></h3>
+            <!--<p><?php /* echo"$aRespuestas[1]" */ ?></p>
             <audio controls autoplay >
-                <source src='<?php /* $ruta */ ?>'>
+                <source src='<?php /* $sRuta */ ?>'>
             </audio>-->
+            <!-- Impresión de tabla para mostrar resultados de la consulta -->
             <table>
                 <caption>Tabla de resultados consulta palabra</caption>
                 <tbody>
-    <?php foreach ($aVPalabra["significados"] as $aMeaning) { ?>
+                    <?php
+                    //Recorrido de las posiciones del array de respuestas
+                    foreach ($aRespuestas["significados"] as $aMeaning) {
+                        ?>
                         <tr>
                             <td>Categoría gramatical</td>
-                            <th> <?php echo ($aMeaning->partOfSpeech) ?? 'No hay datos'; ?> </th>
+                            <th> <?php
+                                //Impresión de categoría gramatical de la definición o mensaje de no hay datos si no hay respuesta
+                                echo ($aMeaning->partOfSpeech) ?? 'No hay datos';
+                                ?> </th>
                         </tr>
                         <?php
+                        //Recorrido de array interno con definiciones, habrá una o varias por cada categoría gramatical.
                         foreach ($aMeaning->definitions as $aDefinition) {
+                            //Cada vez que encuentre una nueva definición, autoincrementa en uno el contador
                             $contador++
                             ?>
                             <tr>
-                                <td>Definición:<?php echo"$contador"; ?></td>
-                                <td><?php echo "$aDefinition->definition"; ?></td>
+                                <td>Definición:<?php
+                                    //Impresión del número pertinente de definición
+                                    echo"$contador";
+                                    ?></td>
+                                <td><?php
+                                    //Impresión de la definición obtenida en la consulta a la API
+                                    echo "$aDefinition->definition";
+                                    ?></td>
                             </tr>
                             <?php
                         }

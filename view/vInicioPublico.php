@@ -40,26 +40,26 @@
             <input class="diapositivaAbrir" type="radio" id="diapositiva1" 
                    name="slide" aria-hidden="true" hidden="" checked="checked">
             <div class="diapositivaItem">
-                <label>Ficheros LoginLogoff</label>
+                <label>Ficheros Aplicación Final</label>
                 <img src="./webroot/media/Imagen-RelacionDeFicheros.PNG">
             </div>
             <input class="diapositivaAbrir" type="radio" id="diapositiva2" 
                    name="slide" aria-hidden="true" hidden="">
             <div class="diapositivaItem">
-                <label>Diagrama de clases LoginLogoff</label>
+                <label>Diagrama de clases Aplicación Final</label>
                 <img src="./webroot/media/Imagen-DiagramaDeClasesMulticapa.PNG">
             </div>
             <input class="diapositivaAbrir" type="radio" id="diapositiva3" 
                    name="slide" aria-hidden="true" hidden="">
             <div class="diapositivaItem">
-                <label>Árbol de navegación LoginLogoff</label>
+                <label>Árbol de navegación Aplicación Final</label>
                 <img src="./webroot/media/Imagen-ArbolDeNavegación.png">
             </div>
 
             <input class="diapositivaAbrir" type="radio" id="diapositiva4" 
                    name="slide" aria-hidden="true" hidden="">
             <div class="diapositivaItem">
-                <label>Diagrama Casos de Uso</label>
+                <label>Diagrama Casos de Uso Aplicación Final</label>
                 <img src="./webroot/media/Imagen-DiagramaDeCasosDeUso.png">
             </div>
              <!--<input class="diapositivaAbrir" type="radio" id="diapositiva5" 

@@ -28,6 +28,7 @@ header h1,header h2,header h3{
     top: 0%;
     flex-direction: column;
     margin-bottom: 2rem;
+    letter-spacing: 5px;
 }
 #headerInicioPublico p{
     background-color: #344079;

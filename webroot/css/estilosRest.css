@@ -42,9 +42,19 @@ fieldset{
     display: flex;
     align-content: center;
     justify-content: space-evenly;
+    padding-bottom: 3rem;
+}
+#divPalabra{
+    display: flex;
 }
 #palabra{
     height: 40px;
+    font-family: 'LatoLightItalic';
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: #344079 underline;
+    text-underline-offset:3px;
 }
 #labelPalabra{
     font-family: 'LatoLight';
@@ -96,7 +106,9 @@ table caption{
 table{
     color: #99a0a1;
     width: 70%;
-    height: 80%;
+    height: 100%;
+    padding-bottom: 6rem;
+    margin-bottom: 6rem;
 }
 table,td,th{
     border: 1px solid #99a0a1;
