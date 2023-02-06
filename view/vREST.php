@@ -37,7 +37,7 @@ $contador = 0;
         //Variable string que guarda la url del audio.
         // $sRuta;
         //Si el array de respuestas tiene contenido
-        if (isset($aRespuestas)) {
+        if (isset($aRespuestasApi)) {
             /* En desarrollo mostrar botón de audio para escuchar pronunciación.
              * foreach ($aVPalabra["audio"] as $aPhonetics) {
               foreach ($aPhonetics->audio as $aAudio) {
@@ -49,7 +49,7 @@ $contador = 0;
 
             <h3>Palabra buscada: <strong><?php
                     //Impresión de la palabra introducida en el input
-                    print_r($aRespuestas["palabra"]);
+                    print_r($aRespuestasApi["palabra"]);
                     ?></strong></h3>
             <!--<p><?php /* echo"$aRespuestas[1]" */ ?></p>
             <audio controls autoplay >
@@ -61,7 +61,7 @@ $contador = 0;
                 <tbody>
                     <?php
                     //Recorrido de las posiciones del array de respuestas
-                    foreach ($aRespuestas["significados"] as $aMeaning) {
+                    foreach ($aRespuestasApi["significados"] as $aMeaning) {
                         ?>
                         <tr>
                             <td>Categoría gramatical</td>

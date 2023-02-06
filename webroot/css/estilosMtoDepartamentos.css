@@ -41,32 +41,45 @@ aside{
     justify-content: space-between;
     flex-direction: column;
 }
-input{
-    margin-bottom: 0.25rem;
-    width: 14rem;
+label{
+    font-family: 'LatoLight';
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 2.5rem;
 }
-#detalle,#editar_Perfil,#mtoDepartamentos,#rest{
+#descripcion{
+    font-family: 'LatoLightItalic';
+    width: 20rem;
+}
+#buscar{
     align-items: center;
     justify-content: center;
-    min-height: 2.5rem;
-    padding: 0 2rem;
+    min-height: 2.5rem;    
+    width: 8rem;
+    margin: 0 2rem;
     cursor: pointer;
     background-color: #344079;
     color: white;
     font-weight: bold;
     font-size: 22px;
 }
-#detalle:hover,#editar_Perfil:hover,#mtoDepartamentos:hover,#rest:hover{
+#buscar:hover{
     background-color: white;
     color: #344079
 }
-#salir,#error{
+#volver{
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    width: 8rem;
+    padding: 0 2rem;
+    cursor: pointer;
     background-color: #d9c7c7;
     font-weight: bold;
     font-size: 22px;
     color: #344079;
 }
-#salir:hover,#error:hover{
+#volver:hover{
     background-color: #344079;
     color: #d9c7c7;
 }
@@ -80,23 +93,26 @@ input{
 }
 #bienvenida{
     position: absolute;
-    top: 4rem;
+    top: 14rem;
     text-align: center;
     font-family: 'LatoLightItalic';
     font-weight: bold;
-    font-size: 36px;
     color: #3367ac;
-    margin: 2.5rem auto;
-    width: 60%;
+    margin: 0 auto;
+    width: 100%;
 }
 #formInicioPrivado{
+    position: absolute;
+    top:4rem;
+    left: 2rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    align-content: center;
-    align-items: flex-end;
-    margin-top: 0.75rem;
-    margin-right: 2rem;
+    margin: 0 auto;
+    width: 90vw;
+    height: 8rem;
+    justify-content: flex-start;
+    align-content: flex-end;
 }
 #salirInicioPrivado{
     display: flex;
@@ -109,39 +125,20 @@ input{
     color: #99a0a1;
     font-size: 20px;
 }
-#divBienvenida{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    text-align: center;
-    width: 98vw;
-}
-#divBienvenida h3{
-    font-family: 'LatoLight';
-    font-size: 24px;
-    font-weight: 400;
-    color: #99a0a1;
-    border-bottom: 2px solid #99a0a1 ;
-    margin-bottom: 2.5rem;
-    width: 400px;
-}
-#divBienvenidaTabla,#divBienvenidaInicio,#divBienvenidaConexiones{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-content: flex-end;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-}
 table caption{
     font-family: 'LatoLight';
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 400;
     color: #333333;
     text-decoration:underline solid  #333333;
     padding-bottom: 1rem;
 }
-table{
+table thead th{
+    font-size: 22px;
+   text-decoration: underline solid #3367ac;
+}
+table tbody{
+    font-size: 18px;
     color: #99a0a1;
 }
 footer{

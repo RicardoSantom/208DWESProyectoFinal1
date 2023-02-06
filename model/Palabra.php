@@ -32,5 +32,29 @@ class Palabra {
         $this->significados = $significados;
         $this->audio = $audio;
     }
+    public function getPalabra() {
+        return $this->palabra;
+    }
+
+    public function getSignificados() {
+        return $this->significados;
+    }
+
+    public function getAudio() {
+        return $this->audio;
+    }
+
+    public function setPalabra($palabra): void {
+        $this->palabra = $palabra;
+    }
+
+    public function setSignificados($significados): void {
+        $this->significados = $significados;
+    }
+
+    public function setAudio($audio): void {
+        $this->audio = $audio;
+    }
+
 
 }
