@@ -1,31 +1,73 @@
 <?php
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/PHPClass.php to edit this template
- */
-
 /**
- * Description of Departamento
+ * Summary Clase para la creación, consulta y modificación de objetos Departamento.
+ * 
+ * Description of Departamento. Esta clase define los atributos privados para el 
+ * objeto Departamento, define también el constructor con los parámetros indicados
+ * para instanciar un objeto Departamento, así como los métodos getter y setter
+ * para consultar y modificar los valores de los atributos.
  *
- * @author daw2
+ * @author Ricardo Santiago Tomé
+ * @version 0.1
+ * @since 04/02/2023
  */
 class Departamento {
-    private $codUsuario;
-    private $descDepartamento;
-    private $fechaCreacionDepartamento;
-    private $volumenDeNegocio;
-    private $fechaBajaDepartamento;
+     /**
+     * @access private
+     * @var string $codDepartamento Código del Departamento
+     */
+    private $codDepartamento;
     
-    public function __construct($codUsuario, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio, $fechaBajaDepartamento=null) {
-        $this->codUsuario = $codUsuario;
+    /**
+     * @access private
+     * @var string $descDepartamento Descripción del Departamento
+     */
+    private $descDepartamento;
+    
+    /**
+     * @access private
+     * @var DateTime $fechaCreacionDepartamento Fecha de creación del Departamento
+     */
+    private $fechaCreacionDepartamento;
+    
+    /**
+     * @access private
+     * @var float $volumenDeNegocio Volumen de negocio del Departamento
+     */
+    private $volumenDeNegocio;
+    
+    /**
+     * @access private
+     * @var DateTime $fechaBajaDepartamento Fecha de baja del Departamento
+     */
+    private $fechaBajaDepartamento;
+
+    /**
+     * 
+     * Funcion __construct
+     * 
+     * Funcion que inicializa los atributos declarados
+     * 
+     * @author Ricardo Santiago Tomé
+     * @version 0.1
+     * @since: 04/02/2023
+     * @param string $codDepartamento Código del Departamento
+     * @param string $descDepartamento Descripción del Departamento
+     * @param dateTime $fechaCreacionDepartamento Fecha de creación del Departamento
+     * @param float $volumenDeNegocio Volumen de negocio del Departamento
+     * @param datetime $fechaBajaDepartamento Fecha de baja del Departamento
+     */
+    
+    public function __construct($codDepartamento, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio, $fechaBajaDepartamento=null) {
+        $this->codUsuario = $codDepartamento;
         $this->descDepartamento = $descDepartamento;
         $this->fechaCreacionDepartamento = $fechaCreacionDepartamento;
         $this->volumenDeNegocio = $volumenDeNegocio;
         $this->fechaBajaDepartamento = $fechaBajaDepartamento;
     }
-    public function getCodUsuario() {
-        return $this->codUsuario;
+    
+    public function getCodDepartamento() {
+        return $this->codDepartamento;
     }
 
     public function getDescDepartamento() {
@@ -44,8 +86,8 @@ class Departamento {
         return $this->fechaBajaDepartamento;
     }
 
-    public function setCodUsuario($codUsuario): void {
-        $this->codUsuario = $codUsuario;
+    public function setCodDepartamento($codDepartamento): void {
+        $this->codDepartamento = $codDepartamento;
     }
 
     public function setDescDepartamento($descDepartamento): void {

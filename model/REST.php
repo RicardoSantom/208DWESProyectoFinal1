@@ -38,9 +38,10 @@ class REST {
      * de un valor a Objeto como clase predefinida. 
      */
     public static function buscarPalabra($palabra) {
-        $sRespuestaApi = file_get_contents("https://api.dictionaryapi.dev/api/v2/entries/en/{$palabra}");
-        //Guardado en variable stdClass de la decodificación de la respuesta,si no hay respuesta, guarda null
-        $oSalida = $sRespuestaApi ?? json_decode($sRespuestaApi) ;
+        $sRespuestaApi = @file_get_contents("https://api.dictionaryapi.dev/api/v2/entries/en/{$palabra}");
+        //Guardado en variable stdClass de la decodificación de la respuesta,lo hace en su posición 0
+        //al ser esta la que corresponde con la url solicitante desde esta api al wiktionary
+        $oSalida = json_decode($sRespuestaApi)[0] ;
         //Si $oSalida es reconocido como un objeto
         if (is_object($oSalida)) {
             //Construye un objeto palabra con los atributos pasados como parámetro al constructor
@@ -49,6 +50,30 @@ class REST {
             //Si no se ha construido el objeto $oSalida, devuelve nulo.
             return null;
         }
+    }
+    
+    /**
+     * Summary Funcion para buscar universidades con llamada a API
+     * 
+     * Description Función que recibe un pais como parámetro y devuelve un array
+     * con la información proporcionada por la llamada a una API
+     * 
+     * @author Manuel Martín Alonso <https://github.com/Manuel0119/204DWESProyectoFinal/blob/developer/model/REST.php>
+     * 
+     * @param string $pais
+     * @return array $aUniversidad Contiene los valores del nombre, pais, página web
+     * código y provincia de la universidad consultada.
+     */
+      public static function buscarUniversidad($pais) {
+        $aUniversidad = [];
+        $archivoJSON = file_get_contents("http://universities.hipolabs.com/search?country=$pais");
+        $aUniversidades = json_decode($archivoJSON, true);
+        if ($aUniversidades) {
+            foreach ($aUniversidades as $valor){
+                array_push($aUniversidad, new Universidad($valor['name'], $valor['country'], $valor['web_pages'][0], $valor['alpha_two_code'], $valor['state-province']));
+            }
+        }
+        return $aUniversidad;
     }
 
 }

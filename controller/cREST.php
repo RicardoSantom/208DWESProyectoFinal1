@@ -2,7 +2,7 @@
 /**
  * Summary Controlador para la vista de REST
  * 
- * Description Actúa en función a las decisiones tomadas por el usuario
+ * Description Actúa en función de las decisiones tomadas por el usuario
  * en la vista vREST, valida la entrada del input del formulario y realiza
  * con los valores en él recogidos una llamada a una API externa que consiste
  * en un diccionario de palabras en idioma inglés.
@@ -19,7 +19,9 @@ if (isset($_REQUEST['volver'])) {
 }
 //Array para almacenar errores(DE MOMENTO,) con un solo campo.
 $aErrores = [
-    "palabra" => null
+    'palabra' => null,
+    'signigicados'=>null,
+    'audio'=>null
 ];
 //Si se pulsa buscar, el usuario ha interactuado con el formulario.
 if (isset($_REQUEST['buscar'])) {
@@ -39,7 +41,7 @@ if ($entradaOk) {
     //Se guarda en $oPalabra el resultado de la llamada a la API
     $oPalabra = REST::buscarPalabra($_REQUEST["palabra"]);
     //Array para guardar los datos a mostrar de la respuesta
-    $aRespuestas = [
+    $aRespuestasApi = [
         'palabra' => $oPalabra->palabra,
         'significados' => $oPalabra->significados,
         'audio' => $oPalabra->audio

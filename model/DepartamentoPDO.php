@@ -28,22 +28,23 @@ class DepartamentoPDO {
         }
     }
 
-    public static function buscaDepartamentosPorDesc($descDepartamento) {
+    public static function buscaDepartamentosPorDesc($descDepartamento) {        
+        $aDepartamento = [];
         $sSelect = "select * from T02_Departamento where T02_DescDepartamento like'%{$descDepartamento}%';";
-        /*$resultadoConsulta = DBPDO::ejecutarConsulta($sSelect);
+        $resultadoConsulta = DBPDO::ejecutarConsulta($sSelect);
         $oResultado = $resultadoConsulta->fetchObject();
         while ($oResultado != null) {
-            array_push($aDepartamento, new Departamento(
+           $oDepartamento = new Departamento(
                             $oResultado->T02_CodDepartamento,
                             $oResultado->T02_DescDepartamento,
                             $oResultado->T02_FechaCreacionDepartamento,
-                            $oResultado->T02_FechaCreacionDepartamento,
-                            $oResultado->T02_VolumenDeNegocio,
+                            $oResultado->T02_VolumenNegocio,
                             $oResultado->T02_FechaBajaDepartamento
-            ));
+            );
+            array_push($aDepartamento, $oDepartamento);
             $oResultado = $resultadoConsulta->fetchObject();
-        }*/
-          return DBPDO::ejecutarConsulta($sSelect);
+        }
+        return $aDepartamento;
     }
 
     public static function altaDepartamento() {
