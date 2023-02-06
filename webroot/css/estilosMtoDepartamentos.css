@@ -1,0 +1,150 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 21 ene 2023, 12:09:58
+    Author     : desar
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato-Regular';
+}
+body{
+    background-color: #fff;
+    font-family: 'LatoRegular';
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+}
+main{
+    width: 100%;
+}
+article{
+    position: absolute;
+    top: 16rem;
+}
+aside{
+    width:14rem;
+}
+.formulario{
+    position: absolute;
+    right: 5px;
+    top: 0.5rem;
+    display: flex;
+    border: none;
+    justify-content: space-between;
+    flex-direction: column;
+}
+input{
+    margin-bottom: 0.25rem;
+    width: 14rem;
+}
+#detalle,#editar_Perfil,#mtoDepartamentos,#rest{
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    padding: 0 2rem;
+    cursor: pointer;
+    background-color: #344079;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+}
+#detalle:hover,#editar_Perfil:hover,#mtoDepartamentos:hover,#rest:hover{
+    background-color: white;
+    color: #344079
+}
+#salir,#error{
+    background-color: #d9c7c7;
+    font-weight: bold;
+    font-size: 22px;
+    color: #344079;
+}
+#salir:hover,#error:hover{
+    background-color: #344079;
+    color: #d9c7c7;
+}
+.imgUsuario{
+    position: absolute;
+    top: 4.5rem;
+    right: 3rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+#bienvenida{
+    position: absolute;
+    top: 4rem;
+    text-align: center;
+    font-family: 'LatoLightItalic';
+    font-weight: bold;
+    font-size: 36px;
+    color: #3367ac;
+    margin: 2.5rem auto;
+    width: 60%;
+}
+#formInicioPrivado{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-end;
+    margin-top: 0.75rem;
+    margin-right: 2rem;
+}
+#salirInicioPrivado{
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    width: 6rem;
+    height: 2rem;
+    border: none;
+    background-color: transparent;
+    color: #99a0a1;
+    font-size: 20px;
+}
+#divBienvenida{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+    width: 98vw;
+}
+#divBienvenida h3{
+    font-family: 'LatoLight';
+    font-size: 24px;
+    font-weight: 400;
+    color: #99a0a1;
+    border-bottom: 2px solid #99a0a1 ;
+    margin-bottom: 2.5rem;
+    width: 400px;
+}
+#divBienvenidaTabla,#divBienvenidaInicio,#divBienvenidaConexiones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-end;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+table caption{
+    font-family: 'LatoLight';
+    font-size: 24px;
+    font-weight: 400;
+    color: #333333;
+    text-decoration:underline solid  #333333;
+    padding-bottom: 1rem;
+}
+table{
+    color: #99a0a1;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+}

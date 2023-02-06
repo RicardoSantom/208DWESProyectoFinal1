@@ -22,15 +22,15 @@
             <input type = "submit" name = "Buscar" value = "Buscar" id = "botonBuscar"/>
         </fieldset>
     </form>
-    <article>
-        <table class="tablaConsulta">
-            <thead>
-                <tr>
-                    <th>T02_CodDepartamento</th>
-                    <th>T02_DescDepartamento</th>
-                    <th>T02_FechaCreaciónDepartamento</th>
-                    <th>T02_VolumenNegocio</th>
-                    <th>T02_FechaBajaDepartamento</th>
-                </tr>
-            </thead>
-            </main>
+    <table class="tablaConsulta">
+        <thead>
+            <tr>
+                <th>T02_CodDepartamento</th>
+                <th>T02_DescDepartamento</th>
+                <th>T02_FechaCreaciónDepartamento</th>
+                <th>T02_VolumenNegocio</th>
+                <th>T02_FechaBajaDepartamento</th>
+            </tr>
+        </thead>
+    </table>
+</main>
