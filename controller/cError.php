@@ -6,7 +6,13 @@
  * @since 30/01/2023
  * @version 1.0
  */
-
+//Si se pulsa tecnologias, se navega a su vista correspondiente
+if(isset($_REQUEST['tecnologias'])){
+    $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'tecnologias';
+    header("Location: index.php");
+    exit();
+}
 // Si se clicka el botón 'volver', destruye la variable de sesión de error y vuelve al inicio privado.
 if(isset($_REQUEST['volver'])){
     /*paginaAnterior se establece a cadena vacía porque no quiero que recuerde
@@ -30,6 +36,5 @@ $aVError = [
     'archivo' => $_SESSION['error']->getArchivoError(),
     'linea' => $_SESSION['error']->getLineaError()
 ];
-
 // Carga de la página de inicio.
 require_once $aVistas['layout'];

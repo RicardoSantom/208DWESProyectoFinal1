@@ -21,7 +21,15 @@ $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc("");
     ];
 //Si se pulsa el botón volver, regresa a la página anterior.
 if (isset($_REQUEST['volver'])) {
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+     $_SESSION['paginaAnterior']= 'inicioPrivado';
+    $_SESSION['paginaEnCurso'] = 'inicioPrivado';
+    header("Location: index.php");
+    exit();
+}
+//Si se pulsa tecnologias, se navega a su vista correspondiente
+if(isset($_REQUEST['tecnologias'])){
+    $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'tecnologias';
     header("Location: index.php");
     exit();
 }

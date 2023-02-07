@@ -105,6 +105,22 @@ footer img{
     height: 25px;
     width: 15px;
 }
+#tecnologias{
+    align-items: center;
+    justify-content: center;
+    min-height: 2.25rem;
+    cursor: pointer;
+    background-color: #344079;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    width: 9rem;
+    text-align: center;
+}
+#tecnologias:hover{
+    background-color: white;
+    color: #344079
+}
 #enlaceSecundario,#enlacePrincipal {
     color: #666666;
     font-size: 20px;

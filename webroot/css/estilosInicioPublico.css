@@ -87,7 +87,8 @@ img{
 #diapositiva1:checked ~ .control-1,
 #diapositiva2:checked ~ .control-2,
 #diapositiva3:checked ~ .control-3,
-#diapositiva4:checked ~ .control-4{
+#diapositiva4:checked ~ .control-4,
+#diapositiva5:checked ~ .control-5{
     display: block;
 }
 .diapositivaIndicador {
@@ -121,6 +122,8 @@ li:nth-child(2) .diapositivaCirculo,
 #diapositiva3:checked ~ .control-3 ~ .diapositivaIndicador
 li:nth-child(3) .diapositivaCirculo,
 #diapositiva4:checked ~ .control-4 ~ .diapositivaIndicador
-li:nth-child(4) .diapositivaCirculo{
+li:nth-child(4) .diapositivaCirculo,
+#diapositiva5:checked ~ .control-5 ~ .diapositivaIndicador
+li:nth-child(5) .diapositivaCirculo{
     color: #428bca;
 }

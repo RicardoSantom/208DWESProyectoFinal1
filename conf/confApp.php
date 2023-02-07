@@ -26,7 +26,8 @@ $aControladores=[
     "borrarCuenta"=>"controller/cBorrarCuenta.php",
     "rest" => "controller/cREST.php",
     "error"=> "controller/cError.php",
-    "mtoDepartamentos"=>"controller/cMtoDepartamentos.php"
+    "mtoDepartamentos"=>"controller/cMtoDepartamentos.php",
+    "tecnologias"=>"controller/cTecnologias.php"
 ];
 
 $aVistas=[
@@ -43,6 +44,7 @@ $aVistas=[
     "borrarCuenta"=>"view/vBorrarCuenta.php",
     "rest" => "view/vREST.php",
     "error" => "view/vError.php",
-    "mtoDepartamentos"=>"view/vMtoDepartamentos.php"
+    "mtoDepartamentos"=>"view/vMtoDepartamentos.php",
+    "tecnologias"=>"view/vTecnologias.php"
 ];
 ?>

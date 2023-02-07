@@ -18,7 +18,14 @@
         <title><?php echo ucfirst($_SESSION['paginaEnCurso']) ?></title>
     </head>
     <body>
-         <footer>
+        <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; ?>
+        <footer>
+            <?php if ($_SESSION['paginaEnCurso'] != 'tecnologias' && $_SESSION['paginaEnCurso'] !='wip') {
+                ?>
+                <form action="<?php echo $_SERVER['PHP_SELF']; ?>">                    
+                    <input type="submit" name="tecnologias" id="tecnologias" value="tecnologias">
+                </form>
+            <?php } ?>
             <p>2022-23 IES LOS SAUCES. <a href="../../../index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé </a> © Todos los derechos reservados</p>
             <p>|</p>
             <a href="https://github.com/RicardoSantom/208DWESProyectoFinal1" target="blank" id="github" title="RicardoSantom en GitHub"></a>

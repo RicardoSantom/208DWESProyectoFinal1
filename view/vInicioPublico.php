@@ -62,20 +62,23 @@
                 <label>Diagrama Casos de Uso Aplicación Final</label>
                 <img src="./webroot/media/Imagen-DiagramaDeCasosDeUso.png">
             </div>
-             <!--<input class="diapositivaAbrir" type="radio" id="diapositiva5" 
+             <input class="diapositivaAbrir" type="radio" id="diapositiva5" 
                    name="slide" aria-hidden="true" hidden="">
             <div class="diapositivaItem">
                 <label>Diagrama De Clases</label>
                 <img src="./webroot/media/Imagen-DiagramaDeClases.png">
-            </div>-->
+            </div>
+            
+            <label for="diapositiva5" class="diapositivaControl prev control-1">‹</label>
+            <label for="diapositiva5" class="diapositivaControl next control-4">‹</label>
+            <label for="diapositiva4" class="diapositivaControl prev control-5">‹</label>
             <label for="diapositiva4" class="diapositivaControl next control-3">‹</label>
-            <label for="diapositiva3" class="diapositivaControl next control-2">‹</label>
-            <label for="diapositiva2" class="diapositivaControl prev control-3">›</label>
-            <label for="diapositiva1" class="diapositivaControl next control-4">‹</label>
-            <label for="diapositiva4" class="diapositivaControl prev control-1">‹</label>
-            <label for="diapositiva3" class="diapositivaControl prev control-4">›</label>
-            <label for="diapositiva2" class="diapositivaControl next control-1">‹</label>
-            <label for="diapositiva1" class="diapositivaControl prev control-2">›</label>
+            <label for="diapositiva3" class="diapositivaControl next control-2">›</label>
+            <label for="diapositiva3" class="diapositivaControl prev control-4">‹</label>
+            <label for="diapositiva2" class="diapositivaControl prev control-3">‹</label>
+            <label for="diapositiva2" class="diapositivaControl next control-1">›</label>
+            <label for="diapositiva1" class="diapositivaControl next control-5">›</label>
+            <label for="diapositiva1" class="diapositivaControl prev control-2">‹</label>
             <ol class="diapositivaIndicador">
                 <li>
                     <label for="diapositiva1" class="diapositivaCirculo">•</label>
@@ -88,6 +91,9 @@
                 </li>
                 <li>
                     <label for="diapositiva4" class="diapositivaCirculo">•</label>
+                </li>
+                <li>
+                    <label for="diapositiva5" class="diapositivaCirculo">•</label>
                 </li>
             </ol>
         </div>

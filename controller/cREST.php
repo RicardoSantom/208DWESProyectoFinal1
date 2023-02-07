@@ -13,7 +13,7 @@
  */
 // Si se pulsa en volver, regresa a la página anterior
 if (isset($_REQUEST['volver'])) {
-    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
+    $_SESSION['paginaEnCurso'] = 'inicioPrivado';
     header("Location: index.php");
     exit();
 }
@@ -46,6 +46,13 @@ if ($entradaOk) {
         'significados' => $oPalabra->significados,
         'audio' => $oPalabra->audio
     ];
+}
+//Si se pulsa tecnologias, se navega a su vista correspondiente
+if(isset($_REQUEST['tecnologias'])){
+    $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'tecnologias';
+    header("Location: index.php");
+    exit();
 }
 //
 require_once $aVistas['layout'];
