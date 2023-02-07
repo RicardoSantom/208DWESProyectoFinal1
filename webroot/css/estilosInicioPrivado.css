@@ -148,3 +148,7 @@ footer{
     position: fixed;
     bottom: 0;
 }
+footer p form{
+    position: absolute;
+    left: 0;
+}
