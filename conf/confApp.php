@@ -1,6 +1,8 @@
 <?php
 
 require_once 'core/221024ValidacionFormularios.php';
+require_once 'core/feedbro-subscriptions-20230209-003413.opml';
+require_once 'core/novedades.xml';
 require_once 'model/DB.php';
 require_once 'model/UsuarioDB.php';
 require_once 'model/Usuario.php';
@@ -27,7 +29,8 @@ $aControladores=[
     "rest" => "controller/cREST.php",
     "error"=> "controller/cError.php",
     "mtoDepartamentos"=>"controller/cMtoDepartamentos.php",
-    "tecnologias"=>"controller/cTecnologias.php"
+    "tecnologias"=>"controller/cTecnologias.php",
+    "rss"=>"rss/cRSS.php"
 ];
 
 $aVistas=[
@@ -45,6 +48,7 @@ $aVistas=[
     "rest" => "view/vREST.php",
     "error" => "view/vError.php",
     "mtoDepartamentos"=>"view/vMtoDepartamentos.php",
-    "tecnologias"=>"view/vTecnologias.php"
+    "tecnologias"=>"view/vTecnologias.php",
+    "rss"=>"rss/vCSS.php"
 ];
 ?>

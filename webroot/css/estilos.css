@@ -11,7 +11,9 @@ body{
     height: 100%;
     min-height: 950px;
 }
-main{width: 100vw;}
+main{
+    width: 100vw;
+}
 main,article{
     margin-bottom: 6rem;
 }
@@ -95,11 +97,15 @@ header h1,header h2,header h3{
     border: 3px solid #F5FEFF;
     font-family: 'Digital Numbers';
     min-width: 165px;
+    border-radius: 5px;
+    
 }
 footer img{
     height: 30px;
     width: 20px;
     background-color: transparent;
+    border-radius: 5px;
+    padding: 1px;
 }
 .puntos{
     height: 25px;
@@ -116,6 +122,10 @@ footer img{
     font-size: 22px;
     width: 9rem;
     text-align: center;
+    animation-name: backgroundColorPalette;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 #tecnologias:hover{
     background-color: white;

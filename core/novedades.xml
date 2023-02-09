@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Ricardo Santiago Tomé - Novedades - 2ºDAW</title>
+        <link>https://daw208.ieslossauces.es/index.html</link>
+        <description>Novedades en las prácticas de 2ºcurso DAW</description>
+        <webMaster>ricardo.santom@educa.jcyl.es</webMaster>
+        <category>novedades</category>
+        <category>DWES</category>
+        <category>DAW</category>
+        <category>DWEC</category>
+        <category>Educación</category>
+        <language>es-ES</language>
+        <pubDate>Tue, 07 Feb 2023 06:13:05 GMT</pubDate>
+        <copyright>Ricardo Santiago Tomé</copyright>
+        <lastBuildDate>Wed, 08 Feb 2023 18:07:00 GMT</lastBuildDate>
+        <skipDays>
+            <day>Sunday</day>
+            <day>Saturday</day>
+        </skipDays>
+        <item>
+            <title>Índice general</title>
+            <link>https://daw208.ieslossauces.es/index.html</link>
+            <description>
+            <![CDATA[<p>ïndice de todas las prácticas.</p>
+            <p>ïndice general con todas las prácticas del 
+                        <strong>Ciclo de Grado Superior Desarrollo de Aplicaciones Web<strong></p>
+                          <p>2ºDAW</p>]]>
+            </description>
+            <category>html</category>
+            <category>xml</category>
+            <category>rss</category>
+            <category>php</category>
+            <category>javascript</category>
+            <category>css</category>
+            <author>ricardo.santom@educa.jcyl.es (Ricardo Santiago Tomé)</author>
+            <pubDate>Tue, 07 Feb 2023 06:13:05 GMT</pubDate>
+            <enclosure url="https://daw208.ieslossauces.es/webroot/images/pantallazoIndex.jpg"  length="1042" type="image/jpg"/>
+            <guid isPermaLink="true">http://daw208.ieslossauces.es/index.html</guid>
+        </item>
+        <item>
+            <title>Publicación 2</title>
+            <link>https://daw208.ieslossauces.es/feedbro-subscriptions-20230209-003413.opml</link>
+            <category>Enlace a archivo OPML</category>
+            <description><![CDATA[ <p><img src="https://www.daw208.ieslossauces.es/webroot/images/pantallazoIndexDAW.jpg"
+ style="float:left;margin:0 10px 0 0;" alt="Links rotos">Publicación release con tag 0.2.
+            Esta release se corresponde con la segunda versión estable del proyecto alojado en 1and1
+                y del que se extienden el resto de proyectos correspondientes a cada uno de los módulos
+            de 2º curso de DAW. En esta versión se encuentran publicados también este archivo de feed y
+            el archivo con formato OPML para importar esta suscripcion y las futuras creadas por este
+            humilde pulsateclas.]]></description>
+            <author>ricardo.santom@educa.jcyl.es (Ricardo Santiago Tomé)</author>
+            <pubDate>Thu, 09 Feb 2023 02:10:00 GMT</pubDate>
+            <enclosure url="https://daw208.ieslossauces.es/webroot/images/pantallazoIndexDAW.jpg"  length="1042" type="image/png"/>
+            <guid isPermaLink="true">https://daw208.ieslossauces.es/index.html</guid>
+        </item>
+
+        <item>
+            <title>Publicación 1</title>
+            <link>https://daw208.ieslossauces.es/index.html</link>
+            <description>1ª publicación canal de rss novedades.xml. Este canal mostrará
+            las release publicadas en los distintos repositorios de los módulos del curso
+            2º de Desarrollo de Aplicaciones Web</description>
+            <author>ricardo.santom@educa.jcyl.es (Ricardo Santiago Tomé)</author>
+            <pubDate>Tue, 07 Feb 2023 06:13:05 GMT</pubDate>
+            <enclosure url="https://daw208.ieslossauces.es/webroot/images/pantallazoIndex.jpg"  length="1042" type="image/png"/>
+            <guid isPermaLink="true">https://daw208.ieslossauces.es/index.html</guid>
+        </item>
+    </channel>
+</rss>

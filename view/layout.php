@@ -16,11 +16,31 @@
         <link rel="stylesheet" href="webroot/css/estilos.css"/>
         <link rel="stylesheet" href="webroot/css/estilos<?php echo ucfirst($_SESSION['paginaEnCurso']) ?>.css"/>
         <title><?php echo ucfirst($_SESSION['paginaEnCurso']) ?></title>
+        <style>
+            @keyframes backgroundColorPalette {
+                0% {
+                    background: #111125;
+                }
+                25% {
+                    background: #e94235;
+                }
+                50% {
+                    background: #f7bc19;
+                }
+                75% {
+                    background: #34a853;
+                }
+                100% {
+                    background: #111125;
+                }
+            }
+
+        </style>
     </head>
     <body>
         <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; ?>
         <footer>
-            <?php if ($_SESSION['paginaEnCurso'] != 'tecnologias' && $_SESSION['paginaEnCurso'] !='wip') {
+            <?php if ($_SESSION['paginaEnCurso'] != 'tecnologias' && $_SESSION['paginaEnCurso'] != 'wip') {
                 ?>
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>">                    
                     <input type="submit" name="tecnologias" id="tecnologias" value="tecnologias">

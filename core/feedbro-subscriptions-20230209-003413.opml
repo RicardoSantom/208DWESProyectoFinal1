@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+<head>
+<title>Feed Subscriptions</title>
+</head>
+<body>
+      <outline text="Ricardo Santiago Tomé - Novedades - 2ºDAW" title="Ricardo Santiago Tomé - Novedades - 2ºDAW" type="rss" 
+            xmlUrl="https://daw208.ieslossauces.es/novedades.xml" htmlUrl="https://daw208.ieslossauces.es/index.html"/>
+</body>
+</opml>
