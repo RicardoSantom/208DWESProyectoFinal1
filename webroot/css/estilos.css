@@ -135,7 +135,7 @@ footer img{
     color: #666666;
     font-size: 20px;
 }
-#github,#linkedin,#curriculum{
+#github,#linkedin,#curriculum,#rss{
     clear: both;
     text-decoration: none;
 }
@@ -156,18 +156,22 @@ footer img{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-#curriculum:before{
+#curriculum:before,rss:before{
     color: #FFC9B5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-#linkedin{
+#linkedin,#rss{
     color: #FFC9B5;
 }
-#curriculum span{
+#curriculum span,#rss span{
     color: #FFC9B5;
     font-size: 30px;
     padding-top: 10px;
+}
+#rss{
+    background-color: transparent;
+    border-style: none;
 }
 #github,#linkedin{
     padding-top: 10px;

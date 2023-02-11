@@ -11,6 +11,11 @@ if(isset($_REQUEST['tecnologias'])){
     header("Location: index.php");
     exit();
 }
+if(isset($_REQUEST['rss'])){
+    $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'rss';
+    header("Location: index.php");
+    exit();
+}
 require_once $aControladores[$_SESSION['paginaEnCurso']]; //pedimos el controlador del inicio publico
 require_once $aVistas[$_SESSION['paginaEnCurso']];
-?>

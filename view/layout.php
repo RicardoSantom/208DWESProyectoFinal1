@@ -40,19 +40,26 @@
     <body>
         <?php require_once $aVistas[$_SESSION['paginaEnCurso']]; ?>
         <footer>
-            <?php if ($_SESSION['paginaEnCurso'] != 'tecnologias' && $_SESSION['paginaEnCurso'] != 'wip') {
+            <?php if ($_SESSION['paginaEnCurso'] != 'tecnologias' && $_SESSION['paginaEnCurso'] != 'wip' 
+                    && $_SESSION['paginaEnCurso'] != 'rss') {
                 ?>
                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>">                    
                     <input type="submit" name="tecnologias" id="tecnologias" value="tecnologias">
                 </form>
             <?php } ?>
-            <p>2022-23 IES LOS SAUCES. <a href="../../../index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé </a> © Todos los derechos reservados</p>
+            <p>2022-23 IES LOS SAUCES. <a href="../../../index.html" id="enlacePrincipal" title="Enlace a Index Principal">Ricardo Santiago Tomé </a> ©</p>
+            <?php if ($_SESSION['paginaEnCurso'] != 'rss' && $_SESSION['paginaEnCurso'] != 'wip') {
+                ?>
+            <p>|</p><form  class="material-icons" action="<?php echo $_SERVER['PHP_SELF']; ?>">   
+            <button title="Publicación feed en rss" type="submit" name="rss" id="rss" value="rss"><span class="material-icons md-18">rss_feed</span></button>
+            </form>
+             <?php } ?>
             <p>|</p>
             <a href="https://github.com/RicardoSantom/208DWESProyectoFinal1" target="blank" id="github" title="RicardoSantom en GitHub"></a>
             <p>|</p>
             <a href="https://www.linkedin.com/in/ricardo-santiago-tom%C3%A9/" id="linkedin" title="Ricardo Santiago Tomé en Linkedim"  target="_blank"></a>
             <p>|</p>
-            <a href="http://daw208.ieslossauces.es/doc/curriculumRicardo.pdf"  title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
+            <a href="doc/curriculumRicardo.pdf"  title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
             <p>|</p>
             <div>Esta página <strong>pretende</strong> emular a: <a href="https://www.elganso.com/es/" id="ganso" target="_blank" title="Enlace a página web El Ganso">"El Ganso"</a></div>
         </footer>      

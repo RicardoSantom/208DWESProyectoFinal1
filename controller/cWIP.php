@@ -19,4 +19,3 @@ if(isset($_REQUEST['tecnologias'])){
     exit();
 }
 require_once $aVistas['layout'];
-?>
