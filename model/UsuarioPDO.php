@@ -48,10 +48,10 @@ class UsuarioPDO implements UsuarioDB {
     }
 
     public static function altaUsuario($codUsuario, $password, $descUsuario) {
-        $SQLAltaUsuario = <<<sql
+        $SQLAltaUsuario = <<<QUERY
                 INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario, T01_NumConexiones, T01_FechaHoraUltimaConexion) 
-                values('{$codUsuario}',sha2(concat('{$codUsuario}','{$password}'),256),'{$descUsuario}',1, now());
-                sql;
+                    values('{$codUsuario}',sha2(concat('{$codUsuario}','{$password}'),256),'{$descUsuario}',1, now());
+                QUERY;
         if (self::validarCodNoExiste(!$codUsuario)) {
             DBPDO::ejecutarConsulta($SQLAltaUsuario);
             return new Usuario($codUsuario, hash('sha256', ($codUsuario . $password)), $descUsuario, 1, new DateTime("now"));
@@ -70,7 +70,9 @@ class UsuarioPDO implements UsuarioDB {
 
     public static function validarCodNoExiste($codUsuario) {
         $codigoNoExiste = true;
-        $SQLValidarCodigo = "select * from T01_Usuario where T01_CodUsuario={$codUsuario}";
+        $SQLValidarCodigo = <<< query
+                select * from T01_Usuario where T01_CodUsuario="{$codUsuario}";
+                query;
         $oResultado = DBPDO::ejecutarConsulta($SQLValidarCodigo);
         if (!$oResultado) {
             $codigoNoExiste = false;

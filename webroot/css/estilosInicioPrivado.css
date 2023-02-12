@@ -125,7 +125,7 @@ input{
     margin-bottom: 2.5rem;
     width: 400px;
 }
-#divBienvenidaTabla,#divBienvenidaInicio,#divBienvenidaConexiones{
+.divBienvenidaTabla,.divBienvenidaInicio,.divBienvenidaConexiones{
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -62,5 +62,3 @@ class DBPDO implements DB {
     }
 
 }
-
-?>
