@@ -34,7 +34,7 @@ if (isset($_REQUEST['iniciarSesion'])) {
             $entradaOk = false;
         }
     }
-//   si no se ha pulsado iniciar sesion le pedimos que muestre el formulario de inicio
+//Si el booleano sigue en true, registra la última conexión y redirige a inicioPrivado
     if ($entradaOk) {
         UsuarioPDO::registrarUltimaConexion($oUsuario);
         $_SESSION['User208DWESProyectoFinal'] = $oUsuario;

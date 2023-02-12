@@ -16,7 +16,7 @@ if(isset($_REQUEST['error'])){
      DBPDO::ejecutarConsulta("Select * from meInventoElNombreDeUnaTablaQueNoExiste;");
 }
 if(isset($_REQUEST['editar_Perfil'])){
-    $_SESSION['paginaEnCurso']='wip';
+    $_SESSION['paginaEnCurso']='miCuenta';
     $_SESSION['paginaAnterior']='inicioPrivado';
     header("Location: index.php"); 
     exit();

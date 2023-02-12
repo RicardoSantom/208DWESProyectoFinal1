@@ -28,7 +28,9 @@ $aControladores=[
     "mtoDepartamentos"=>"controller/cMtoDepartamentos.php",
     "tecnologias"=>"controller/cTecnologias.php",
     "rss"=>"controller/cRSS.php",
-     "registro"=>"controller/cRegistro.php"
+     "registro"=>"controller/cRegistro.php",    
+    "miCuenta"=>"controller/cMiCuenta.php",
+    "cambiarPassword"=>"controller/cCambiarPassword.php"
 ];
 
 $aVistas=[
@@ -48,5 +50,7 @@ $aVistas=[
     "mtoDepartamentos"=>"view/vMtoDepartamentos.php",
     "tecnologias"=>"view/vTecnologias.php",
     "rss"=>"view/vRSS.php",
-    "registro"=>"view/vRegistro.php"
+    "registro"=>"view/vRegistro.php",
+    "miCuenta"=>"view/vMiCuenta.php",
+    "cambiarPassword"=>"view/vCambiarPassword.php"
 ];

@@ -1,9 +1,15 @@
 <?php
 
 /**
- * Description of UsuarioPDO clase que implementa métodos declarados en la interfaz DB
+ * Summary clase que implementa métodos declarados en la interfaz DB.
+ * 
+ * Description of UsuarioPDO Implementa métodos para validar, dar de alta,
+ * modificar y borrar un usuario, también para registrar la fecha y hora de la 
+ * última conexión del usuario.
+ *  
  * @author Ricardo Santiago Tomé <https://github.com/RicardoSantom>
  * @since 15/01/2023
+ * Última modificación 12/02/2023
  * @version 0.1
  */
 class UsuarioPDO implements UsuarioDB {
@@ -39,10 +45,10 @@ class UsuarioPDO implements UsuarioDB {
 
     public static function registrarUltimaConexion($oUsuario) {
         $oUsuario->setNumConexiones($oUsuario->getNumConexiones() + 1);
-        $SQLActualizacionNumConexiones = <<<query
+        $SQLActualizacionNumConexiones = <<<QUERY
               UPDATE T01_Usuario SET T01_NumConexiones=T01_NumConexiones+1,T01_FechaHoraUltimaConexion=now()
               WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
-              query;
+              QUERY;
         DBPDO::ejecutarConsulta($SQLActualizacionNumConexiones);
         return $oUsuario;
     }
@@ -60,12 +66,35 @@ class UsuarioPDO implements UsuarioDB {
         }
     }
 
-    public static function modificarUsuario() {
-        
+    public static function modificarUsuario($oUsuario, $descUsuario) {
+        $SQLmodificarUsuario = <<<QUERY
+                UPDATE T01_Usuario set T01_DescUsuario="{$descUsuario}" WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
+                QUERY;
+        DBPDO::ejecutarConsulta($SQLmodificarUsuario);
+        $oUsuario->setDescUsuario($descUsuario);
     }
 
-    public static function borrarUsuario() {
-        
+    public static function cambiarPassword($oUsuario, $nuevoPassword) {
+        $entradaOk = false;
+        $SQLmodificarContraseña = <<<QUERY
+            UPDATE T01_Usuario SET T01_Password="{$nuevoPassword}" WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
+        QUERY;
+        if (DBPDO::ejecutarConsulta($SQLmodificarContraseña)) {
+            $entradaOk = true;
+            $oUsuario->setPassword($nuevoPassword);
+        }
+        return $entradaOk;
+    }
+
+    public static function borrarUsuario($codUsuario) {
+        $entradaOk = false;
+        $SQLborrarUsuario = <<<QUERY
+                DELETE * from T01_Usuario where T01_codUsuario="{$codUsuario}";
+                QUERY;
+        if (DBPDO::ejecutarConsulta($SQLborrarUsuario)) {
+            $entradaOk = true;
+        }
+        return $entradaOk;
     }
 
     public static function validarCodNoExiste($codUsuario) {

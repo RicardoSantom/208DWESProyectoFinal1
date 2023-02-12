@@ -20,26 +20,26 @@
          * @version 1.0
          * @since 15/01/2023
          */
-        require_once 'core/TablasSuperglobales.php';        
+        require_once 'core/TablasSuperglobales.php';
         TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_COOKIE, "\$_COOKIE");
         if (!empty($_SESSION) || is_null($_SESSION)) {
             ?>
-        <table class="tablaGlobales"><caption><?php printf('$_SESSION') ?></caption><tbody>
-                <?php
-                if (is_null($_SESSION) || empty($_SESSION)) {
-                    print('<thead><th  style="border:none;color:red;text-align:center;">La variable $_SESSION no guarda ningún valor</th></thead>');
-                } else {
-                    foreach ($_SESSION as $clave => $valor) {
-                        echo '<tr>';
-                        echo "<td>$clave</td><td><pre>";
-                        print_r($valor);
-                        echo '</pre></td></tr>';
+            <table class="tablaGlobales"><caption><?php printf('$_SESSION') ?></caption><tbody>
+                    <?php
+                    if (is_null($_SESSION) || empty($_SESSION)) {
+                        print('<thead><th  style="border:none;color:red;text-align:center;">La variable $_SESSION no guarda ningún valor</th></thead>');
+                    } else {
+                        foreach ($_SESSION as $clave => $valor) {
+                            echo '<tr>';
+                            echo "<td>$clave</td><td><pre>";
+                            print_r($valor);
+                            echo '</pre></td></tr>';
+                        }
                     }
-                }
-                ?>
-            </tbody>
+                    ?>
+                </tbody>
             </table>
-        <?php
+            <?php
         } else {
             printf('<h3>La variable superglobal $_SESSION está vacía</h3>');
         }
@@ -75,27 +75,34 @@
                 </tr>
                 <tr>
                     <td>Fecha Hora Ultima Conexion Anterior</td>
-                    <td><?php echo $_SESSION['User208DWESProyectoFinal']->getFechaHoraUltimaConexionAnterior() ?></td>
-                </tr>
-                <tr>
-                    <td>Perfil</td>
-                    <td><?php echo $_SESSION['User208DWESProyectoFinal']->getPerfil() ?></td>
-                </tr>
-                <tr>
-                    <td>Imagen usuario</td>
-                    <td><?php echo $_SESSION['User208DWESProyectoFinal']->getImagenUsuario() ?></td>
-                </tr>
-            </tbody>
-        </table>
-        <?php
-        TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_SERVER, "\$_SERVER");
-        TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_REQUEST, "\$_REQUEST");
-        TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_FILES, "\$_FILES");
-        TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_ENV, "\$_ENV");
-        TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_POST, "\$_POST");
-        TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_GET, "\$_GET");
-        ?>
-<?php phpinfo();
-?>
+                    <td><?php
+                        if ($_SESSION['User208DWESProyectoFinal']->getFechaHoraUltimaConexionAnterior() != null) {
+                            echo 'Todavía no hay registrada una última conexión anterior';
+                            } else{
+                            echo $_SESSION['User208DWESProyectoFinal']->getFechaHoraUltimaConexionAnterior();
+                            }
+                            ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Perfil</td>
+                        <td><?php echo $_SESSION['User208DWESProyectoFinal']->getPerfil() ?></td>
+                    </tr>
+                    <tr>
+                        <td>Imagen usuario</td>
+                        <td><?php echo $_SESSION['User208DWESProyectoFinal']->getImagenUsuario() ?></td>
+                    </tr>
+                </tbody>
+            </table>
+            <?php
+            TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_SERVER, "\$_SERVER");
+            TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_REQUEST, "\$_REQUEST");
+            TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_FILES, "\$_FILES");
+            TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_ENV, "\$_ENV");
+            TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_POST, "\$_POST");
+            TablasSuperglobales::imprimirTablaVariablesSuperGlobales($_GET, "\$_GET");
+            ?>
+            <?php phpinfo();
+            ?>
     </article>
 </main>

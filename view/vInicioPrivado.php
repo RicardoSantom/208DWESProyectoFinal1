@@ -26,7 +26,7 @@
             ?>
             <div class="divBienvenidaInicio">
                 <h3>Ultimo inicio de sesión: </h3>
-                <?php echo '<p>' . $_SESSION['User208DWESProyectoFinal']->getFechaHoraUltimaConexionAnterior() . '</p></div>';
+                <?php echo '<p>' . $_SESSION['User208DWESProyectoFinal']->getFechaHoraUltimaConexionAnterior() . '</p>';
                 ?>
             </div>
             <div class="divBienvenidaTabla">
