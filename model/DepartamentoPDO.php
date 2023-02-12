@@ -22,7 +22,8 @@ class DepartamentoPDO {
         $oDatos = $oResultado->fetchObject();
 
         if ($oDatos) {
-            return new Departamento($oDatos->T02_CodDepartamento, $oDatos->T02_DescDepartamento, $oDatos->T02_FechaCreacionDepartamento, $oDatos->T02_VolumenDeNegocio, $oDatos->T02_FechaBajaDepartamento);
+            return new Departamento($oDatos->T02_CodDepartamento, $oDatos->T02_DescDepartamento, 
+                    $oDatos->T02_FechaCreacionDepartamento, $oDatos->T02_VolumenDeNegocio, $oDatos->T02_FechaBajaDepartamento);
         } else {
             return false;
         }

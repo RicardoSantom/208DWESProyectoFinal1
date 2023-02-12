@@ -7,8 +7,8 @@ if (isset($_REQUEST['cancelar'])) {
     exit();
 }
 if (isset($_REQUEST['registrarse'])) {
-   $_SESSION['paginaAnterior']='login';
-   $_SESSION['paginaEnCurso']='wip';
+   $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
+   $_SESSION['paginaEnCurso']='registro';
     header("Location: index.php"); 
     exit();
 }

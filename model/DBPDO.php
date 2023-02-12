@@ -35,7 +35,7 @@ class DBPDO implements DB {
              */
             $_SESSION['error'] = new ErrorApp($excepcion->getCode(), $excepcion->getMessage(),
                     $excepcion->getFile(), $excepcion->getLine(), $_SESSION['paginaAnterior']);
-            //Navegación hasta páina de error para ver los mensajes de errores.
+            //Navegación hasta página de error para ver los mensajes de errores.
             $_SESSION['paginaEnCurso'] = 'error';
             header('Location: index.php');
             exit();

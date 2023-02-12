@@ -29,9 +29,9 @@ class UsuarioPDO implements UsuarioDB {
                         $oDatos->T01_DescUsuario, $oDatos->T01_NumConexiones, $oDatos->T01_FechaHoraUltimaConexion,
                         $oDatos->T01_Perfil, $oDatos->T01_ImagenUsuario);
                 return $oUsuario;
-            } /*else { //Si no existe, devuelve false.
-                return false;
-            }*/
+            } /* else { //Si no existe, devuelve false.
+              return false;
+              } */
         } catch (Exception $ex) {
             echo $ex->getMessage();
         }
@@ -47,22 +47,35 @@ class UsuarioPDO implements UsuarioDB {
         return $oUsuario;
     }
 
-    public static function altaUsuario() {
-        
+    public static function altaUsuario($codUsuario, $password, $descUsuario) {
+        $SQLAltaUsuario = <<<sql
+                INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario, T01_NumConexiones, T01_FechaHoraUltimaConexion) 
+                values('{$codUsuario}',sha2(concat('{$codUsuario}','{$password}'),256),'{$descUsuario}',1, now());
+                sql;
+        if (self::validarCodNoExiste(!$codUsuario)) {
+            DBPDO::ejecutarConsulta($SQLAltaUsuario);
+            return new Usuario($codUsuario, hash('sha256', ($codUsuario . $password)), $descUsuario, 1, new DateTime("now"));
+        } else {
+            return false;
+        }
     }
 
     public static function modificarUsuario() {
         
     }
 
-    public static function borrarUsuario($codUsuario) {
+    public static function borrarUsuario() {
         
     }
 
     public static function validarCodNoExiste($codUsuario) {
-        
+        $codigoNoExiste = true;
+        $SQLValidarCodigo = "select * from T01_Usuario where T01_CodUsuario={$codUsuario}";
+        $oResultado = DBPDO::ejecutarConsulta($SQLValidarCodigo);
+        if (!$oResultado) {
+            $codigoNoExiste = false;
+        }
+        return $codigoNoExiste;
     }
 
 }
-
-?>

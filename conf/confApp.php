@@ -27,7 +27,8 @@ $aControladores=[
     "error"=> "controller/cError.php",
     "mtoDepartamentos"=>"controller/cMtoDepartamentos.php",
     "tecnologias"=>"controller/cTecnologias.php",
-    "rss"=>"controller/cRSS.php"
+    "rss"=>"controller/cRSS.php",
+     "registro"=>"controller/cRegistro.php"
 ];
 
 $aVistas=[
@@ -46,5 +47,6 @@ $aVistas=[
     "error" => "view/vError.php",
     "mtoDepartamentos"=>"view/vMtoDepartamentos.php",
     "tecnologias"=>"view/vTecnologias.php",
-    "rss"=>"view/vRSS.php"
+    "rss"=>"view/vRSS.php",
+    "registro"=>"view/vRegistro.php"
 ];
