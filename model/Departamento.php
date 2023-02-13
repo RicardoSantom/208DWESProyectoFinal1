@@ -59,7 +59,7 @@ class Departamento {
      */
     
     public function __construct($codDepartamento, $descDepartamento, $fechaCreacionDepartamento, $volumenDeNegocio, $fechaBajaDepartamento=null) {
-        $this->codUsuario = $codDepartamento;
+        $this->codDepartamento = $codDepartamento;
         $this->descDepartamento = $descDepartamento;
         $this->fechaCreacionDepartamento = $fechaCreacionDepartamento;
         $this->volumenDeNegocio = $volumenDeNegocio;
