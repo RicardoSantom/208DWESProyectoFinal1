@@ -33,6 +33,7 @@ class DepartamentoPDO {
         $aDepartamento = [];
         $sSelect = "select * from T02_Departamento where T02_DescDepartamento like'%{$descDepartamento}%';";
         $resultadoConsulta = DBPDO::ejecutarConsulta($sSelect);
+        //$oResultado es un objeto de la clase PDO::Statement
         $oResultado = $resultadoConsulta->fetchObject();
         while ($oResultado != null) {
            $oDepartamento = new Departamento(

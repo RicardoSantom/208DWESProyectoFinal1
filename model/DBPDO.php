@@ -44,21 +44,4 @@ class DBPDO implements DB {
             unset($DB208DWESLoginLogoff);
         }
     }
-
-    public function altaUsuario() {
-        
-    }
-
-    public function modificarUsuario() {
-        
-    }
-
-    public function borrarUsuario() {
-        
-    }
-
-    public function validarCodNoExiste() {
-        
-    }
-
 }
