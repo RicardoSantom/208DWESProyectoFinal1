@@ -12,7 +12,8 @@
 //Inclusión librería de validación
 require_once 'core/221024ValidacionFormularios.php';
 /*Variable de tipo array donde se guarda el resultado de llamar a la función
- * correspondiente dentro del modelo.
+ * correspondiente dentro del modelo. Inicializada a cadena vacía para que muestre
+ * la tabla con todos los departamentos a la entrada a la vMtoDepartamentos.
  */
 $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc("");
     //Array con el único campo consultado.
@@ -37,12 +38,12 @@ if(isset($_REQUEST['tecnologias'])){
 if (isset($_REQUEST['buscar'])) {
     //Booleano para controlar que la ejecución es correcta.
     $entradaOk = true;
-    //Array con las respuestas recibidas.
-    $aRespuestasApi = [
+    //Array con los valores para buscar
+    $aValoresBusqueda = [
         "buscaDepartamentosPorDesc" => null
     ];
     //Validación del input para la descripción.
-    $aErrores['descripcion'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['descripcion'], 255, 0, 0);
+    $aErrores['descripcion'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['descripcion'], 20, 1, 0);
     /*Recorrer el array de errores comprobando que no haya errores. Si no los hay
      * el booleano continua a true, si los hay, cambia a falso.
      */
@@ -53,12 +54,12 @@ if (isset($_REQUEST['buscar'])) {
     }
     //Si el booleano sigue a true.
     if ($entradaOk) {
-        //Guardado en el array de respuestas de la descripción solicitada en el input.
-        $aRespuestasApi['buscaDepartamentosPorDesc'] = $_REQUEST['descripcion'];
+        //Guardado en el array de valores de la descripción solicitada en el input.
+        $aValoresBusqueda['buscaDepartamentosPorDesc'] = $_REQUEST['descripcion'];
         /*Guardado en la variable array de la ejecución de la función correspondiente 
-         * del modelo con los datos proporcionados por el array de respuestas.
+         * del modelo con los datos proporcionados por el array de valores.
          */
-        $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($aRespuestasApi['buscaDepartamentosPorDesc']);
+        $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($aValoresBusqueda['buscaDepartamentosPorDesc']);
     }
 }
 //Inclusión de la vista.

@@ -4,11 +4,15 @@
 </header>
 <main>
     <form name = "vMtoDepartamentos" id = "formInicioPrivado" action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">
-        <label for = "descripcion">Inserte descripción:</label>
-        <input type = "text" id="descripcion" name = "descripcion" placeholder = "Máximo 30 caracteres" value = "<?php echo $_REQUEST['descripcion'] ?? '' ?>"/>
-        <p><?php echo '<span style="color: red;">' . $aErrores['descripcion'] . '</span>'; ?></p>
-        <input type = "submit" name = "buscar" value = "Buscar" id = "buscar"/>            
-        <button type="submit" name="volver" id="volver" value="volver">Volver</button>
+        <div id="divInputDescripcion">
+            <label for = "descripcion">Inserte descripción:</label>
+            <input type = "text" id="descripcion" name = "descripcion" placeholder = "Máximo 20 caracteres" value = "<?php echo $_REQUEST['descripcion'] ?? '' ?>"/>
+            <p><?php echo '<span style="color: red;">' . $aErrores['descripcion'] . '</span>'; ?></p>
+        </div>
+        <div id="divBotonesDescripcion">
+            <input type = "submit" name = "buscar" value = "Buscar" id = "buscar"/>            
+            <button type="submit" name="volver" id="volver" value="volver">Volver</button>
+        </div>
     </form>
     <table id="bienvenida">
         <caption>Tabla Mantenimiento Departamentos</caption>

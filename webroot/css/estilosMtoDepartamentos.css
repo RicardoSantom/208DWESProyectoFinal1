@@ -29,18 +29,6 @@ article{
     position: absolute;
     top: 16rem;
 }
-aside{
-    width:14rem;
-}
-.formulario{
-    position: absolute;
-    right: 5px;
-    top: 0.5rem;
-    display: flex;
-    border: none;
-    justify-content: space-between;
-    flex-direction: column;
-}
 label{
     font-family: 'LatoLight';
     font-size: 22px;
@@ -105,14 +93,17 @@ label{
     position: absolute;
     top:4rem;
     left: 2rem;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     margin: 0 auto;
     width: 90vw;
     height: 8rem;
-    justify-content: flex-start;
-    align-content: flex-end;
+}
+#divInputDescripcion{
+    display: flex;
+    margin: 1rem auto;
+    align-items: center;
+}
+#divInputDescripcion *{
+    margin: 0 1rem 0 0;
 }
 #salirInicioPrivado{
     display: flex;
