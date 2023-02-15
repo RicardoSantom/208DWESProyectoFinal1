@@ -135,7 +135,7 @@ footer img{
     color: #666666;
     font-size: 20px;
 }
-#github,#linkedin,#curriculum,#rss{
+#github,#linkedin,#curriculum,#rss,#php{
     clear: both;
     text-decoration: none;
 }
@@ -156,25 +156,25 @@ footer img{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-#curriculum:before,rss:before{
+#curriculum:before,rss:before,#php:before{
     color: #FFC9B5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-#linkedin,#rss{
+#linkedin,#rss,#php{
     color: #FFC9B5;
 }
-#curriculum span,#rss span{
+#curriculum span,#rss span,#php span{
     color: #FFC9B5;
     font-size: 30px;
     padding-top: 10px;
 }
-#rss{
-    background-color: transparent;
-    border-style: none;
-}
 #github,#linkedin{
     padding-top: 10px;
+}
+#rss{
+    background: transparent;
+    border-style: none;
 }
 footer p{
     padding-top: 15px;

@@ -30,7 +30,7 @@ class DepartamentoPDO {
     }
 
     public static function buscaDepartamentosPorDesc($descDepartamento) {        
-        $aDepartamento = [];
+        $aDepartamentos = [];
         $sSelect = "select * from T02_Departamento where T02_DescDepartamento like'%{$descDepartamento}%';";
         $resultadoConsulta = DBPDO::ejecutarConsulta($sSelect);
         //$oResultado es un objeto de la clase PDO::Statement
@@ -43,10 +43,10 @@ class DepartamentoPDO {
                             $oResultado->T02_VolumenNegocio,
                             $oResultado->T02_FechaBajaDepartamento
             );
-            array_push($aDepartamento, $oDepartamento);
+            array_push($aDepartamentos, $oDepartamento);
             $oResultado = $resultadoConsulta->fetchObject();
         }
-        return $aDepartamento;
+        return $aDepartamentos;
     }
 
     public static function altaDepartamento() {

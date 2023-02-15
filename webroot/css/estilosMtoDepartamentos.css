@@ -39,7 +39,7 @@ label{
     font-family: 'LatoLightItalic';
     width: 20rem;
 }
-#buscar{
+#buscar,#refrescar{
     align-items: center;
     justify-content: center;
     min-height: 2.5rem;    
@@ -51,7 +51,7 @@ label{
     font-weight: bold;
     font-size: 22px;
 }
-#buscar:hover{
+#buscar:hover,#refrescar:hover{
     background-color: white;
     color: #344079
 }

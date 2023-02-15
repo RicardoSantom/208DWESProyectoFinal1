@@ -6,12 +6,13 @@
     <form name = "vMtoDepartamentos" id = "formInicioPrivado" action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">
         <div id="divInputDescripcion">
             <label for = "descripcion">Inserte descripción:</label>
-            <input type = "text" id="descripcion" name = "descripcion" placeholder = "Máximo 20 caracteres" value = "<?php echo $_REQUEST['descripcion'] ?? '' ?>"/>
-            <p><?php echo '<span style="color: red;">' . $aErrores['descripcion'] . '</span>'; ?></p>
+            <input type = "text" id="descripcion" name = "descripcion" placeholder = "Máximo 30 caracteres" value = "<?php echo $_SESSION['buscaDepartamentosPorDesc'] ?? '' ?>"/>
+            <p><?php echo '<span style="color: red;">' . $aErrores['buscaDepartamentosPorDesc'] . '</span>'; ?></p>
         </div>
         <div id="divBotonesDescripcion">
             <input type = "submit" name = "buscar" value = "Buscar" id = "buscar"/>            
             <button type="submit" name="volver" id="volver" value="volver">Volver</button>
+            <button type="submit" name="refrescar" id="refrescar" value="refrescar">Refrescar campos</button>
         </div>
     </form>
     <table id="bienvenida">
@@ -23,20 +24,26 @@
                 <th>T02_FechaCreaciónDepartamento</th>
                 <th>T02_VolumenNegocio</th>
                 <th>T02_FechaBajaDepartamento</th>
+                <th>Controles</th>
             </tr>
         </thead>
         <tbody>
             <?php
-            foreach ($aDepartamentos as $oDepartamento) {
-                ?>
-                <tr>
-                    <td><?php echo $oDepartamento->getCodDepartamento() ?></td>
-                    <td><?php echo $oDepartamento->getDescDepartamento() ?></td>
-                    <td><?php echo $oDepartamento->getFechaCreacionDepartamento() ?></td>
-                    <td><?php echo $oDepartamento->getVolumenDeNegocio() ?></td>
-                    <td><?php echo $oDepartamento->getFechaBajaDepartamento() ?></td>
-                </tr>
-                <?php
+            if ($aVMtoDepartamentos) {
+                foreach ($aVMtoDepartamentos as $valorDepartamento) {
+                    ?>
+                    <tr>
+                        <td><?php echo $valorDepartamento['codDepartamento'] ?></td>
+                        <td><?php echo $valorDepartamento['descDepartamento'] ?></td>
+                        <td><?php echo $valorDepartamento['fechaAlta'] ?></td>
+                        <td><?php echo $valorDepartamento['volumenNegocio'] ?></td>
+                        <td><?php echo $valorDepartamento['fechaBaja'] ?></td>
+                        <td></td>
+                    </tr>
+                    <?php
+                }
+            } else{
+                echo $aErrores['buscaDepartamentosPorDesc'];
             }
             ?>
         </tbody>
