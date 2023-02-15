@@ -10,23 +10,31 @@
  * @version 0.1
  * @since 04/03/2023
  */
-//Inclusión librería de validación
-require_once 'core/221024ValidacionFormularios.php';
+$_SESSION['criterioBusquedaDepartamento']="";
+if($_SESSION['criterioBusquedaDepartamento']){
+    $_SESSION['criterioBusquedaDepartamento'] = ´´;
+}
+if(isset($_REQUEST['editar'])){
+    $_SESSION['paginaAnterior']= $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso']='wip';    
+    header("Location: index.php"); 
+    exit();
+}
+if(isset($_REQUEST['borrar'])){
+    $_SESSION['paginaAnterior']= $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso']='wip';    
+    header("Location: index.php"); 
+    exit();
+}
 if (isset($_REQUEST['refrescar'])) {
     //Limpio el input de descripción.
-    $_REQUEST['descripcion'] = "";
-    /* Variable de tipo array donde se guarda el resultado de llamar a la función
-     * correspondiente dentro del modelo. Inicializada a cadena vacía para que muestre
-     * la tabla con todos los departamentos a la entrada a la vMtoDepartamentos o cuando 
-     * se pulsa el botón refrescar.
-     */
-    $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc("");
-    //Guardado en la sesión la descripción solicitada en el input.
-    $_SESSION['buscaDepartamentosPorDesc'] = "";
+    $_SESSION['criterioBusquedaDepartamento'] = "";
+    header("Location: index.php");
+     exit();
 }
 //Array con el único campo consultado.
 $aErrores = [
-    'buscaDepartamentosPorDesc' => null
+    'criterioBusquedaDepartamento' => null
 ];
 //Si se pulsa el botón volver, regresa a la página anterior.
 if (isset($_REQUEST['volver'])) {
@@ -47,7 +55,7 @@ if (isset($_REQUEST['buscar'])) {
     //Booleano para controlar que la ejecución es correcta.
     $entradaOk = true;
     //Validación del input para la descripción.
-    $aErrores['buscaDepartamentosPorDesc'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['descripcion'], 30, 1, 0);
+    $aErrores['criterioBusquedaDepartamento'] = validacionFormularios::comprobarAlfaNumerico($_REQUEST['descripcion'], 30, 1, 0);
     /* Recorrer el array de errores comprobando que no haya errores. Si no los hay
      * el booleano continua a true, si los hay, cambia a falso.
      */
@@ -62,12 +70,12 @@ if (isset($_REQUEST['buscar'])) {
 //Si el booleano sigue a true.
 if ($entradaOk) {
     //Guardado en la sesión la descripción solicitada en el input.
-    $_SESSION['buscaDepartamentosPorDesc'] = $_REQUEST['descripcion'];
+    $_SESSION['criterioBusquedaDepartamento'] = $_REQUEST['descripcion'];
 }
 /* Guardado en la variable array de la ejecución de la función correspondiente 
  * del modelo con los datos proporcionados por el array de valores.
  */
-$aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($_SESSION['buscaDepartamentosPorDesc']);
+$aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($_SESSION['criterioBusquedaDepartamento']);
 //Array para guardar los campos del objeto Departamento y mostrarlos en la vista
 $aVMtoDepartamentos = [];
 //Si DepartamentoPDO ha devuelto resultado válido(un array)
@@ -87,7 +95,7 @@ if ($aDepartamentos) {
         ]);
     }
 } else {
-    $aErrores['buscaDepartamentosPorDesc'] = "No se encuentra el departamento";
+    $aErrores['criterioBusquedaDepartamento'] = "No se encuentra el departamento";
 }
 //Inclusión de la vista.
 require_once $aVistas['layout'];

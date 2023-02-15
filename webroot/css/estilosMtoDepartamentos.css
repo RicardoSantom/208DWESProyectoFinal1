@@ -50,6 +50,10 @@ label{
     color: white;
     font-weight: bold;
     font-size: 22px;
+    margin-bottom: 0.5rem;
+}
+#refrescar{
+    width: 15rem;
 }
 #buscar:hover,#refrescar:hover{
     background-color: white;
@@ -80,28 +84,34 @@ label{
     cursor: pointer;
 }
 #bienvenida{
-    position: absolute;
-    top: 14rem;
+    position: relative;
+    top: 17rem;
     text-align: center;
     font-family: 'LatoLightItalic';
     font-weight: bold;
     color: #3367ac;
-    margin: 0 auto;
-    width: 100%;
+    padding: 3rem auto;
+    width: 94%;
 }
 #formInicioPrivado{
     position: absolute;
-    top:4rem;
+    display: flex;
+    align-items: center;
+    top:8rem;
     left: 2rem;
     margin: 0 auto;
     width: 90vw;
     height: 8rem;
 }
-#divInputDescripcion{
+fieldset{
+    display: flex;
+    align-items: center;
+}
+/*#divInputDescripcion{
     display: flex;
     margin: 1rem auto;
     align-items: center;
-}
+}*/
 #divInputDescripcion *{
     margin: 0 1rem 0 0;
 }
@@ -131,6 +141,17 @@ table thead th{
 table tbody{
     font-size: 18px;
     color: #99a0a1;
+}
+.alfabetica{
+    text-align: left;
+}
+.numerica{
+    text-align: right;
+}
+#formVolver{
+    position: absolute;
+    top: 85px;
+    left: 30px;
 }
 footer{
     position: fixed;
