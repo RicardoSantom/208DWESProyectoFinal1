@@ -35,14 +35,14 @@
         <tbody>
             <?php
             if ($aVMtoDepartamentos) {
-                foreach ($aVMtoDepartamentos as $valorDepartamento) {
+                foreach ($aVMtoDepartamentos as $departamentoEnCurso) {
                     ?>
                     <tr>
-                        <td class="alfabetica"><?php echo $valorDepartamento['codDepartamento'] ?></td>
-                        <td class="alfabetica"><?php echo $valorDepartamento['descDepartamento'] ?></td>
-                        <td class="numerica"><?php echo $valorDepartamento['fechaAlta'] ?></td>
-                        <td class="numerica"><?php echo $valorDepartamento['volumenNegocio'] ?></td>
-                        <td class="numerica"><?php echo $valorDepartamento['fechaBaja'] ?></td>
+                        <td class="alfabetica"><?php echo $departamentoEnCurso['codDepartamento'] ?></td>
+                        <td class="alfabetica"><?php echo $departamentoEnCurso['descDepartamento'] ?></td>
+                        <td class="numerica"><?php echo $departamentoEnCurso['fechaAlta'] ?></td>
+                        <td class="numerica"><?php echo $departamentoEnCurso['volumenNegocio'] ?></td>
+                        <td class="numerica"><?php echo $departamentoEnCurso['fechaBaja'] ?></td>
                         <td>
                             <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">
                                 <button type="submit" name="editar" id="editarConsultar" value="editar">editar</button>
