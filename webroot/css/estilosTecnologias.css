@@ -8,9 +8,12 @@
     width: 98%;
     margin: 0 auto;
     position: relative;
-    top: 7rem;
+    top: 3rem;
     height: 85%;
     flex-wrap: wrap;
+}
+#divTecnologias *{
+    margin-top: 0.5rem;
 }
 #divTecnologias ul{
     width: 45%;
@@ -33,6 +36,17 @@
     border-bottom: 2px solid #99a0a1 ;
     width: 400px;
     margin: 2.5rem auto;
+}
+#enlaceImagenes{
+    display: flex;
+    position: absolute;
+    margin: 1rem auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 }
 #volver{
     align-items: center;

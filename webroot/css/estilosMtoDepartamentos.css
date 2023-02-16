@@ -92,6 +92,7 @@ label{
     color: #3367ac;
     padding: 3rem auto;
     width: 94%;
+    margin: 0 auto;
 }
 #formInicioPrivado{
     position: absolute;
@@ -141,6 +142,11 @@ table thead th{
 table tbody{
     font-size: 18px;
     color: #99a0a1;
+}
+tbody tr td{
+    border-bottom: 1px solid #cccccc;
+    height: 2rem;
+    border-collapse: separate;
 }
 .alfabetica{
     text-align: left;

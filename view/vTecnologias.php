@@ -22,6 +22,12 @@
             <li class="sangrado"><a href="doc/EstudioLaravel.pdf" title="Enlace Laravel.pdf" target="blank">DESARROLLO WEB EN ENTORNO SERVIDOR - Laravel</a><hr></li>
             <li class="sangrado"><a href="doc/Instalación y Despliegue Laravel.pptx" title="Enlace Instalación y Despliegue Laravel.pptx" target="blank">DESARROLLO WEB EN ENTORNO SERVIDOR - Powerpoint Laravel</a><hr></li>
             <li><a href="doc/EstudioTema2.pdf" title="Enlace EstudioTema2.pdf" target="blank">TEMA 2: INSTALACIÓN, CONFIGURACIÓN Y DOCUMENTACIÓN DEL ENTORNO DE DESARROLLO Y DEL ENTORNO DE EXPLOTACIÓN</a><hr></li>
+            <li id="enlaceImagenes">
+                <a href="https://www.php.net/"><img src="webroot/media/img/php.png" alt="imagen php" height="125" width="125"/></a>
+                <a href="https://www.w3schools.com/js/default.asp"><img src="webroot/media/img/js.png" alt="imagen js" height="125" width="125"/></a>
+                <a href="https://www.w3schools.com/"><img src="webroot/media/img/interfaces.png" alt="imagen interfaces" height="125" width="125"/></a>
+                <a href="https://httpd.apache.org/"><img src="webroot/media/img/apache.png" alt="imagen apache" height="125" width="125"/></a>
+            </li>
         </ul>        
         <ul>
             <li><h3>Documentación Proyecto Final</h3></li>

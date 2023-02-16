@@ -10,13 +10,13 @@
         <fieldset>
             <div id="divInputDescripcion">
                 <label for = "descripcion">Descripción:</label>
-                <input type = "text" id="descripcion" name = "descripcion" placeholder = "Máximo 30 caracteres" value = "<?php echo $_SESSION['buscaDepartamentosPorDesc'] ?? '' ?>"/>
+                <input type = "text" id="descripcion" name = "descripcion" placeholder = "Máximo 30 caracteres" value = "<?php echo $_SESSION['criterioBusquedaDepartamento'] ?? '' ?>"/>
                 <p><?php echo '<span style="color: red;">' . $aErrores['criterioBusquedaDepartamento'] . '</span>'; ?></p>
 
             </div>
             <div id="divBotonesDescripcion">
                 <input type = "submit" name = "buscar" value = "Buscar" id = "buscar"/>
-                <!--<button type="submit" name="refrescar" id="refrescar" value="refrescar">Limpiar campos</button>-->
+                <button type="submit" name="refrescar" id="refrescar" value="refrescar">Limpiar campos</button>
             </div>
         </fieldset>
     </form>
@@ -28,7 +28,7 @@
                 <th class="alfabetica">Descripción</th>
                 <th class="numerica">Fecha Creación</th>
                 <th class="numerica">Volumen Negocio</th>
-                <th class="numerica">Fecha Baja Departamento</th>
+                <th class="numerica">Fecha Baja</th>
                 <th></th>
             </tr>
         </thead>
@@ -53,7 +53,7 @@
                     <?php
                 }
             } else {
-                echo $aErrores['buscaDepartamentosPorDesc'];
+                echo $aErrores['criterioBusquedaDepartamento'];
             }
             ?>
         </tbody>

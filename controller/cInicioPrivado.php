@@ -22,6 +22,14 @@ if(isset($_REQUEST['editar_Perfil'])){
     exit();
 }
 if(isset($_REQUEST['mtoDepartamentos'])){
+    //Si no hay valor guardado en la sesión de una búsqueda en MtoDepartamentos
+    if( $_SESSION['criterioBusquedaDepartamento'] == null){
+        /*
+         * Guarda en la sesión la búsqueda como vacía, para que al entrar por
+         * primera vez, muestre todos los departamentos.
+         */
+         $_SESSION['criterioBusquedaDepartamento'] ="";
+    } 
     $_SESSION['paginaEnCurso']='mtoDepartamentos';
     $_SESSION['paginaAnterior']='inicioPrivado';
     header("Location: index.php"); 

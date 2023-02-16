@@ -10,27 +10,51 @@
  * @version 0.1
  * @since 04/03/2023
  */
-$_SESSION['criterioBusquedaDepartamento']="";
-if($_SESSION['criterioBusquedaDepartamento']){
-    $_SESSION['criterioBusquedaDepartamento'] = ´´;
+
+/* Guardado en la variable array de la ejecución de la función correspondiente 
+ * del modelo con los datos proporcionados por el array de valores.
+ * En su primera ocurrencia y gracias a la inicialización a cadena vacía en el 
+ * controlador de inicio privado, muestra todos los departamentos de la DB.
+ */
+$aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($_SESSION['criterioBusquedaDepartamento']);
+//Array para guardar los campos del objeto Departamento y mostrarlos en la vista
+$aVMtoDepartamentos = [];
+//Si DepartamentoPDO ha devuelto resultado válido(un array de objetos)
+if ($aDepartamentos) {
+    //Recorro el array y por cada objeto...
+    foreach ($aDepartamentos as $oDepartamento) {
+        /**
+         * Utilizo el método array_push para introducir los valores devueltos
+         * por los getters para cada objeto departamento.
+         */
+        array_push($aVMtoDepartamentos, [
+            'codDepartamento' => $oDepartamento->getCodDepartamento(),
+            'descDepartamento' => $oDepartamento->getDescDepartamento(),
+            'fechaAlta' => $oDepartamento->getFechaCreacionDepartamento(),
+            'volumenNegocio' => $oDepartamento->getVolumenDeNegocio(),
+            'fechaBaja' => $oDepartamento->getFechaBajaDepartamento()
+        ]);
+    }
+} else {
+    $aErrores['criterioBusquedaDepartamento'] = "No se encuentra el departamento";
 }
-if(isset($_REQUEST['editar'])){
-    $_SESSION['paginaAnterior']= $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso']='wip';    
-    header("Location: index.php"); 
+if (isset($_REQUEST['editar'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'wip';
+    header("Location: index.php");
     exit();
 }
-if(isset($_REQUEST['borrar'])){
-    $_SESSION['paginaAnterior']= $_SESSION['paginaEnCurso'];
-    $_SESSION['paginaEnCurso']='wip';    
-    header("Location: index.php"); 
+if (isset($_REQUEST['borrar'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'wip';
+    header("Location: index.php");
     exit();
 }
 if (isset($_REQUEST['refrescar'])) {
     //Limpio el input de descripción.
     $_SESSION['criterioBusquedaDepartamento'] = "";
     header("Location: index.php");
-     exit();
+    exit();
 }
 //Array con el único campo consultado.
 $aErrores = [
@@ -64,38 +88,16 @@ if (isset($_REQUEST['buscar'])) {
             $entradaOk = false;
         }
     }
+//Si el booleano sigue a true.
+    if ($entradaOk) {
+        //Guardado en la sesión la descripción solicitada en el input.
+        $_SESSION['criterioBusquedaDepartamento'] = $_REQUEST['descripcion'];
+    } else {
+        $aErrores['criterioBusquedaDepartamento'] = "No se encuentra el departamento";
+    }header('Location: index.php');
+    exit;
 } else {
     $entradaOk = false;
-}
-//Si el booleano sigue a true.
-if ($entradaOk) {
-    //Guardado en la sesión la descripción solicitada en el input.
-    $_SESSION['criterioBusquedaDepartamento'] = $_REQUEST['descripcion'];
-}
-/* Guardado en la variable array de la ejecución de la función correspondiente 
- * del modelo con los datos proporcionados por el array de valores.
- */
-$aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($_SESSION['criterioBusquedaDepartamento']);
-//Array para guardar los campos del objeto Departamento y mostrarlos en la vista
-$aVMtoDepartamentos = [];
-//Si DepartamentoPDO ha devuelto resultado válido(un array)
-if ($aDepartamentos) {
-    //Recorro el array y por cada objeto...
-    foreach ($aDepartamentos as $oDepartamento) {
-        /**
-         * Utilizo el método array_push para introducir los valores devueltos
-         * por los getters para cada objeto departamento.
-         */
-        array_push($aVMtoDepartamentos, [
-            'codDepartamento' => $oDepartamento->getCodDepartamento(),
-            'descDepartamento' => $oDepartamento->getDescDepartamento(),
-            'fechaAlta' => $oDepartamento->getFechaCreacionDepartamento(),
-            'volumenNegocio' => $oDepartamento->getVolumenDeNegocio(),
-            'fechaBaja' => $oDepartamento->getFechaBajaDepartamento()
-        ]);
-    }
-} else {
-    $aErrores['criterioBusquedaDepartamento'] = "No se encuentra el departamento";
 }
 //Inclusión de la vista.
 require_once $aVistas['layout'];
