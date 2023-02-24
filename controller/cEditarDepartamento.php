@@ -1,15 +1,16 @@
 <?php
 $oDepartamento = DepartamentoPDO::buscarDepartamentoPorCod($_SESSION['codDepartamentoEnCurso']); 
+
 if (isset($_REQUEST['volver'])) {
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     header('Location: index.php');
     exit();
 }
-$aErrores = [
+$aErrores = [//array de errores
     "descripcion" => null,
     "volumenNegocio" => null
 ];
-$aRespuestas = [
+$aRespuestas = [//array de respuestas
     "descripcion" => null,
     "volumenNegocio" => null
 ];
