@@ -11,8 +11,7 @@
             <div id="divInputDescripcion">
                 <label for = "descripcion">Descripción:</label>
                 <input type = "text" id="descripcion" name = "descripcion" placeholder = "Máximo 30 caracteres" value = "<?php echo $_SESSION['criterioBusquedaDepartamento'] ?? '' ?>"/>
-                <p><?php echo '<span style="color: red;">' . $aErrores['criterioBusquedaDepartamento'] . '</span>'; ?></p>
-
+                <p><span style="color: red"><?php echo $aErrores['descripcion']; ?></span></p>
             </div>
             <div id="divBotonesDescripcion">
                 <input type = "submit" name = "buscar" value = "Buscar" id = "buscar"/>
@@ -45,16 +44,16 @@
                         <td class="numerica"><?php echo $departamentoEnCurso['fechaBaja'] ?></td>
                         <td>
                             <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">
-                                <button type="submit" name="editar" id="editarConsultar" value="editar">editar</button>
+                                <button type="submit" name="editar" id="editarConsultar" value="<?php echo $departamentoEnCurso['codDepartamento']; ?>">editar</button>
                                 <button type="submit" name="borrar" id="borrar" value="borrar">borrar</button>
                             </form>
                         </td>
                     </tr>
                     <?php
                 }
-            } else {
-                echo $aErrores['criterioBusquedaDepartamento'];
-            }
+            } /*else {
+                echo $aErrores['descripcion'];
+            }*/
             ?>
         </tbody>
     </table>

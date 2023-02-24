@@ -30,7 +30,9 @@ $aControladores=[
     "rss"=>"controller/cRSS.php",
      "registro"=>"controller/cRegistro.php",    
     "miCuenta"=>"controller/cMiCuenta.php",
-    "cambiarPassword"=>"controller/cCambiarPassword.php"
+    "cambiarPassword"=>"controller/cCambiarPassword.php",
+    "editarDepartamento"=>"controller/cEditarDepartamento.php",
+    "borrarDepartamento"=>"controller/cBorrarDepartamento.php"
 ];
 
 $aVistas=[
@@ -52,5 +54,7 @@ $aVistas=[
     "rss"=>"view/vRSS.php",
     "registro"=>"view/vRegistro.php",
     "miCuenta"=>"view/vMiCuenta.php",
-    "cambiarPassword"=>"view/vCambiarPassword.php"
+    "cambiarPassword"=>"view/vCambiarPassword.php",
+    "editarDepartamento"=>"view/vEditarDepartamento.php",
+    "borrarDepartamento"=>"view/vBorrarDepartamento.php"
 ];

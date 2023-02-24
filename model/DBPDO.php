@@ -14,7 +14,7 @@ class DBPDO implements DB {
 
     /**
      * @author Ricardo Santiago Tomé - RicardoSantom en Github <https://github.com/RicardoSantom>
-     * @return Object $oResultado Guarda el resultado de la ejecución y resultado
+     * @return Object $oPDOStatementResultadoConsulta Guarda el resultado de la ejecución y resultado
      * recogio por una sentencia mysql.
      * @param String $sentenciaSQL Sentencia en lenguaje SQL
      * @param  $parametros  Lista de parámetros para sacar datos de la DB
@@ -22,13 +22,13 @@ class DBPDO implements DB {
     public static function ejecutarConsulta($sentenciaSQL, $parametros = null) {
         try {
 // Conexión con la base de datos.
-            $DB208DWESLoginLogoff = new PDO(DSN, USER, PASSWORD);
+            $DB208DWESProyectoFinal = new PDO(DSN, USER, PASSWORD);
 // Preparación de la consulta.
-            $oResultado = $DB208DWESLoginLogoff->prepare($sentenciaSQL);
+            $oPDOStatementResultadoConsulta = $DB208DWESProyectoFinal->prepare($sentenciaSQL);
 //Ejecución de consulta con parámetros facilitados a la función.
-            $oResultado->execute($parametros);
+            $oPDOStatementResultadoConsulta->execute($parametros);
 //Devolución del resultado de la consulta
-            return $oResultado;
+            return $oPDOStatementResultadoConsulta;
         } catch (PDOException $excepcion) {
             /* Si hay errores construye un objeto ErrorApp y lo guarda en la sesión junto
              * con la página anterior(inicioPrivado) a la que navegará para mostrar los errores.
@@ -41,7 +41,7 @@ class DBPDO implements DB {
             exit();
         } finally {
 //Cerrado base de datos
-            unset($DB208DWESLoginLogoff);
+            unset($DB208DWESProyectoFinal);
         }
     }
 }
