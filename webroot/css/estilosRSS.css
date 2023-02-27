@@ -2,15 +2,31 @@
     Created on : 30 ene 2023, 0:46:03
     Author     : Ricardo Santiago Tomé
 */
-#divWip{
+main{
+    position: relative;
+    min-height: 2024px;
+    padding-bottom: 6rem;
+}
+#rss span{
+    font-size: 3rem;
+}
+#formRss{
+    display: flex;
+    position: absolute;
+    right: 2rem;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+}
+#articleRss{
     text-align: center;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     position: relative;
-    top: 7rem;
+    top: 3rem;
     height: 18rem;
 }
-#divWip h2{
+h2{
     text-align: center;
     font-family: 'LatoLightItalic';
     font-weight: bold;
@@ -19,7 +35,7 @@
     margin-top: 2.5rem;
     margin-bottom: 2rem;
 }
-#divWip h3{
+h3{
     font-family: 'LatoLight';
     font-size: 24px;
     font-weight: 400;
@@ -27,6 +43,7 @@
     border-bottom: 2px solid #99a0a1 ;
     width: 400px;
     margin: 2.5rem auto;
+    text-align: center;
 }
 #volver{
     align-items: center;
@@ -34,7 +51,7 @@
     min-height: 2.5rem;
     padding: 0 2rem;
     cursor: pointer;
-   background-color: #d9c7c7;
+    background-color: #d9c7c7;
     font-weight: bold;
     font-size: 22px;
     color: #344079;
