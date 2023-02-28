@@ -21,7 +21,7 @@
                     <th class="numerica"><input id="volumen" type="text" id="volumen" name="volumen" value="<?php echo $aVistaEliminarDepartamento['volumen']; ?>" readonly style="background-color:#cccccc;;"></th>
                 </tr>
                 <tr>
-                    <th class="alfabetica"><label for="fechaAlta">fecha Alta: </label></th>
+                    <th class="alfabetica"><label for="FechaAlta">fecha Alta: </label></th>
                     <th class="numerica"><input type="text"  name="fechaAlta" value="<?php echo $aVistaEliminarDepartamento['fechaAlta']; ?>" readonly style="background-color: #cccccc;;"></th>
                 </tr>
                 <tr>
