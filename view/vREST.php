@@ -19,10 +19,18 @@ $contador = 0;
     <h3>Vista REST</h3>
 </header>
 <main>
+
     <div id="divRest">
         <form id="formRest" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <fieldset>
                 <legend><h2>Diccionario inglés:</h2></legend>
+                <div id="instrucciones">
+                    <h4>Obtener definiciones de palabras</h4>
+                    <p><strong>Uso</strong> : A continuación se muestra la sintaxis básica de una solicitud URL a la API:</p>
+                    <p>"https://api.dictionaryapi.dev/api/v2/entries/en/palabra"</p>
+                    <h4>Por ejemplo, para obtener la definición de la palabra inglesa hello, puede enviar una solicitud a</h4>
+                    https://api.dictionaryapi.dev/api/v2/entries/en/hello
+                </div>
                 <div id="divPalabra">
                     <label id="labelPalabra">Introduzca palabra:</label>
                     <input type='text' name='palabra' id="palabra" value="<?php

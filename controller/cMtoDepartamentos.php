@@ -46,7 +46,38 @@ if (isset($_REQUEST['editar'])) {
     header("Location: index.php");
     exit();
 }
-if (isset($_REQUEST['borrar'])) {
+if (isset($_REQUEST['eliminar'])) {
+     $_SESSION['codDepartamentoEnCurso'] = $_REQUEST['eliminar'];
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'eliminarDepartamento';
+    header("Location: index.php");
+    exit();
+}
+if (isset($_REQUEST['rehabilitar'])) {
+    $_SESSION['codDepartamentoEnCurso'] = $_REQUEST['rehabilitar'];
+    DepartamentoPDO::rehabilitarDepartamento($_SESSION['codDepartamentoEnCurso']);
+    header("Location: index.php");
+    exit();
+}
+if (isset($_REQUEST['deshabilitar'])) {
+    $_SESSION['codDepartamentoEnCurso'] = $_REQUEST['deshabilitar'];
+    DepartamentoPDO::bajaLogicaDepartamento($_SESSION['codDepartamentoEnCurso']);
+    header("Location: index.php");
+    exit();
+}
+if (isset($_REQUEST['aniadir'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'altaDepartamento';
+    header("Location: index.php");
+    exit();
+}
+if (isset($_REQUEST['importar'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'wip';
+    header("Location: index.php");
+    exit();
+}
+if (isset($_REQUEST['exportar'])) {
     $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'wip';
     header("Location: index.php");

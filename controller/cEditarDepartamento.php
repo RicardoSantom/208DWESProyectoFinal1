@@ -6,11 +6,11 @@ if (isset($_REQUEST['volver'])) {
     header('Location: index.php');
     exit();
 }
-$aErrores = [//array de errores
+$aErrores = [
     "descripcion" => null,
     "volumenNegocio" => null
 ];
-$aRespuestas = [//array de respuestas
+$aRespuestas = [
     "descripcion" => null,
     "volumenNegocio" => null
 ];
@@ -36,7 +36,7 @@ if (isset($_REQUEST['aceptar'])) {
         exit();
     }
 }
-$aVDepartamento = [
+$aVistaEditarDepartamento = [
     'codigo' => $oDepartamento->getCodDepartamento(),
     'descripcion' => $oDepartamento->getDescDepartamento(),
     'volumen' => $oDepartamento->getVolumenDeNegocio(),

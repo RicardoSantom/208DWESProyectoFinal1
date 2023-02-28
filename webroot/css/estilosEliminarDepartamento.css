@@ -22,12 +22,8 @@ body{
     align-content: stretch;
     justify-content: center;
 }
-header{
-    width: 50%;
-}
 main{
     width: 100%;
-    margin-top: 3rem;
 }
 article{
     position: absolute;
@@ -42,10 +38,8 @@ label{
 #descripcion{
     font-family: 'LatoLightItalic';
     width: 20rem;
-    line-height: 2rem;
-    font-size: 22px;
 }
-#buscar,#refrescar,#aniadir,#exportar,#importar{
+#eliminar{
     align-items: center;
     justify-content: center;
     min-height: 2.5rem;    
@@ -58,14 +52,11 @@ label{
     font-size: 22px;
     margin-bottom: 0.5rem;
 }
-#refrescar{
-    width: 15rem;
-}
-#buscar:hover,#refrescar:hover,#aniadir:hover,#exportar:hover,#importar:hover{
+#eliminar:hover{
     background-color: white;
     color: #344079
 }
-#volver{
+#cancelar{
     align-items: center;
     justify-content: center;
     min-height: 2.5rem;
@@ -77,7 +68,7 @@ label{
     font-size: 22px;
     color: #344079;
 }
-#volver:hover{
+#cancelar:hover{
     background-color: #344079;
     color: #d9c7c7;
 }
@@ -91,18 +82,14 @@ label{
 }
 #bienvenida{
     position: relative;
-    top: 14rem;
+    top: 12rem;
     text-align: center;
     font-family: 'LatoLightItalic';
     font-weight: bold;
     color: #3367ac;
     padding: 3rem auto;
-    width: 94%;
+    width: 54%;
     margin: 0 auto;
-}
-#divFormularios{
-    height: 200px;
-    display: inline;
 }
 #formInicioPrivado{
     position: absolute;
@@ -114,31 +101,17 @@ label{
     width: 90vw;
     height: 8rem;
 }
-#parrafoError{
-    font-size: 20px;
-}
 fieldset{
     display: flex;
     align-items: center;
 }
-#divVolver,#divBotones{
+/*#divInputDescripcion{
     display: flex;
-}
-#divVolver{
-    height: 2.5rem;
-}
-#divBotones{
-    width: 10rem;
-    height: 16rem;
-    position: absolute;
-    right: 35px;
-    display: flex;
-    flex-direction: column;
+    margin: 1rem auto;
     align-items: center;
-    top: -50px;
-}
+}*/
 #divInputDescripcion *{
-    margin: 1rem 1rem 0 0;
+    margin: 0 1rem 0 0;
 }
 #salirInicioPrivado{
     display: flex;
@@ -167,50 +140,39 @@ table tbody{
     font-size: 18px;
     color: #99a0a1;
 }
-tbody tr td{
-    border-bottom: 1px solid #cccccc;
-    height: 2rem;
+tbody tr th{
+     /*border-bottom: 1px solid #cccccc;*/
     border-collapse: separate;
-    width: 7rem;
 }
 .alfabetica{
     text-align: left;
 }
 .numerica{
-    text-align: right;
-}
-.fecha{
-    text-align: center;
-}
-.corta{
-    width: 1rem;
-}
-.media{
-    width: 0.75rem;
+    text-align: left;
 }
 #formVolver{
-    display: flex;
     position: absolute;
     top: 85px;
     left: 30px;
-    width: 100%;
-    justify-content: space-between;
-    height: 180px;
+}
+input{
+    font-family: 'LatoItalic';
+    font-size: 22px;
+}
+
+#codigo{    
+    height: 2rem;
+    width: 8rem;
+}
+#descripcion{
+    height: 2rem;
+    width: 30rem;
+}
+#volumen{
+    height: 2rem;
+    width: 8rem;
 }
 footer{
     position: fixed;
     bottom: 0;
-}
-#editarConsultar,#eliminar{
-    height: 2rem;
-    font-size: 1.75rem;
-}
-#rehabilitar,#deshabilitar{
-    font-weight: bolder;
-}
-#rehabilitar{
-    background-color: #33da24;
-}
-#deshabilitar{
-    background-color: #ff5d4e;
 }

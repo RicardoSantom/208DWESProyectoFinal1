@@ -33,7 +33,7 @@ if (isset($_REQUEST['buscar'])) {
         $entradaOk = false;
     }
 } else {
-    //Si si hay errores, el formulario no se ha rellenado nunca, booleano a false
+    //Si hay errores, el formulario no se ha rellenado nunca, booleano a false.
     $entradaOk = false;
 }
 //Si el booleano está a true
