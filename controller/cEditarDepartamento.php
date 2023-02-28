@@ -1,4 +1,5 @@
 <?php
+//FALTAN COMENTARIOS ('WIP')
 $oDepartamento = DepartamentoPDO::buscarDepartamentoPorCod($_SESSION['codDepartamentoEnCurso']); 
 
 if (isset($_REQUEST['volver'])) {

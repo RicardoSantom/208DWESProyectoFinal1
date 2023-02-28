@@ -1,6 +1,6 @@
 <?php
-
-if (isset($_REQUEST['cancelar'])) {//al pulsar vuelve a la pagina anterior
+//FALTAN COMENTARIOS ('WIP')
+if (isset($_REQUEST['cancelar'])) {
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     header('Location: index.php');
     exit();
