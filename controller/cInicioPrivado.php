@@ -35,6 +35,12 @@ if(isset($_REQUEST['mtoDepartamentos'])){
     header("Location: index.php"); 
     exit();
 }
+if(isset($_REQUEST['mtoUsuarios'])){
+    $_SESSION['paginaEnCurso']='mtoUsuarios';
+    $_SESSION['paginaAnterior']='inicioPrivado';
+    header("Location: index.php"); 
+    exit();
+}
 if(isset($_REQUEST['rest'])){
     $_SESSION['paginaEnCurso']='rest';
     $_SESSION['paginaAnterior']='inicioPrivado';

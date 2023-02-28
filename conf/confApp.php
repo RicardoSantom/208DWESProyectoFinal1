@@ -34,7 +34,8 @@ $aControladores = [
     "cambiarPassword" => "controller/cCambiarPassword.php",
     "editarDepartamento" => "controller/cEditarDepartamento.php",
     "altaDepartamento" => "controller/cAltaDepartamento.php",
-    "eliminarDepartamento" => "controller/cEliminarDepartamento.php"
+    "eliminarDepartamento" => "controller/cEliminarDepartamento.php",
+    "mtoUsuarios"=>"controller/cMtoUsuarios.php"
 ];
 
 $aVistas = [
@@ -60,4 +61,5 @@ $aVistas = [
     "editarDepartamento" => "view/vEditarDepartamento.php",
     "altaDepartamento" => "view/vAltaDepartamento.php",
     "eliminarDepartamento" => "view/vEliminarDepartamento.php",
+    "mtoUsuarios"=>"view/vMtoUsuarios.php"
 ];

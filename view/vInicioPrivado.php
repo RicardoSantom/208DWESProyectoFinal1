@@ -7,6 +7,11 @@
     <input type="submit" id="detalle" value="Detalle" name="detalle">
     <input type="submit" id="editar_Perfil" value="Editar Perfil" name="editar_Perfil">
     <input type="submit" id="mtoDepartamentos" value="Mto.Departamentos" name="mtoDepartamentos">
+    <?php
+    if ($_SESSION['User208DWESProyectoFinal']->getPerfil() == 'administrador') {
+        echo '<input type="submit" id="mtoUsuarios" value="Mto.Usuarios" name="mtoUsuarios">';
+    }
+    ?>
     <input type="submit" id="rest" value="Rest" name="rest">
     <input type="submit" id="error" value="Error" name="error">
     <input type="submit" id="salir" value="Cerrar Sesion" name="salir">

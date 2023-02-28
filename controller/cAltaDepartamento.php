@@ -28,7 +28,7 @@ if (isset($_REQUEST['aceptar'])){
         "descripcion"=> validacionFormularios::comprobarAlfabetico($_REQUEST['descripcion'],255,5,OBLIGATORIO),
         "volumen"=> validacionFormularios::comprobarFloat($_REQUEST['volumen'], PHP_FLOAT_MAX, -PHP_FLOAT_MAX, obligatorio: OBLIGATORIO)
     ];
-    //comprobamos que no hay errores
+    //Comprobamos que no hay errores
     foreach ($aErrores as $clave => $valor) {
         if ($valor != null) {
             $entradaOk = false;
