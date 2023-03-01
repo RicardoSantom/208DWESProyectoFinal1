@@ -44,7 +44,7 @@ if (isset($_REQUEST['aceptar'])) {
     }
 }
 if (isset($_REQUEST['borrarUsuario'])) {
-    $_SESSION['paginaEnCurso'] = 'wip';
+    $_SESSION['paginaEnCurso'] = 'borrarCuenta';
     $_SESSION['paginaAnterior'] = 'miCuenta';
     header("Location: index.php");
     exit();
