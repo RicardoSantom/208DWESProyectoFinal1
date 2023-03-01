@@ -121,7 +121,7 @@
                             <td>Fecha Hora Ultima Conexion Anterior: </td>
                             <td><?php
                                 if ($aVistaDatosUsuario['fechaHoraUltimaConexionAnterior'] != null) {
-                                    echo $aVistaDatosUsuario['fechaHoraUltimaConexionAnterior'];
+                                    echo date_format($aVistaDatosUsuario['fechaHoraUltimaConexionAnterior'], 'Y-m-d H:i:s');
                                 } else {
                                     echo 'Aún no hay datos de su última conexión anterior.';
                                 }
