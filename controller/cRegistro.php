@@ -56,17 +56,17 @@ if (isset($_REQUEST['registro'])) {
      * permanecer el booleano a true, se da de alta al usuario creando una instancia
      * de UsuarioPDO y se regresa a inicioPrivado.
      */
-    if ($_REQUEST['password'] == $_REQUEST['repetirPassword'] && $entradaOk) {
-        $oUsuario = UsuarioPDO::altaUsuario($_REQUEST['usuario'], $_REQUEST['password'], $_REQUEST['descripcion'],$perfil);
+    if (($_REQUEST['password'] == $_REQUEST['repetirPassword']) && $entradaOk) {
+        $oUsuario = UsuarioPDO::altaUsuario($_REQUEST['usuario'], $_REQUEST['password'], $_REQUEST['descripcion'], $perfil);
         $_SESSION['User208DWESProyectoFinal'] = $oUsuario;
         $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-        header("Location: index.php");
-        exit();
+        $entradaOk=true;
+    } else {
+        $entradaOk=false;
     }
 }
-if (!empty($_POST) == true) {
-    $oUsuario = UsuarioPDO::altaUsuario($_REQUEST['usuario'], $_REQUEST['password'], $_REQUEST['descripcion'],$perfil);
-        $_SESSION['User208DWESProyectoFinal'] = $oUsuario;
+if (!empty($_POST) == true && $entradaOk) {
+    $_SESSION['User208DWESProyectoFinal'] = $oUsuario;
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
     header("Location: index.php");
     exit();
