@@ -1,6 +1,6 @@
 <header id="headerId">
     <h1>Proyecto Final</h1>
-    <h3>Eliminar Departamento</h3>
+    <h3>Vista <?php echo ucfirst($_SESSION['paginaEnCurso']) ?></h3>
 </header>
 <main>
     <form id = "formInicioPrivado" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
@@ -21,7 +21,7 @@
                     <th class="numerica"><input id="volumen" type="text" id="volumen" name="volumen" value="<?php echo $aVistaEliminarDepartamento['volumen']; ?>" readonly style="background-color:#cccccc;;"></th>
                 </tr>
                 <tr>
-                    <th class="alfabetica"><label for="fechaAlta">fecha Alta: </label></th>
+                    <th class="alfabetica"><label for="FechaAlta">fecha Alta: </label></th>
                     <th class="numerica"><input type="text"  name="fechaAlta" value="<?php echo $aVistaEliminarDepartamento['fechaAlta']; ?>" readonly style="background-color: #cccccc;;"></th>
                 </tr>
                 <tr>

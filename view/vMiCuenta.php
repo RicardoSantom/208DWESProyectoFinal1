@@ -1,3 +1,7 @@
+<header id="headerId">
+    <h1>Proyecto Final</h1>
+    <h3>Vista <?php echo ucfirst($_SESSION['paginaEnCurso']) ?></h3>
+</header>
 <div class="codigophp">
     <h1>Editar Perfil</h1>
     <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">

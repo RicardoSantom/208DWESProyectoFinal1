@@ -42,7 +42,16 @@ class UsuarioPDO implements UsuarioDB {
             echo $ex->getMessage();
         }
     }
-
+    
+    /**
+     * Función que registra la fecha y hora de la última conexión de un usuario
+     * 
+     * Función estática que recibe un objeto usuario, incrementa en 1 el número
+     * de conexiones que ha realizado y actualiza este dato en la DB
+     * 
+     * @param Usuario $oUsuario Usuario al que queremos actualizar su número de conexiones
+     * @return Usuario Devuelve el objeto usuario con el nº de conexiones actualizado.
+     */
     public static function registrarUltimaConexion($oUsuario) {
         $oUsuario->setNumConexiones($oUsuario->getNumConexiones() + 1);
         $sSentenciaSQLActualizacionNumConexiones = <<<QUERY
@@ -52,20 +61,42 @@ class UsuarioPDO implements UsuarioDB {
         DBPDO::ejecutarConsulta($sSentenciaSQLActualizacionNumConexiones);
         return $oUsuario;
     }
-
-    public static function altaUsuario($codUsuario, $password, $descUsuario) {
+    
+    /**
+     * Función que da de alta un usuario nuevo
+     * 
+     * Función estática que construye un usuario y actualiza su registro en la DB
+     * esi no existiera previamente
+     * 
+     * @param string $codUsuario Código del usuario
+     * @param sttring $password Password del usuario
+     * @param string $descUsuario Descripción del usuario
+     * @param string $perfil Tipo de usuario
+     * @return boolean|\Usuario
+     */
+    public static function altaUsuario($codUsuario, $password, $descUsuario,$perfil) {
         $sSentenciaSQLAltaUsuario = <<<QUERY
-                INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario, T01_NumConexiones, T01_FechaHoraUltimaConexion) 
+                INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario, T01_NumConexiones, 
+                    T01_FechaHoraUltimaConexion) 
                     values('{$codUsuario}',sha2(concat('{$codUsuario}','{$password}'),256),'{$descUsuario}',1, now());
                 QUERY;
         if (self::validarCodNoExiste(!$codUsuario)) {
             DBPDO::ejecutarConsulta($sSentenciaSQLAltaUsuario);
-            return new Usuario($codUsuario, hash('sha256', ($codUsuario . $password)), $descUsuario, 1, new DateTime("now"));
+            return new Usuario($codUsuario, hash('sha256', ($codUsuario . $password)), $descUsuario, 1, new DateTime("now"),$perfil);
         } else {
             return false;
         }
     }
-
+    
+    /**
+     * Función que modifica un usuario
+     * 
+     * Función estática que recibe un objeto usuario, un código y modifica
+     * la descripción del usuario.
+     * 
+     * @param Usuario $oUsuario Usuario a modififcar
+     * @param string $descUsuario Descripción del usuario a modificar
+     */
     public static function modificarUsuario($oUsuario, $descUsuario) {
         $sSentenciaSQLmodificarUsuario = <<<QUERY
                 UPDATE T01_Usuario set T01_DescUsuario="{$descUsuario}" WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
@@ -73,7 +104,17 @@ class UsuarioPDO implements UsuarioDB {
         DBPDO::ejecutarConsulta($sSentenciaSQLmodificarUsuario);
         $oUsuario->setDescUsuario($descUsuario);
     }
-
+    
+    /**
+     * Funció mque cambia el password de un usuario
+     * 
+     * Función estática que recibe un objeto Usuario y un password que 
+     * actualizará en la DB
+     * 
+     * @param type $oUsuario
+     * @param type $nuevoPassword
+     * @return boolean
+     */
     public static function cambiarPassword($oUsuario, $nuevoPassword) {
         $entradaOk = false;
         $sSentenciaSQLmodificarContraseña = <<<QUERY
@@ -85,7 +126,17 @@ class UsuarioPDO implements UsuarioDB {
         }
         return $entradaOk;
     }
-
+    
+    /**
+     * Función que borra un usuario de la DB.
+     * 
+     * Función estática que recibe un código de usuario, borra el usuario de la
+     * DB al que pertenezca el código y devuelve un booleano con el resultado.
+     * 
+     * @param string $codUsuario Código del usuario a borrar
+     * @return boolean Si lo ha borrado devuelve true. Si no lo he podido borrar
+     * devuelve false.
+     */
     public static function borrarUsuario($codUsuario) {
         $entradaOk = false;
         $sSentenciaSQLborrarUsuario = <<<QUERY
@@ -97,6 +148,15 @@ class UsuarioPDO implements UsuarioDB {
         return $entradaOk;
     }
 
+    /**
+     * Función que valida la existencia o no de un código de usuario en la DB.
+     * 
+     * Función estática que recibe un código de usuario y comprueba si existe
+     * previamente en la DB, devuelve true o false indicando si existe o no
+     * 
+     * @param string $codUsuario Código a comprobar en DB.
+     * @return boolean Si exise el código devuelve true, sino, devuelve false.
+     */
     public static function validarCodNoExiste($codUsuario) {
         $codigoNoExiste = true;
         $sSentenciaSQLValidarCodigo = <<< query

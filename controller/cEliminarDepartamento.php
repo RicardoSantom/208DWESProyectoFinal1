@@ -16,7 +16,7 @@ $aVistaEliminarDepartamento=[
     'codigo'=>$oDepartamento->getCodDepartamento(),
     'descripcion'=>$oDepartamento->getDescDepartamento(),
     'volumen'=>$oDepartamento->getVolumenDeNegocio(),
-    'fechaAlta'=>$oDepartamento->getFechaCreacionDepartamento(),
+    'fechaAlta'=>$oDepartamento->getFechaCreacionDepartamento()->format('Y-m-d'),
     'fechaBaja'=>$oDepartamento->getFechaBajaDepartamento()
         ];
 require_once $aVistas['layout'];

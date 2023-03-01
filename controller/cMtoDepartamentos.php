@@ -33,7 +33,7 @@ if ($aDepartamentos) {
         array_push($aVMtoDepartamentos, [
             'codDepartamento' => $oDepartamento->getCodDepartamento(),
             'descDepartamento' => $oDepartamento->getDescDepartamento(),
-            'fechaAlta' => $oDepartamento->getFechaCreacionDepartamento(),
+            'fechaAlta' => $oDepartamento->getFechaCreacionDepartamento()->format('Y-m-d H:i:s'),
             'volumenNegocio' => $oDepartamento->getVolumenDeNegocio(),
             'fechaBaja' => $oDepartamento->getFechaBajaDepartamento()
         ]);

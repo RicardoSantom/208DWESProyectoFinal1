@@ -1,0 +1,230 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 21 ene 2023, 12:09:58
+    Author     : desar
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato-Regular';
+}
+body{
+    background-color: #fff;
+    font-family: 'LatoRegular';
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+}
+main{
+    width: 100%;
+}
+article{
+    position: absolute;
+    top: 16rem;
+}
+input{
+    font-family: 'LatoItalic';
+    font-size: 22px;
+}
+label{
+    font-family: 'LatoLight';
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 2.5rem;
+}
+#descripcion{
+    font-family: 'LatoLightItalic';
+    width: 20rem;
+}
+#registro{
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;    
+    width: 8rem;
+    margin: 0 2rem;
+    cursor: pointer;
+    background-color: #344079;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+    border: 2px solid black;
+}
+#registro:hover{
+    background-color: white;
+    color: #344079
+}
+#cancelar{
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;
+    width: 8rem;
+    padding: 0 2rem;
+    cursor: pointer;
+    background-color: #d9c7c7;
+    font-weight: bold;
+    font-size: 22px;
+    color: #344079;
+    border: 2px solid black;
+}
+#cancelar:hover{
+    background-color: #344079;
+    color: #d9c7c7;
+}
+.imgUsuario{
+    position: absolute;
+    top: 4.5rem;
+    right: 3rem;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+}
+#bienvenida{
+    position: relative;
+    top: 12rem;
+    text-align: center;
+    font-family: 'LatoLightItalic';
+    font-weight: bold;
+    color: #3367ac;
+    padding: 3rem auto;
+    width: 54%;
+    margin: 0 auto;
+}
+#formInicioPrivado{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top:8rem;
+    left: 2rem;
+    margin: 0 auto;
+    width: 90vw;
+    height: 8rem;
+}
+fieldset{
+    display: flex;
+    align-items: center;
+}
+/*#divInputDescripcion{
+    display: flex;
+    margin: 1rem auto;
+    align-items: center;
+}*/
+#divInputDescripcion *{
+    margin: 0 1rem 0 0;
+}
+#salirInicioPrivado{
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    width: 6rem;
+    height: 2rem;
+    border: none;
+    background-color: transparent;
+    color: #99a0a1;
+    font-size: 20px;
+}
+table caption{
+    font-family: 'LatoLight';
+    font-size: 26px;
+    font-weight: 400;
+    color: #333333;
+    text-decoration:underline solid  #333333;
+    padding-bottom: 1rem;
+}
+table thead th{
+    font-size: 22px;
+   text-decoration: underline solid #3367ac;
+}
+table tbody{
+    font-size: 18px;
+    color: #99a0a1;
+}
+tbody tr th{
+     /*border-bottom: 1px solid #cccccc;*/
+    border-collapse: separate;
+}
+.alfabetica{
+    text-align: left;
+}
+.numerica{
+    text-align: left;
+}
+#formVolver{
+    position: absolute;
+    top: 85px;
+    left: 30px;
+}
+#codigo{    
+    height: 2rem;
+    width: 8rem;
+}
+#descripcion{
+    height: 2rem;
+    width: 30rem;
+}
+#volumen{
+    height: 2rem;
+    width: 8rem;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+}
+/*************ESTILOS CAPTCHA***********/
+.error {
+    border: solid 3px #FF0000 !important;
+
+}
+.correcto{
+    border: solid 3px #039e1d;
+
+}
+
+.captcha {
+    text-align: center;
+    position: relative;
+    width: 390px;
+    height: 250px;
+    display: none;
+}
+.cuestion {
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: xx-large;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin: 5px;
+    margin-top: 20px;
+
+}
+
+.resultado {
+    border: thick solid rgb(14, 121, 121);
+
+}
+
+.opcaptcha {
+    border: thick solid teal;
+    color: rgb(14, 121, 121);
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: xx-large;
+    width: 50px;
+    height: 50px;
+    float: left;
+    margin: 25px;
+    margin-top: 20px;
+    background-color: lightgray;
+
+}
