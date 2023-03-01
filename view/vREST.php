@@ -16,7 +16,7 @@ $contador = 0;
 ?>
 <header id="headerId">
     <h1>Proyecto Final</h1>
-    <h3>Vista REST</h3>
+    <h3>Vista <?php echo ucfirst($_SESSION['paginaEnCurso']) ?></h3>
 </header>
 <main>
 

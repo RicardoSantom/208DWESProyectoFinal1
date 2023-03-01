@@ -9,8 +9,8 @@
  */
 ?>
 <header id="headerId">
-    <h1>Aplicación Final</h1>
-    <h3>MANTENIMIENTO DE USUARIOS</h3>
+    <h1>Proyecto Final</h1>
+    <h3>Vista <?php echo ucfirst($_SESSION['paginaEnCurso']) ?></h3>
 </header>
 <main>
     <div id="divWip">

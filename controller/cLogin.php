@@ -1,15 +1,16 @@
 <?php
+
 require_once 'core/221024ValidacionFormularios.php';
 if (isset($_REQUEST['cancelar'])) {
-    $_SESSION['paginaAnterior']='inicioPublico';
-    $_SESSION['paginaEnCurso'] =  $_SESSION['paginaAnterior'];
+    $_SESSION['paginaAnterior'] = 'inicioPublico';
+    $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];
     header('Location: index.php');
     exit();
 }
 if (isset($_REQUEST['registrarse'])) {
-   $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
-   $_SESSION['paginaEnCurso']='registro';
-    header("Location: index.php"); 
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
+    $_SESSION['paginaEnCurso'] = 'registro';
+    header("Location: index.php");
     exit();
 }
 if (isset($_REQUEST['iniciarSesion'])) {
@@ -38,14 +39,15 @@ if (isset($_REQUEST['iniciarSesion'])) {
     if ($entradaOk) {
         UsuarioPDO::registrarUltimaConexion($oUsuario);
         $_SESSION['User208DWESProyectoFinal'] = $oUsuario;
+        $_SESSION['perfilUsuarioEnCurso'] =$oUsuario->getPerfil();
         $_SESSION['paginaEnCurso'] = 'inicioPrivado';
         header("Location: index.php");
         exit();
     }
 }
 //Si se pulsa tecnologias, se navega a su vista correspondiente
-if(isset($_REQUEST['tecnologias'])){
-    $_SESSION['paginaAnterior']=$_SESSION['paginaEnCurso'];
+if (isset($_REQUEST['tecnologias'])) {
+    $_SESSION['paginaAnterior'] = $_SESSION['paginaEnCurso'];
     $_SESSION['paginaEnCurso'] = 'tecnologias';
     header("Location: index.php");
     exit();

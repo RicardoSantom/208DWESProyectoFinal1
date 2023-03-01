@@ -1,6 +1,6 @@
 <header id="headerId">
     <h1>Proyecto Final</h1>
-    <h3>Alta Departamento</h3>
+    <h3>Vista <?php echo ucfirst($_SESSION['paginaEnCurso']) ?></h3>
 </header>
 <main>
     <form id="formInicioPrivado" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
