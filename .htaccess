@@ -1,3 +1,5 @@
 ErrorDocument 404 /pageerror/404.html
 ErrorDocument 403 /pageerror/403.html
-Redirect 302 /google "https://www.google.es"
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://daw208.ieslossauces.es/$1 [R,L]
