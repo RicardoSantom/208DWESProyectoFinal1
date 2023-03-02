@@ -10,22 +10,22 @@
                 <tr>
                     <th class="alfabetica"><label for = "usuario">Usuario:</label></th>
                     <th class="numerica"><input style = "background: #ffffcc" type = "text" id="usuario" name = "usuario" class="error"/></th>
-                    <td style="color: red;"> <?php echo $aErrores['usuario']; ?></td>
+                    <td class="error" style="color: red;"> <?php echo $aErrores['usuario']; ?></td>
                 </tr>
                 <tr>
                     <th class="alfabetica"><label for = "password">Contraseña:</label></th>
                     <th class="numerica"><input style = "background: #ffffcc" id="password" type = "password" name = "password" class="error"/></th>
-                    <td style="color: red;"> <?php echo $aErrores['password']; ?></td>
+                    <td  class="error" style="color: red;"> <?php echo $aErrores['password']; ?></td>
                 </tr>
                 <tr>
                     <th class="alfabetica"><label for = "repetirPassword">Vuelva a introducir la contraseña:</label></th>
                     <th class="numerica"><input style = "background: #ffffcc" id="repetirPassword" type = "password" name = "repetirPassword" class="error"/></th>
-                    <td style="color: red;"> <?php echo $aErrores['repetirPassword']; ?></td>
+                    <td  class="error" style="color: red;"> <?php echo $aErrores['repetirPassword']; ?></td>
                 </tr>
                 <tr>
                     <th class="alfabetica"><label for = "descripcion">Descripción:</label></th>
                     <th class="numerica"><input style = "background: #ffffcc" placeholder="Máximo 60 caracteres" id="descripcion" type = "text" name = "descripcion" class="error"/></th>
-                    <td style="color: red;"> <?php echo $aErrores['descripcion']; ?></td>
+                    <td  class="error" style="color: red;"> <?php echo $aErrores['descripcion']; ?></td>
                 </tr>
             </tbody>
             <tfoot>

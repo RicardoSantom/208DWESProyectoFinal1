@@ -78,6 +78,9 @@ label{
     background-color: #344079;
     color: #d9c7c7;
 }
+.error{
+    width: 100px;
+}
 .imgUsuario{
     position: absolute;
     top: 4.5rem;

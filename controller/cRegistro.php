@@ -57,18 +57,29 @@ if (isset($_REQUEST['registro'])) {
      * de UsuarioPDO y se regresa a inicioPrivado.
      */
     if (($_REQUEST['password'] == $_REQUEST['repetirPassword']) && $entradaOk) {
-        $oUsuario = UsuarioPDO::altaUsuario($_REQUEST['usuario'], $_REQUEST['password'], $_REQUEST['descripcion'], $perfil);
+        $oUsuario = UsuarioPDO::altaUsuario($_REQUEST['usuario'], $_REQUEST['password'], $_REQUEST['descripcion'], 'usuario');
         $_SESSION['User208DWESProyectoFinal'] = $oUsuario;
         $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-        $entradaOk=true;
+        $aVistaDatosUsuario = [
+            'codUsuario' => ($_SESSION['User208DWESProyectoFinal']->getCodUsuario()),
+            'password' => ($_SESSION['User208DWESProyectoFinal']->getPassword()),
+            'descUsuario' => ($_SESSION['User208DWESProyectoFinal']->getDescUsuario()),
+            'numConexiones' => ($_SESSION['User208DWESProyectoFinal']->getNumconexiones()),
+            'fechaHoraUltimaConexion' => ($_SESSION['User208DWESProyectoFinal']->getFechaHoraUltimaConexion()),
+            'fechaHoraUltimaConexionAnterior' => ($_SESSION['User208DWESProyectoFinal']->getFechaHoraUltimaConexionAnterior()),
+            'perfil' => $_SESSION['User208DWESProyectoFinal']->getPerfil(),
+            'imagenUsuario' => $_SESSION['User208DWESProyectoFinal']->getImagenUsuario()
+        ];
+        $entradaOk = true;
     } else {
-        $entradaOk=false;
+        $entradaOk = false;
     }
 }
-if (!empty($_POST) == true && $entradaOk) {
-    $_SESSION['User208DWESProyectoFinal'] = $oUsuario;
+/*if (!empty($_POST) == true) {
+    //$oUsuario = UsuarioPDO::altaUsuario($_REQUEST['usuario'], $_REQUEST['password'], $_REQUEST['descripcion'], 'usuario');
+    // $_SESSION['User208DWESProyectoFinal'] = $oUsuario;
     $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-    header("Location: index.php");
-    exit();
-}
+
+    $entradaOk = true;
+}*/
 require_once $aVistas['layout'];

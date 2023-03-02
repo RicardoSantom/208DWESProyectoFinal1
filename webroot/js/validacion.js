@@ -49,7 +49,7 @@ function examen() {
 
     repetirPassword.addEventListener("keyup", funcionValidarRepetirPassword);
     function funcionValidarRepetirPassword(e) {
-        if (validarRepetirPassword.test(e.target.value)) {
+        if (validarRepetirPassword.test(e.target.value) && (password.value == repetirPassword.value)) {
             repetirPasswordOK = true;
             repetirPassword.classList.remove("error");
             repetirPassword.classList.add("correcto");
@@ -73,7 +73,13 @@ function examen() {
         }
     }
     /********************EJERCICIO 3*************************/
+    /*botonRegistro.setAttribute("name","comprobar");
+    botonRegistro.setAttribute("value","Comprobar");
+    botonRegistro.style.backgroundColor="green";
     var enviarDatosOK = false;
+    if(botonRegistro.value=="Comprobar"){
+        console.log("prueba value Comprobar");
+    }*/
     botonRegistro.addEventListener("click", comprobarCampos);
     function comprobarCampos(ev) {
         ev.preventDefault();
@@ -81,7 +87,7 @@ function examen() {
             enviarDatosOK = true;
         } else {
             enviarDatosOK = false;
-            alert("Ha introducido datos incorrectos");
+            //alert("Ha introducido datos incorrectos");
         }
 
         if (enviarDatosOK == true) {
@@ -115,9 +121,9 @@ function examen() {
     let aleatorio1 = parseInt(Math.random() * 19);
     let aleatorio2 = parseInt(Math.random() * 19);
     /*while (aleatorio1 == aleatorio2 || aleatorio1 == resultado || aleatorio2 == resultado) {
-        aleatorio2 = parseInt(Math.random() * 19);
-        aleatorio1 = parseInt(Math.random() * 19);
-    }*/
+     aleatorio2 = parseInt(Math.random() * 19);
+     aleatorio1 = parseInt(Math.random() * 19);
+     }*/
 
 
     let arrayAleatorios = [resultado, aleatorio1, aleatorio2];
@@ -167,6 +173,7 @@ function examen() {
     function regresar(ev) {
         ev.preventDefault();
     }
+
     destinoArrastrable.addEventListener("drop", comprobarCuentas);
     function comprobarCuentas(ev) {
         /**identificar arrastrado */
@@ -181,12 +188,11 @@ function examen() {
             var mensajeHappy = document.createElement("p");
             mensajeHappy.textContent = "ENHORABUENA, NO ERES UN ROBOT";
             mensajeEnhorabuena = setTimeout(() => {
-                console.log("Prueba mensaje Enhorabuena");
                 captcha.removeChild(pCaptcha);
                 captcha.insertAdjacentElement("afterBegin", mensajeHappy);
             }, 2000);
+
             enviarForm = setTimeout(() => {
-                console.log("Prueba submit");
                 formInicioPrivado.submit();
             }, 4000);
 
@@ -195,4 +201,5 @@ function examen() {
             ev.target.textContent = "NO";
         }
     }
+
 }
