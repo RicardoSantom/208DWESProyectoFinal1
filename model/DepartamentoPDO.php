@@ -137,9 +137,11 @@ class DepartamentoPDO {
                     INSERT INTO T02_Departamento (T02_CodDepartamento,T02_DescDepartamento,T02_FechaCreacionDepartamento,T02_VolumenNegocio)
                     values("$codDepartamento","$descDepartamento",now(),$volumenNegocio);
                 QUERY;
-        return DBPDO::ejecutarConsulta($sSentenciaSQLInsercion);
+        if (self::validarCodNoExiste($codDepartamento)) {
+            return DBPDO::ejecutarConsulta($sSentenciaSQLInsercion);
+        }
     }
-    
+
     /**
      * Summary Baja lógica de un departamento.
      * 
@@ -160,12 +162,24 @@ class DepartamentoPDO {
     }
 
     public static function rehabilitarDepartamento($codDepartamento) {
-         $sSQLActualizacion = <<<QUERY
+        $sSQLActualizacion = <<<QUERY
                     UPDATE T02_Departamento SET T02_FechaBajaDepartamento = null
                     WHERE T02_CodDepartamento= '{$codDepartamento}';
                 QUERY;
 
         return DBPDO::ejecutarConsulta($sSQLActualizacion);
+    }
+
+    public static function validarCodNoExiste($codDepartamento) {
+        $codigoNoExiste = true;
+        $sSentenciaSQLValidarCodigo = <<< query
+                select * from T01_Usuario where T01_CodUsuario="{$codUsuario}";
+                query;
+        $oResultado = DBPDO::ejecutarConsulta($sSentenciaSQLValidarCodigo);
+        if (!$oResultado) {
+            $codigoNoExiste = false;
+        }
+        return $codigoNoExiste;
     }
 
     public static function contarDepartamentos() {

@@ -149,18 +149,18 @@ class UsuarioPDO implements UsuarioDB {
     }
 
     /**
-     * Función que valida la existencia o no de un código de usuario en la DB.
+     * Función que valida la existencia o no de un código de departamento en la DB.
      * 
-     * Función estática que recibe un código de usuario y comprueba si existe
+     * Función estática que recibe un código de departamento, comprueba si existe
      * previamente en la DB, devuelve true o false indicando si existe o no
      * 
-     * @param string $codUsuario Código a comprobar en DB.
+     * @param string $codDepartamento Código a comprobar en DB.
      * @return boolean Si exise el código devuelve true, sino, devuelve false.
      */
-    public static function validarCodNoExiste($codUsuario) {
+    public static function validarCodNoExiste($codDepartamento) {
         $codigoNoExiste = true;
         $sSentenciaSQLValidarCodigo = <<< query
-                select * from T01_Usuario where T01_CodUsuario="{$codUsuario}";
+                select * from T02_Departamento where T02_CodDepartamento="{$codDepartamento}";
                 query;
         $oResultado = DBPDO::ejecutarConsulta($sSentenciaSQLValidarCodigo);
         if (!$oResultado) {
