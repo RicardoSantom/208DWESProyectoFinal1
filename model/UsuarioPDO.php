@@ -32,7 +32,8 @@ class UsuarioPDO implements UsuarioDB {
             $oResultadoConsulta = $oPDOStatementResultadoConsulta->fetchObject();
             if (is_object($oResultadoConsulta)) {
                 $oUsuario = new Usuario($oResultadoConsulta->T01_CodUsuario, $oResultadoConsulta->T01_Password,
-                        $oResultadoConsulta->T01_DescUsuario, $oResultadoConsulta->T01_NumConexiones, $oResultadoConsulta->T01_FechaHoraUltimaConexion,
+                        $oResultadoConsulta->T01_DescUsuario, $oResultadoConsulta->T01_NumConexiones, 
+                        $oResultadoConsulta->T01_FechaHoraUltimaConexion,
                         $oResultadoConsulta->T01_Perfil, $oResultadoConsulta->T01_ImagenUsuario);
                 return $oUsuario;
             } /* else { //Si no existe, devuelve false.
@@ -54,8 +55,8 @@ class UsuarioPDO implements UsuarioDB {
      */
     public static function registrarUltimaConexion($oUsuario) {
         $oUsuario->setNumConexiones($oUsuario->getNumConexiones() + 1);
-        $oUsuario->setFechaHoraUltimaConexionAnterior($oUsuario->getFechaHoraUltimaConexion());
-        $oUsuario->setFechaHoraUltimaConexion(new DateTime("now"));
+        /*$oUsuario->setFechaHoraUltimaConexionAnterior($oUsuario->getFechaHoraUltimaConexion());
+        $oUsuario->setFechaHoraUltimaConexion(new DateTime("now"));*/
         $sSentenciaSQLActualizacionNumConexiones = <<<QUERY
               UPDATE T01_Usuario SET T01_NumConexiones=T01_NumConexiones+1,T01_FechaHoraUltimaConexion=now()
               WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";

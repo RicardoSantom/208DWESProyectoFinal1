@@ -1,5 +1,4 @@
 <?php
-
 require_once 'core/221024ValidacionFormularios.php';
 if (isset($_REQUEST['cancelar'])) {
     $_SESSION['paginaAnterior'] = 'inicioPublico';
@@ -31,21 +30,16 @@ if (isset($_REQUEST['iniciarSesion'])) {
     if ($entradaOk) {
         //Comprobación de Usuario Correcto
         $oUsuario = UsuarioPDO::validarUsuario($_REQUEST['usuario'], $_REQUEST['password']);
-        if (is_null($oUsuario)) {
+        if (is_bool($oUsuario)) {
             $entradaOk = false;
-        } else{
-            $oUsuarioPrivado=new Usuario($_REQUEST['usuario'], $_REQUEST['password'], $descUsuario, $numConexiones, $fechaHoraUltimaConexion, 
-                    $fechaHoraUltimaConexionAnterior, $perfil, $imagenUsuario);
         }
     }
 //Si el booleano sigue en true, registra la última conexión y redirige a inicioPrivado
-    if ($entradaOk) {
+     if ($entradaOk) {
         UsuarioPDO::registrarUltimaConexion($oUsuario);
         $_SESSION['User208DWESProyectoFinal'] = $oUsuario;
-        $_SESSION['perfilUsuarioEnCurso'] =$oUsuario->getPerfil();
         $_SESSION['paginaEnCurso'] = 'inicioPrivado';
         header("Location: index.php");
-        exit();
     }
 }
 //Si se pulsa tecnologias, se navega a su vista correspondiente

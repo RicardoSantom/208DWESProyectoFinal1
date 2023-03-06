@@ -53,7 +53,7 @@
                         </tr>
                         <tr>
                             <td>Fecha Hora Ultima Conexion: </td>
-                            <td><?php echo date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexion'], 'Y-m-d H:i:s') ?></td>
+                            <td><?php echo $aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexion'] ?></td>
                         </tr>
                         <tr>
                             <td>Fecha Hora Ultima Conexion Anterior: </td>

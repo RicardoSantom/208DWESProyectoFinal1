@@ -9,7 +9,7 @@
 
 //ENTORNO DESARROLLO CASA
 // IP del servidor y Nombre de la base de datos
-define('DSN', 'mysql:host=192.168.1.77;dbname=DB208DWESLoginLogoff');
+define('DSN', 'mysql:host=192.168.3.207;dbname=DB208DWESLoginLogoff');
 // Usuario con el que se conecta
 define("USER", 'user208DWESLoginLogoff');
 // Contraseña con la que conectarse a la base de datos 
