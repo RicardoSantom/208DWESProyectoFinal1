@@ -22,25 +22,21 @@ class UsuarioPDO implements UsuarioDB {
      * no se haya podido contruir un objeto del tipo Usuario
      */
     public static function validarUsuario($codUsuario, $password) {
-        try { //String con consulta de selección SQL
-            $sSentenciaSQLBuscarPorCodigo = <<<QUERY
+        //String con consulta de selección SQL
+        $sSentenciaSQLBuscarPorCodigo = <<<QUERY
                 SELECT * FROM T01_Usuario
                 WHERE T01_CodUsuario='$codUsuario' AND
                 T01_Password=SHA2("{$codUsuario}{$password}", 256);
             QUERY;
-            $oPDOStatementResultadoConsulta = DBPDO::ejecutarConsulta($sSentenciaSQLBuscarPorCodigo);
-            $oResultadoConsulta = $oPDOStatementResultadoConsulta->fetchObject();
-            if (is_object($oResultadoConsulta)) {
-                $oUsuario = new Usuario($oResultadoConsulta->T01_CodUsuario, $oResultadoConsulta->T01_Password,
-                        $oResultadoConsulta->T01_DescUsuario, $oResultadoConsulta->T01_NumConexiones, 
-                        $oResultadoConsulta->T01_FechaHoraUltimaConexion,
-                        $oResultadoConsulta->T01_Perfil, $oResultadoConsulta->T01_ImagenUsuario);
-                return $oUsuario;
-            } /* else { //Si no existe, devuelve false.
-              return false;
-              } */
-        } catch (Exception $ex) {
-            echo $ex->getMessage();
+        $oPDOStatementResultadoConsulta = DBPDO::ejecutarConsulta($sSentenciaSQLBuscarPorCodigo);
+        $oResultadoConsulta = $oPDOStatementResultadoConsulta->fetchObject();
+        if (is_object($oResultadoConsulta)) {
+            return new Usuario($oResultadoConsulta->T01_CodUsuario, $oResultadoConsulta->T01_Password,
+                    $oResultadoConsulta->T01_DescUsuario, $oResultadoConsulta->T01_NumConexiones,
+                    $oResultadoConsulta->T01_FechaHoraUltimaConexion,
+                    $oResultadoConsulta->T01_Perfil, $oResultadoConsulta->T01_ImagenUsuario);
+        } else { //Si no existe, devuelve false.
+            return false;
         }
     }
 
@@ -54,15 +50,21 @@ class UsuarioPDO implements UsuarioDB {
      * @return Usuario Devuelve el objeto usuario con el nº de conexiones actualizado.
      */
     public static function registrarUltimaConexion($oUsuario) {
+        /* $sSentenciaSQLConsultaConexionAnterior = <<<QUERY
+          select T01_FechaHoraUltimaConexion FROM T01_Usuario
+          WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
+          QUERY;
+          $fechaConexionAnterior = DBPDO::ejecutarConsulta($sSentenciaSQLConsultaConexionAnterior); */
+
+        $fechaActual = new DateTime();
+        $oUsuario->setFechaHoraUltimaConexionAnterior($oUsuario->getFechaHoraUltimaConexion());
+        $oUsuario->setFechaHoraUltimaConexion($fechaActual);
         $oUsuario->setNumConexiones($oUsuario->getNumConexiones() + 1);
-        /*$oUsuario->setFechaHoraUltimaConexionAnterior($oUsuario->getFechaHoraUltimaConexion());
-        $oUsuario->setFechaHoraUltimaConexion(new DateTime("now"));*/
         $sSentenciaSQLActualizacionNumConexiones = <<<QUERY
               UPDATE T01_Usuario SET T01_NumConexiones=T01_NumConexiones+1,T01_FechaHoraUltimaConexion=now()
               WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
               QUERY;
         DBPDO::ejecutarConsulta($sSentenciaSQLActualizacionNumConexiones);
-        return $oUsuario;
     }
 
     /**
@@ -77,16 +79,16 @@ class UsuarioPDO implements UsuarioDB {
      * @param string $perfil Tipo de usuario
      * @return boolean|\Usuario
      */
-    public static function altaUsuario($codUsuario, $password, $descUsuario, $perfil='usuario') {
+    public static function altaUsuario($codUsuario, $password, $descUsuario, $perfil = 'usuario') {
         $sSentenciaSQLAltaUsuario = <<<QUERY
                 INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario, T01_NumConexiones, 
                     T01_FechaHoraUltimaConexion,T01_Perfil) 
                     values('{$codUsuario}',sha2(concat('{$codUsuario}','{$password}'),256),'{$descUsuario}',1, now(),'{$perfil}');
                 QUERY;
-        if (self::validarCodNoExiste(!$codUsuario)) {
+        if (self::validarCodNoExiste($codUsuario)) {
             DBPDO::ejecutarConsulta($sSentenciaSQLAltaUsuario);
             return new Usuario($codUsuario, hash('sha256', ($codUsuario . $password)), $descUsuario,
-                    1, new DateTime("now"), new DateTime("now"), $perfil, null);
+                    1, new DateTime(), $perfil, null);
         } else {
             return false;
         }

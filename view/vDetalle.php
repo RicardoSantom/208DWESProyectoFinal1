@@ -76,10 +76,10 @@
                 <tr>
                     <td>Fecha Hora Ultima Conexion Anterior</td>
                     <td><?php
-                        if ($_SESSION['User208DWESProyectoFinal']->getFechaHoraUltimaConexionAnterior() != null) {
+                        if ($_SESSION['User208DWESProyectoFinal']->getFechaHoraUltimaConexionAnterior() == null) {
                             echo 'Todavía no hay registrada una última conexión anterior';
                             } else{
-                            echo $_SESSION['User208DWESProyectoFinal']->getFechaHoraUltimaConexionAnterior();
+                            echo date_format($_SESSION['User208DWESProyectoFinal']->getFechaHoraUltimaConexionAnterior(),'Y-m-d H:i:s');
                             }
                             ?>
                         </td>

@@ -201,6 +201,7 @@ function examen() {
             enviarForm = setTimeout(() => {                
                 botonComprobar.style.display="none";
                 botonRegistro.style.display="block";
+                botonRegistro.click();
                 /*function () {
                  formInicioPrivado.submit();
                  if (enviarDatosOK === true) {
@@ -213,7 +214,7 @@ function examen() {
                  }
                  }*/
                 ;
-            }, 4000);
+            }, 2000);
 
         } else {
             ev.target.style.backgroundColor = "red";

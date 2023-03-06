@@ -31,7 +31,7 @@
             ?>
             <div class="divBienvenidaInicio">
                 <h3>Ultimo inicio de sesión: </h3>
-                <?php echo '<p>' . $aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'] . '</p>';
+                <?php echo '<p>' . date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'],'Y-m-d H:i:s') . '</p>';
                 ?>
             </div>
             <div class="divBienvenidaTabla">
@@ -53,13 +53,13 @@
                         </tr>
                         <tr>
                             <td>Fecha Hora Ultima Conexion: </td>
-                            <td><?php echo $aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexion'] ?></td>
+                            <td><?php echo date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexion'], 'Y-m-d H:i:s') ?></td>
                         </tr>
                         <tr>
                             <td>Fecha Hora Ultima Conexion Anterior: </td>
                             <td><?php
                                 if ($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'] != null) {
-                                    echo $aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'];
+                                    echo date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'],'Y-m-d H:i:s');
                                 } else {
                                     echo 'Aún no hay datos de su última conexión anterior.';
                                 }
@@ -115,13 +115,13 @@
                         </tr>
                         <tr>
                             <td>Fecha Hora Ultima Conexion: </td>
-                            <td><?php echo date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexion'],'Y-m-d h:m:s') ?></td>
+                            <td><?php echo date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexion'],'Y-m-d H:i:s') ?></td>
                         </tr>
                         <tr>
                             <td>Fecha Hora Ultima Conexion Anterior: </td>
                             <td><?php
                                 if ($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'] != null) {
-                                    echo date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'],'Y-m-d h:m:s');
+                                    echo date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'],'Y-m-d H:i:s');
                                 } else {
                                     echo 'Aún no hay datos de su última conexión anterior.';
                                 }

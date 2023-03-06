@@ -1,4 +1,5 @@
 <?php
+
 require_once 'core/221024ValidacionFormularios.php';
 if (isset($_REQUEST['cancelar'])) {
     $_SESSION['paginaAnterior'] = 'inicioPublico';
@@ -12,11 +13,11 @@ if (isset($_REQUEST['registrarse'])) {
     header("Location: index.php");
     exit();
 }
+$aErrores = [
+    'usuario' => null,
+    'password' => null
+];
 if (isset($_REQUEST['iniciarSesion'])) {
-    $aErrores = [
-        'usuario' => null,
-        'password' => null
-    ];
     $entradaOk = true;
     $oUsuario = null;
     //Comprobamos que el usuario no haya introducido inyeccion de codigo y los datos están correctos
@@ -35,9 +36,10 @@ if (isset($_REQUEST['iniciarSesion'])) {
         }
     }
 //Si el booleano sigue en true, registra la última conexión y redirige a inicioPrivado
-     if ($entradaOk) {
+    if ($entradaOk) {
         UsuarioPDO::registrarUltimaConexion($oUsuario);
         $_SESSION['User208DWESProyectoFinal'] = $oUsuario;
+        $_SESSION['perfilUsuarioEnCurso'] = $oUsuario->getPerfil();
         $_SESSION['paginaEnCurso'] = 'inicioPrivado';
         header("Location: index.php");
     }
