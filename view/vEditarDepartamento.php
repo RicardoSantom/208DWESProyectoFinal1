@@ -5,6 +5,7 @@
 <main>
     <form id = "formInicioPrivado" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <table id="bienvenida">
+            <caption>Editar departamento</caption>
             <tbody>                    
                 <tr>
                     <th class="alfabetica"><label for="codigo">Codigo: </label></th>                    
@@ -14,12 +15,12 @@
                 <tr>
                     <th class="alfabetica"><label for="descripcion">Descripcion: </label></th>
                     <th class="numerica"><input id="descripcion" type="text" style="background-color:#ffffcc;" name="descripcion" value="<?php echo $aVistaEditarDepartamento['descripcion']; ?>"></th>
-                    <th style="color: red;"> <?php echo $aErrores['descripcion']; ?></th>
+                    <th class="errorLibreriaValidacion" style="color: red;"> <?php echo $aErrores['descripcion']; ?></th>
                 </tr>
                 <tr>
                     <th class="alfabetica"><label for="volumen">Volumen de Negocio: </label></th>
                     <th class="numerica"><input type="text" id="volumen" name="volumen" style="background-color:#ffffcc;" value="<?php echo $aVistaEditarDepartamento['volumen']; ?>"></th>
-                    <th style="color: red;"> <?php echo $aErrores['volumenNegocio']; ?></th>
+                    <th class="errorLibreriaValidacion" style="color: red;"> <?php echo $aErrores['volumenNegocio']; ?></th>
                 </tr>
                 <tr>
                     <th class="alfabetica"><label for="fechaAlta">Fecha Alta: </label></th>

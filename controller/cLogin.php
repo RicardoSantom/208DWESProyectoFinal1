@@ -33,6 +33,9 @@ if (isset($_REQUEST['iniciarSesion'])) {
         $oUsuario = UsuarioPDO::validarUsuario($_REQUEST['usuario'], $_REQUEST['password']);
         if (is_null($oUsuario)) {
             $entradaOk = false;
+        } else{
+            $oUsuarioPrivado=new Usuario($_REQUEST['usuario'], $_REQUEST['password'], $descUsuario, $numConexiones, $fechaHoraUltimaConexion, 
+                    $fechaHoraUltimaConexionAnterior, $perfil, $imagenUsuario);
         }
     }
 //Si el booleano sigue en true, registra la última conexión y redirige a inicioPrivado

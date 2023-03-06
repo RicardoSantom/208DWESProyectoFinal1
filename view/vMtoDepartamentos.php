@@ -28,37 +28,37 @@
             </fieldset>
         </form>
     </div>
-    <table id="bienvenida">
-        <caption>Resultados búsqueda</caption>
-        <thead>
-            <tr>
-                <th class="alfabetica">Código</th>
-                <th class="alfabetica">Descripción</th>
-                <th class="fecha">Fecha Creación</th>
-                <th class="numerica">Volumen Negocio</th>
-                <th class="fecha">Fecha Baja</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if ($aVMtoDepartamentos) {
-                foreach ($aVMtoDepartamentos as $departamentoEnCurso) {
-                    ?>
-                    <tr style="<?php
-                    if (is_null($departamentoEnCurso['fechaBaja'])) {
-                        echo "text-decoration: underline 3px #ccff87;";
-                    } else {
-                        echo "text-decoration: underline 3px #ff423d;";
-                    }
-                    ?>">
-                        <td class="alfabetica corta"><?php echo $departamentoEnCurso['codDepartamento'] ?></td>
-                        <td class="alfabetica"><?php echo $departamentoEnCurso['descDepartamento'] ?></td>
-                        <td class="fecha"><?php echo $departamentoEnCurso['fechaAlta'] ?></td>
-                        <td class="numerica corta"><?php echo $departamentoEnCurso['volumenNegocio'] ?></td>
-                        <td class="fecha"><?php echo $departamentoEnCurso['fechaBaja'] ?></td>
-                        <td class="numerica media">
-                            <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">
+    <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post"> 
+        <table id="bienvenida">
+            <caption>Resultados búsqueda</caption>
+            <thead>
+                <tr>
+                    <th class="alfabetica">Código</th>
+                    <th class="alfabetica">Descripción</th>
+                    <th class="fecha">Fecha Creación</th>
+                    <th class="numerica">Volumen Negocio</th>
+                    <th class="fecha">Fecha Baja</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                if ($aVistaMtoDepartamentos) {
+                    foreach ($aVistaMtoDepartamentos as $departamentoEnCurso) {
+                        ?>
+                        <tr style="<?php
+                        if (is_null($departamentoEnCurso['fechaBaja'])) {
+                            echo "text-decoration: underline 3px #ccff87;";
+                        } else {
+                            echo "text-decoration: underline 3px #ff423d;";
+                        }
+                        ?>">
+                            <td class="alfabetica corta"><?php echo $departamentoEnCurso['codDepartamento'] ?></td>
+                            <td class="alfabetica"><?php echo $departamentoEnCurso['descDepartamento'] ?></td>
+                            <td class="fecha"><?php echo $departamentoEnCurso['fechaAlta'] ?></td>
+                            <td class="numerica corta"><?php echo $departamentoEnCurso['volumenNegocio'] ?></td>
+                            <td class="fecha"><?php echo $departamentoEnCurso['fechaBaja'] ?></td>
+                            <td class="numerica media">
                                 <button type="submit" name="editar" id="editarConsultar" value="<?php echo $departamentoEnCurso['codDepartamento']; ?>">editar</button>
                                 <button type="submit" name="eliminar" id="eliminar" value="<?php echo $departamentoEnCurso['codDepartamento']; ?>">eliminar</button>
                                 <?php
@@ -72,13 +72,15 @@
                                     <?php
                                 }
                                 ?>
-                            </form>
-                        </td>
-                    </tr>
-                    <?php
+                            </td>
+                        </tr>
+                        <?php
+                    }
                 }
-            }
-            ?>
-        </tbody>
-    </table>
+                ?>
+
+
+            </tbody>
+        </table>
+    </form>
 </main>

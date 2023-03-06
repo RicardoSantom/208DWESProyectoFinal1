@@ -6,7 +6,11 @@
  * @since: 05-02-2023
  * Última modificación: 05-02-2023
  */
-
+$aErrores = [
+    'viejoPassword' => null,
+    'nuevoPassword' => null,
+    'nuevoPassword2' => null,
+];
 if (isset($_REQUEST['cancelar'])) {
     $_SESSION['paginaAnterior'] = "miCuenta";
     $_SESSION['paginaEnCurso'] = $_SESSION['paginaAnterior'];

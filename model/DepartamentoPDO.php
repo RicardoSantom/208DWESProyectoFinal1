@@ -173,7 +173,7 @@ class DepartamentoPDO {
     public static function validarCodNoExiste($codDepartamento) {
         $codigoNoExiste = true;
         $sSentenciaSQLValidarCodigo = <<< query
-                select * from T01_Usuario where T01_CodUsuario="{$codUsuario}";
+                select * from T01_Usuario where T01_CodUsuario="{$codDepartamento}";
                 query;
         $oResultado = DBPDO::ejecutarConsulta($sSentenciaSQLValidarCodigo);
         if (!$oResultado) {

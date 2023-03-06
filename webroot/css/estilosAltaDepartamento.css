@@ -88,7 +88,7 @@ label{
     font-weight: bold;
     color: #3367ac;
     padding: 3rem auto;
-    width: 54%;
+    width: 70%;
     margin: 0 auto;
 }
 #formInicioPrivado{
@@ -105,11 +105,21 @@ fieldset{
     display: flex;
     align-items: center;
 }
-/*#divInputDescripcion{
-    display: flex;
-    margin: 1rem auto;
-    align-items: center;
-}*/
+.errorLibreriaValidacion{
+    width: 300px;
+}
+#codigo{    
+    height: 2rem;
+    width: 10rem;
+}
+#descripcion{
+    height: 2rem;
+    width: 25rem;
+}
+#volumen{
+    height: 2rem;
+    width: 10rem;
+}
 #divInputDescripcion *{
     margin: 0 1rem 0 0;
 }
@@ -144,11 +154,9 @@ tbody tr th{
      /*border-bottom: 1px solid #cccccc;*/
     border-collapse: separate;
 }
-.alfabetica{
+.alfabetica,.numerica{
     text-align: left;
-}
-.numerica{
-    text-align: left;
+    padding: 0.5rem;
 }
 #formVolver{
     position: absolute;
@@ -159,20 +167,10 @@ input{
     font-family: 'LatoItalic';
     font-size: 22px;
 }
-
-#codigo{    
-    height: 2rem;
-    width: 8rem;
-}
-#descripcion{
-    height: 2rem;
-    width: 30rem;
-}
-#volumen{
-    height: 2rem;
-    width: 8rem;
-}
 footer{
     position: fixed;
     bottom: 0;
+}
+td, th {
+    border-bottom:  1px #99a0a1 solid;
 }

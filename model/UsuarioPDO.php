@@ -42,7 +42,7 @@ class UsuarioPDO implements UsuarioDB {
             echo $ex->getMessage();
         }
     }
-    
+
     /**
      * Función que registra la fecha y hora de la última conexión de un usuario
      * 
@@ -54,6 +54,8 @@ class UsuarioPDO implements UsuarioDB {
      */
     public static function registrarUltimaConexion($oUsuario) {
         $oUsuario->setNumConexiones($oUsuario->getNumConexiones() + 1);
+        $oUsuario->setFechaHoraUltimaConexionAnterior($oUsuario->getFechaHoraUltimaConexion());
+        $oUsuario->setFechaHoraUltimaConexion(new DateTime("now"));
         $sSentenciaSQLActualizacionNumConexiones = <<<QUERY
               UPDATE T01_Usuario SET T01_NumConexiones=T01_NumConexiones+1,T01_FechaHoraUltimaConexion=now()
               WHERE T01_CodUsuario="{$oUsuario->getCodUsuario()}";
@@ -61,7 +63,7 @@ class UsuarioPDO implements UsuarioDB {
         DBPDO::ejecutarConsulta($sSentenciaSQLActualizacionNumConexiones);
         return $oUsuario;
     }
-    
+
     /**
      * Función que da de alta un usuario nuevo
      * 
@@ -74,20 +76,21 @@ class UsuarioPDO implements UsuarioDB {
      * @param string $perfil Tipo de usuario
      * @return boolean|\Usuario
      */
-    public static function altaUsuario($codUsuario, $password, $descUsuario,$perfil) {
+    public static function altaUsuario($codUsuario, $password, $descUsuario, $perfil='usuario') {
         $sSentenciaSQLAltaUsuario = <<<QUERY
                 INSERT INTO T01_Usuario(T01_CodUsuario, T01_Password, T01_DescUsuario, T01_NumConexiones, 
-                    T01_FechaHoraUltimaConexion) 
-                    values('{$codUsuario}',sha2(concat('{$codUsuario}','{$password}'),256),'{$descUsuario}',1, now());
+                    T01_FechaHoraUltimaConexion,T01_Perfil) 
+                    values('{$codUsuario}',sha2(concat('{$codUsuario}','{$password}'),256),'{$descUsuario}',1, now(),'{$perfil}');
                 QUERY;
         if (self::validarCodNoExiste(!$codUsuario)) {
             DBPDO::ejecutarConsulta($sSentenciaSQLAltaUsuario);
-            return new Usuario($codUsuario, hash('sha256', ($codUsuario . $password)), $descUsuario, 1, new DateTime("now"),$perfil);
+            return new Usuario($codUsuario, hash('sha256', ($codUsuario . $password)), $descUsuario,
+                    1, new DateTime("now"), new DateTime("now"), $perfil, null);
         } else {
             return false;
         }
     }
-    
+
     /**
      * Función que modifica un usuario
      * 
@@ -104,7 +107,7 @@ class UsuarioPDO implements UsuarioDB {
         DBPDO::ejecutarConsulta($sSentenciaSQLmodificarUsuario);
         $oUsuario->setDescUsuario($descUsuario);
     }
-    
+
     /**
      * Funció mque cambia el password de un usuario
      * 
@@ -126,7 +129,7 @@ class UsuarioPDO implements UsuarioDB {
         }
         return $entradaOk;
     }
-    
+
     /**
      * Función que borra un usuario de la DB.
      * 
@@ -138,14 +141,8 @@ class UsuarioPDO implements UsuarioDB {
      * devuelve false.
      */
     public static function borrarUsuario($codUsuario) {
-        $entradaOk = false;
-        $sSentenciaSQLborrarUsuario = <<<QUERY
-                DELETE * from T01_Usuario where T01_codUsuario="{$codUsuario}";
-                QUERY;
-        if (DBPDO::ejecutarConsulta($sSentenciaSQLborrarUsuario)) {
-            $entradaOk = true;
-        }
-        return $entradaOk;
+        $sSentenciaSQLborrarUsuario = "DELETE from T01_Usuario where T01_CodUsuario='{$codUsuario}'";
+        return DBPDO::ejecutarConsulta($sSentenciaSQLborrarUsuario);
     }
 
     /**

@@ -88,7 +88,7 @@ label{
     font-weight: bold;
     color: #3367ac;
     padding: 3rem auto;
-    width: 54%;
+    width: 70%;
     margin: 0 auto;
 }
 #formInicioPrivado{
@@ -105,11 +105,9 @@ fieldset{
     display: flex;
     align-items: center;
 }
-/*#divInputDescripcion{
-    display: flex;
-    margin: 1rem auto;
-    align-items: center;
-}*/
+.errorLibreriaValidacion{
+    width: 300px;
+}
 #divInputDescripcion *{
     margin: 0 1rem 0 0;
 }
@@ -175,4 +173,7 @@ input{
 footer{
     position: fixed;
     bottom: 0;
+}
+td, th {
+    border-bottom:  1px #99a0a1 solid;
 }

@@ -43,6 +43,20 @@ label{
     font-family: 'LatoLightItalic';
     width: 20rem;
 }
+#comprobar{
+    align-items: center;
+    justify-content: center;
+    min-height: 2.5rem;    
+    width: 8rem;
+    margin: 0 2rem;
+    cursor: pointer;
+    background-color:#33da24;
+    color: white;
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+    border: 2px solid black;
+}
 #registro{
     align-items: center;
     justify-content: center;
@@ -56,6 +70,7 @@ label{
     font-size: 22px;
     margin-bottom: 0.5rem;
     border: 2px solid black;
+    display: none;
 }
 #registro:hover{
     background-color: white;
@@ -97,7 +112,7 @@ label{
     font-weight: bold;
     color: #3367ac;
     padding: 3rem auto;
-    width: 54%;
+    width: 70%;
     margin: 0 auto;
 }
 #formInicioPrivado{
@@ -153,11 +168,12 @@ tbody tr th{
      /*border-bottom: 1px solid #cccccc;*/
     border-collapse: separate;
 }
-.alfabetica{
-    text-align: left;
+.alfabeticaCancelar{
+    text-align: center;
 }
-.numerica{
+.alfabetica,.numerica{
     text-align: left;
+    padding: 0.5rem;
 }
 #formVolver{
     position: absolute;
@@ -166,30 +182,32 @@ tbody tr th{
 }
 #codigo{    
     height: 2rem;
-    width: 8rem;
+    width: 10rem;
 }
 #descripcion{
     height: 2rem;
-    width: 30rem;
+    width: 25rem;
 }
 #volumen{
     height: 2rem;
-    width: 8rem;
+    width: 10rem;
 }
 footer{
     position: fixed;
     bottom: 0;
 }
+.errorLibreriaValidacion{
+    width: 600px;
+}
 /*************ESTILOS CAPTCHA***********/
 .error {
     border: solid 3px #FF0000 !important;
-
+    width: 200px;
 }
 .correcto{
     border: solid 3px #039e1d;
-
+    width: 200px;
 }
-
 .captcha {
     text-align: center;
     position: relative;
@@ -198,7 +216,6 @@ footer{
     display: none;
 }
 .cuestion {
-
     text-align: center;
     vertical-align: middle;
     line-height: 50px;
@@ -208,14 +225,10 @@ footer{
     float: left;
     margin: 5px;
     margin-top: 20px;
-
 }
-
 .resultado {
     border: thick solid rgb(14, 121, 121);
-
 }
-
 .opcaptcha {
     border: thick solid teal;
     color: rgb(14, 121, 121);
@@ -229,5 +242,14 @@ footer{
     margin: 25px;
     margin-top: 20px;
     background-color: lightgray;
-
+}
+.captcha{
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    border:  3px #33da24 solid;
+    height: 200px;
+}
+td, th {
+    border-bottom:  1px #99a0a1 solid;
 }

@@ -57,10 +57,10 @@ if (isset($_REQUEST['registro'])) {
      * de UsuarioPDO y se regresa a inicioPrivado.
      */
     if (($_REQUEST['password'] == $_REQUEST['repetirPassword']) && $entradaOk) {
-        $oUsuario = UsuarioPDO::altaUsuario($_REQUEST['usuario'], $_REQUEST['password'], $_REQUEST['descripcion'], 'usuario');
+        $oUsuario = UsuarioPDO::altaUsuario($_REQUEST['usuario'], $_REQUEST['password'], $_REQUEST['descripcion'],'usuario');
         $_SESSION['User208DWESProyectoFinal'] = $oUsuario;
         $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-        $aVistaDatosUsuario = [
+        $aVistaDatosUsuarioInicioPrivado = [
             'codUsuario' => ($_SESSION['User208DWESProyectoFinal']->getCodUsuario()),
             'password' => ($_SESSION['User208DWESProyectoFinal']->getPassword()),
             'descUsuario' => ($_SESSION['User208DWESProyectoFinal']->getDescUsuario()),
@@ -75,11 +75,4 @@ if (isset($_REQUEST['registro'])) {
         $entradaOk = false;
     }
 }
-/*if (!empty($_POST) == true) {
-    //$oUsuario = UsuarioPDO::altaUsuario($_REQUEST['usuario'], $_REQUEST['password'], $_REQUEST['descripcion'], 'usuario');
-    // $_SESSION['User208DWESProyectoFinal'] = $oUsuario;
-    $_SESSION['paginaEnCurso'] = 'inicioPrivado';
-
-    $entradaOk = true;
-}*/
 require_once $aVistas['layout'];

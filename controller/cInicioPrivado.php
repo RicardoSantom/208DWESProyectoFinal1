@@ -4,7 +4,7 @@
  * Utilizo el método array_push para introducir los valores devueltos
  * por los getters para el objeto usuario.
  */
-$aVistaDatosUsuario =[
+$aVistaDatosUsuarioInicioPrivado =[
     'codUsuario' => ($_SESSION['User208DWESProyectoFinal']->getCodUsuario()),
     'password' => ($_SESSION['User208DWESProyectoFinal']->getPassword()),
     'descUsuario' => ($_SESSION['User208DWESProyectoFinal']->getDescUsuario()),

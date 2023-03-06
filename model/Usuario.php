@@ -15,12 +15,13 @@ class Usuario {
     private $perfil;
     private $imagenUsuario;
 
-    function __construct($codUsuario, $password, $descUsuario, $numConexiones, $fechaHoraUltimaConexionAnterior, $perfil='usuario', $imagenUsuario=null) {
+    function __construct($codUsuario, $password, $descUsuario, $numConexiones,$fechaHoraUltimaConexion,
+            $fechaHoraUltimaConexionAnterior, $perfil='usuario', $imagenUsuario=null) {
         $this->codUsuario = $codUsuario;
         $this->password = $password;
         $this->descUsuario = $descUsuario;
         $this->numConexiones = $numConexiones;
-        $this->fechaHoraUltimaConexion = new DateTime("now");
+        $this->fechaHoraUltimaConexion = $fechaHoraUltimaConexion;
         $this->fechaHoraUltimaConexionAnterior = $fechaHoraUltimaConexionAnterior;
         $this->perfil = $perfil;
         $this->imagenUsuario = $imagenUsuario;
@@ -53,6 +54,10 @@ class Usuario {
     function getPerfil() {
         return $this->perfil;
     }
+    
+    public function getImagenUsuario() {
+        return $this->imagenUsuario;
+    }
 
     function setCodUsuario($codUsuario) {
         $this->codUsuario = $codUsuario;
@@ -80,10 +85,6 @@ class Usuario {
 
     function setPerfil($perfil) {
         $this->perfil = $perfil;
-    }
-    
-    public function getImagenUsuario() {
-        return $this->imagenUsuario;
     }
 
     public function setImagenUsuario($imagenUsuario) {

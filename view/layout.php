@@ -64,9 +64,9 @@
             <p>|</p>
             <a href="doc/curriculumRicardo.pdf"  title="Curriculum Vitae Ricardo Santiago Tomé" target="_blank" id="curriculum"><span class="material-icons md-18">face</span></a>
             <p>|</p>
-            <div>Esta página <strong>pretende</strong> emular a: <a href="https://www.elganso.com/es/" id="ganso" target="_blank" title="Enlace a página web El Ganso">"El Ganso"</a></div>
-        </footer>      
-        <script defer src="webroot/js/Reloj.js"></script>
+            <div>Esta página <strong> pretende </strong> emular a: <a href="https://www.elganso.com/es/" id="ganso" target="_blank" title="Enlace a página web El Ganso"> "El Ganso"</a></div>      
+            <script defer src="webroot/js/Reloj.js"></script>
+        </footer>
     </body>
 </html>
 
