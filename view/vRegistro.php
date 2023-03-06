@@ -9,32 +9,35 @@
             <tbody>
                 <tr>
                     <th class="alfabetica"><label for = "usuario">Usuario:</label></th>
-                    <th class="numerica"><input style = "background: #ffffcc" type = "text" id="usuario" name = "usuario" class="error"/></th>
-                    <td style="color: red;"> <?php echo $aErrores['usuario']; ?></td>
+                    <th class="numerica"><input style = "background: #ffffcc" type = "text" id="usuario" 
+                                                autofocus name = "usuario" class="error"/></th>
+                    <td class="errorLibreriaValidacion" style="color: red;"> <?php echo $aErrores['usuario']; ?></td>
                 </tr>
                 <tr>
                     <th class="alfabetica"><label for = "password">Contraseña:</label></th>
                     <th class="numerica"><input style = "background: #ffffcc" id="password" type = "password" name = "password" class="error"/></th>
-                    <td style="color: red;"> <?php echo $aErrores['password']; ?></td>
+                    <td  class="errorLibreriaValidacion" style="color: red;"> <?php echo $aErrores['password']; ?></td>
                 </tr>
                 <tr>
                     <th class="alfabetica"><label for = "repetirPassword">Vuelva a introducir la contraseña:</label></th>
                     <th class="numerica"><input style = "background: #ffffcc" id="repetirPassword" type = "password" name = "repetirPassword" class="error"/></th>
-                    <td style="color: red;"> <?php echo $aErrores['repetirPassword']; ?></td>
+                    <td  class="errorLibreriaValidacion" style="color: red;"> <?php echo $aErrores['repetirPassword']; ?></td>
                 </tr>
                 <tr>
                     <th class="alfabetica"><label for = "descripcion">Descripción:</label></th>
                     <th class="numerica"><input style = "background: #ffffcc" placeholder="Máximo 60 caracteres" id="descripcion" type = "text" name = "descripcion" class="error"/></th>
-                    <td style="color: red;"> <?php echo $aErrores['descripcion']; ?></td>
+                    <td  class="errorLibreriaValidacion" style="color: red;"> <?php echo $aErrores['descripcion']; ?></td>
                 </tr>
             </tbody>
             <tfoot>
                 <tr>
                     <td class="alfabetica">
                         <input type = "submit" id = "registro" value = "Registrarse" name = "registro">
+                        <input type = "submit" id = "comprobar" name = "comprobar" value = "Comprobar">
                     </td>
-                    <td class="alfabetica"></td>
                     <td class="alfabetica">
+                    </td>
+                    <td class="alfabetica alfabeticaCancelar">
                         <input type = "submit" id = "cancelar" name = "cancelar" value = "Cancelar">
                     </td>
                 </tr>

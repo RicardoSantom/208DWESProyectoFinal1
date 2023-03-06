@@ -39,7 +39,7 @@ label{
     font-family: 'LatoLightItalic';
     width: 20rem;
 }
-#aceptar{
+#eliminar{
     align-items: center;
     justify-content: center;
     min-height: 2.5rem;    
@@ -52,11 +52,11 @@ label{
     font-size: 22px;
     margin-bottom: 0.5rem;
 }
-#aceptar:hover{
-    background-color: white;
+#eliminar:hover{
+    background-color: #ff6666;
     color: #344079
 }
-#volver{
+#cancelar{
     align-items: center;
     justify-content: center;
     min-height: 2.5rem;
@@ -68,7 +68,7 @@ label{
     font-size: 22px;
     color: #344079;
 }
-#volver:hover{
+#cancelar:hover{
     background-color: #344079;
     color: #d9c7c7;
 }
@@ -82,7 +82,7 @@ label{
 }
 #bienvenida{
     position: relative;
-    top: 13rem;
+    top: 12rem;
     text-align: center;
     font-family: 'LatoLightItalic';
     font-weight: bold;
@@ -105,8 +105,14 @@ fieldset{
     display: flex;
     align-items: center;
 }
-.errorLibreriaValidacion{
-    width: 300px;
+#descUsuario{
+    width: 600px;
+}
+#numConexiones{
+    width: 50px;
+}
+#codUsuario,#perfil{
+    width: 100px;
 }
 #divInputDescripcion *{
     margin: 0 1rem 0 0;

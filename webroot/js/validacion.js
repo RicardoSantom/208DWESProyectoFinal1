@@ -9,13 +9,14 @@ function examen() {
     num1 = document.getElementById("num1");
     num2 = document.getElementById("num2");
     var botonRegistro = document.getElementById("registro");
+    var botonComprobar = document.getElementById("comprobar");
     var captcha = document.getElementById("captcha");
     var formInicioPrivado = document.getElementById("formInicioPrivado");
     var usuarioOK = false;
     var passwordOK = false;
     var repetirPasswordOK = false;
     var descripcionOK = false;
-
+    var enviarDatosOK = false;
     var validarUsuario = /^\w{4,10}$/;
     var validarPassword = /^\w{4,10}$/;
     var validarRepetirPassword = /^\w{4,10}$/;
@@ -49,7 +50,7 @@ function examen() {
 
     repetirPassword.addEventListener("keyup", funcionValidarRepetirPassword);
     function funcionValidarRepetirPassword(e) {
-        if (validarRepetirPassword.test(e.target.value)) {
+        if (validarRepetirPassword.test(e.target.value) && (password.value == repetirPassword.value)) {
             repetirPasswordOK = true;
             repetirPassword.classList.remove("error");
             repetirPassword.classList.add("correcto");
@@ -73,15 +74,21 @@ function examen() {
         }
     }
     /********************EJERCICIO 3*************************/
-    var enviarDatosOK = false;
-    botonRegistro.addEventListener("click", comprobarCampos);
+    /*botonRegistro.setAttribute("name","comprobar");
+     botonRegistro.setAttribute("value","Comprobar");
+     botonRegistro.style.backgroundColor="green";
+     var enviarDatosOK = false;
+     if(botonRegistro.value=="Comprobar"){
+     console.log("prueba value Comprobar");
+     }*/
+    botonComprobar.addEventListener("click", comprobarCampos);
     function comprobarCampos(ev) {
         ev.preventDefault();
         if (usuarioOK == true && passwordOK == true && repetirPasswordOK == true && descripcionOK == true) {
             enviarDatosOK = true;
         } else {
             enviarDatosOK = false;
-            alert("Ha introducido datos incorrectos");
+            //alert("Ha introducido datos incorrectos");
         }
 
         if (enviarDatosOK == true) {
@@ -112,13 +119,16 @@ function examen() {
     let resultado = sumando1 + sumando2;
     num1.textContent = sumando1;
     num2.textContent = sumando2;
-    let aleatorio1 = parseInt(Math.random() * 19);
-    let aleatorio2 = parseInt(Math.random() * 19);
-    /*while (aleatorio1 == aleatorio2 || aleatorio1 == resultado || aleatorio2 == resultado) {
-        aleatorio2 = parseInt(Math.random() * 19);
-        aleatorio1 = parseInt(Math.random() * 19);
-    }*/
+    let aleatorio1;
+    let aleatorio2;
 
+    do {
+        aleatorio1 = parseInt(Math.random() * 19);
+    } while (aleatorio1 == resultado)
+
+    do {
+        aleatorio2 = parseInt(Math.random() * 19);
+    } while (aleatorio2 == resultado || aleatorio2 == aleatorio1)
 
     let arrayAleatorios = [resultado, aleatorio1, aleatorio2];
     //Función sacada de la w3cSchools para ordenar array de manera aleatoria.
@@ -167,32 +177,49 @@ function examen() {
     function regresar(ev) {
         ev.preventDefault();
     }
+
     destinoArrastrable.addEventListener("drop", comprobarCuentas);
     function comprobarCuentas(ev) {
         /**identificar arrastrado */
         let elementoArrastrado = document.getElementsByClassName("arrastrado")[0];
         let valorArrastrado = elementoArrastrado.textContent;
-        if (parseInt(valorArrastrado) == resultado) {
+        if (parseInt(valorArrastrado) === resultado) {
             ev.target.style.backgroundColor = "green";
             ev.target.textContent = "OK";
 
             /*********************intervalos************************/
             var pCaptcha = captcha.getElementsByTagName("p")[0];
             var mensajeHappy = document.createElement("p");
+            mensajeHappy.style.color="green";
             mensajeHappy.textContent = "ENHORABUENA, NO ERES UN ROBOT";
+            //mensajeHappy.setAttributeNode(style = "color:green");
             mensajeEnhorabuena = setTimeout(() => {
-                console.log("Prueba mensaje Enhorabuena");
                 captcha.removeChild(pCaptcha);
                 captcha.insertAdjacentElement("afterBegin", mensajeHappy);
             }, 2000);
-            enviarForm = setTimeout(() => {
-                console.log("Prueba submit");
-                formInicioPrivado.submit();
-            }, 4000);
+
+            enviarForm = setTimeout(() => {                
+                botonComprobar.style.display="none";
+                botonRegistro.style.display="block";
+                botonRegistro.click();
+                /*function () {
+                 formInicioPrivado.submit();
+                 if (enviarDatosOK === true) {
+                 botonRegistro.click();
+                 botonRegistro.off("click", comprobarCampos);
+                 formInicioPrivado.submit();
+                 } else {
+                 botonRegistro.click();
+                 formInicioPrivado.submit();
+                 }
+                 }*/
+                ;
+            }, 2000);
 
         } else {
             ev.target.style.backgroundColor = "red";
             ev.target.textContent = "NO";
         }
     }
+
 }

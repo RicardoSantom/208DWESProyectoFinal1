@@ -176,3 +176,6 @@ footer{
     position: fixed;
     bottom: 0;
 }
+td, th {
+    border-bottom:  1px #99a0a1 solid;
+}

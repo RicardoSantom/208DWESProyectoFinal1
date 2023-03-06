@@ -13,7 +13,7 @@
 // Usuario con el que se conecta
 //define("USER", 'user208DWESLoginLogoff');
 // Contraseña con la que conectarse a la base de datos 
-//define("PASSWORD", 'paso');
+define("PASSWORD", 'paso');
 
 
 //ENTORNO DE DESARROLLO

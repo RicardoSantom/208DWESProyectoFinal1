@@ -17,7 +17,7 @@
  */
 $aDepartamentos = DepartamentoPDO::buscaDepartamentosPorDesc($_SESSION['criterioBusquedaDepartamento']);
 //Array para guardar los campos del objeto Departamento y mostrarlos en la vista
-$aVMtoDepartamentos = [];
+$aVistaMtoDepartamentos = [];
 //Array de errores con el único campo consultado.
 $aErrores = [
     'descripcion' => null
@@ -30,7 +30,7 @@ if ($aDepartamentos) {
          * Utilizo el método array_push para introducir los valores devueltos
          * por los getters para cada objeto departamento.
          */
-        array_push($aVMtoDepartamentos, [
+        array_push($aVistaMtoDepartamentos, [
             'codDepartamento' => $oDepartamento->getCodDepartamento(),
             'descDepartamento' => $oDepartamento->getDescDepartamento(),
             'fechaAlta' => $oDepartamento->getFechaCreacionDepartamento()->format('Y-m-d H:i:s'),

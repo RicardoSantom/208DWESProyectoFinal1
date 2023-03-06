@@ -13,11 +13,11 @@ if (isset($_REQUEST['registrarse'])) {
     header("Location: index.php");
     exit();
 }
+$aErrores = [
+    'usuario' => null,
+    'password' => null
+];
 if (isset($_REQUEST['iniciarSesion'])) {
-    $aErrores = [
-        'usuario' => null,
-        'password' => null
-    ];
     $entradaOk = true;
     $oUsuario = null;
     //Comprobamos que el usuario no haya introducido inyeccion de codigo y los datos están correctos
@@ -31,7 +31,7 @@ if (isset($_REQUEST['iniciarSesion'])) {
     if ($entradaOk) {
         //Comprobación de Usuario Correcto
         $oUsuario = UsuarioPDO::validarUsuario($_REQUEST['usuario'], $_REQUEST['password']);
-        if (is_null($oUsuario)) {
+        if (is_bool($oUsuario)) {
             $entradaOk = false;
         }
     }
@@ -39,10 +39,9 @@ if (isset($_REQUEST['iniciarSesion'])) {
     if ($entradaOk) {
         UsuarioPDO::registrarUltimaConexion($oUsuario);
         $_SESSION['User208DWESProyectoFinal'] = $oUsuario;
-        $_SESSION['perfilUsuarioEnCurso'] =$oUsuario->getPerfil();
+        $_SESSION['perfilUsuarioEnCurso'] = $oUsuario->getPerfil();
         $_SESSION['paginaEnCurso'] = 'inicioPrivado';
         header("Location: index.php");
-        exit();
     }
 }
 //Si se pulsa tecnologias, se navega a su vista correspondiente

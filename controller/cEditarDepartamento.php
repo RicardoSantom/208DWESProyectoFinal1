@@ -18,7 +18,7 @@ $aRespuestas = [
 if (isset($_REQUEST['aceptar'])) {
     $entradaOk = true;
     $aErrores = [
-        "descripcion" => validacionFormularios::comprobarAlfabetico($_REQUEST['descripcion'], 255, 5, OBLIGATORIO),
+        "descripcion" => validacionFormularios::comprobarAlfabetico($_REQUEST['descripcion'],60 , 5, OBLIGATORIO),
         "volumenNegocio" => validacionFormularios::comprobarFloat($_REQUEST['volumen'], PHP_FLOAT_MAX, -PHP_FLOAT_MAX, obligatorio: OBLIGATORIO)
     ];
     foreach ($aErrores as $clave => $valor) {

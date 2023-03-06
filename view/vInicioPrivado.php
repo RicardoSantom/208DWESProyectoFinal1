@@ -8,7 +8,7 @@
     <input type="submit" id="editar_Perfil" value="Editar Perfil" name="editar_Perfil">
     <input type="submit" id="mtoDepartamentos" value="Mto.Departamentos" name="mtoDepartamentos">
     <?php
-    if ($aVistaDatosUsuario['perfil'] == 'administrador') {
+    if ($aVistaDatosUsuarioInicioPrivado['perfil'] == 'administrador') {
         echo '<input type="submit" id="mtoUsuarios" value="Mto.Usuarios" name="mtoUsuarios">';
     }
     ?>
@@ -19,7 +19,7 @@
 <h2 id="bienvenida">
     <?php
     if ($_SESSION['User208DWESProyectoFinal']) {
-        echo "Bienvenido " . $aVistaDatosUsuario['descUsuario'];
+        echo "Bienvenido " . $aVistaDatosUsuarioInicioPrivado['descUsuario'];
     }
     ?>
 </h2>
@@ -27,11 +27,11 @@
     <div id="divBienvenida">
         <?php
         //comprobamos el numero de conexiones si es mayor a 1 tambien mostramos la fecha y hora de la ultima conexion
-        if ($aVistaDatosUsuario['numConexiones'] > 1) {
+        if ($aVistaDatosUsuarioInicioPrivado['numConexiones'] > 1) {
             ?>
             <div class="divBienvenidaInicio">
                 <h3>Ultimo inicio de sesión: </h3>
-                <?php echo '<p>' . $aVistaDatosUsuario['fechaHoraUltimaConexionAnterior'] . '</p>';
+                <?php echo '<p>' . date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'],'Y-m-d H:i:s') . '</p>';
                 ?>
             </div>
             <div class="divBienvenidaTabla">
@@ -41,25 +41,25 @@
                     <tbody>
                         <tr>
                             <td>Código usuario: </td>
-                            <td><?php echo $aVistaDatosUsuario['codUsuario'] ?></td>
+                            <td><?php echo $aVistaDatosUsuarioInicioPrivado['codUsuario'] ?></td>
                         </tr>
                         <tr>
                             <td>Descripción usuario: </td>
-                            <td><?php echo $aVistaDatosUsuario['descUsuario'] ?></td>
+                            <td><?php echo $aVistaDatosUsuarioInicioPrivado['descUsuario'] ?></td>
                         </tr>
                         <tr>
                             <td>Número conexiones: </td>
-                            <td><?php echo $aVistaDatosUsuario['numConexiones'] ?></td>
+                            <td><?php echo $aVistaDatosUsuarioInicioPrivado['numConexiones'] ?></td>
                         </tr>
                         <tr>
                             <td>Fecha Hora Ultima Conexion: </td>
-                            <td><?php echo date_format($aVistaDatosUsuario['fechaHoraUltimaConexion'], 'Y-m-d H:i:s') ?></td>
+                            <td><?php echo date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexion'], 'Y-m-d H:i:s') ?></td>
                         </tr>
                         <tr>
                             <td>Fecha Hora Ultima Conexion Anterior: </td>
                             <td><?php
-                                if ($aVistaDatosUsuario['fechaHoraUltimaConexionAnterior'] != null) {
-                                    echo $aVistaDatosUsuario['fechaHoraUltimaConexionAnterior'];
+                                if ($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'] != null) {
+                                    echo date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'],'Y-m-d H:i:s');
                                 } else {
                                     echo 'Aún no hay datos de su última conexión anterior.';
                                 }
@@ -68,11 +68,11 @@
                         </tr>
                         <tr>
                             <td>Perfil: </td>
-                            <td><?php echo $aVistaDatosUsuario['perfil'] != null ?></td>
+                            <td><?php echo $aVistaDatosUsuarioInicioPrivado['perfil'] ?></td>
                         </tr>
                         <tr>
                             <td>Imagen usuario</td>
-                            <td><?php echo $aVistaDatosUsuario['imagenUsuario'] ?></td>
+                            <td><?php echo $aVistaDatosUsuarioInicioPrivado['imagenUsuario'] ?></td>
                         </tr>
                     </tbody>
                 </table>
@@ -81,11 +81,11 @@
                 <h3>Número de conexiones</h3>
                 <p>
                     <?php
-                    if ($aVistaDatosUsuario['numConexiones'] == 1) {
+                    if ($aVistaDatosUsuarioInicioPrivado['numConexiones'] == 1) {
                         echo"Es la primera vez que te conectas.";
                     } else {
                         //Mostramos el numero de conexiones
-                        echo"<p>Te has conectado " . $aVistaDatosUsuario['numConexiones'] . " veces";
+                        echo"<p>Te has conectado " . $aVistaDatosUsuarioInicioPrivado['numConexiones'] . " veces";
                     }
                     ?>
                 </p>
@@ -94,7 +94,7 @@
             ?>
             <div class="divBienvenidaInicio">
                 <h3>Ultimo inicio de sesión: </h3>
-                <p>Aún no hay una fecha registrada de su última conexión anterior</p>
+                <p>Esta es la primera vez que se conecta</p>
             </div>
             <div class="divBienvenidaTabla">
                 <h3>Datos objeto usuario</h3>
@@ -103,25 +103,25 @@
                     <tbody>
                         <tr>
                             <td>Código usuario: </td>
-                            <td><?php echo $aVistaDatosUsuario['codUsuario'] ?></td>
+                            <td><?php echo $aVistaDatosUsuarioInicioPrivado['codUsuario'] ?></td>
                         </tr>
                         <tr>
                             <td>Descripción usuario: </td>
-                            <td><?php echo $aVistaDatosUsuario['descUsuario'] ?></td>
+                            <td><?php echo $aVistaDatosUsuarioInicioPrivado['descUsuario'] ?></td>
                         </tr>
                         <tr>
                             <td>Número conexiones: </td>
-                            <td><?php echo $aVistaDatosUsuario['numConexiones'] ?></td>
+                            <td><?php echo $aVistaDatosUsuarioInicioPrivado['numConexiones'] ?></td>
                         </tr>
                         <tr>
                             <td>Fecha Hora Ultima Conexion: </td>
-                            <td><?php echo date_format($aVistaDatosUsuario['fechaHoraUltimaConexion'], 'Y-m-d H:i:s') ?></td>
+                            <td><?php echo date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexion'],'Y-m-d H:i:s') ?></td>
                         </tr>
                         <tr>
                             <td>Fecha Hora Ultima Conexion Anterior: </td>
                             <td><?php
-                                if ($aVistaDatosUsuario['fechaHoraUltimaConexionAnterior'] != null) {
-                                    echo date_format($aVistaDatosUsuario['fechaHoraUltimaConexionAnterior'], 'Y-m-d H:i:s');
+                                if ($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'] != null) {
+                                    echo date_format($aVistaDatosUsuarioInicioPrivado['fechaHoraUltimaConexionAnterior'],'Y-m-d H:i:s');
                                 } else {
                                     echo 'Aún no hay datos de su última conexión anterior.';
                                 }
@@ -130,11 +130,11 @@
                         </tr>
                         <tr>
                             <td>Perfil: </td>
-                            <td><?php echo $aVistaDatosUsuario['perfil'] != null ?></td>
+                            <td><?php echo $aVistaDatosUsuarioInicioPrivado['perfil'] ?></td>
                         </tr>
                         <tr>
                             <td>Imagen usuario</td>
-                            <td><?php echo $aVistaDatosUsuario['imagenUsuario'] ?></td>
+                            <td><?php echo $aVistaDatosUsuarioInicioPrivado['imagenUsuario'] ?></td>
                         </tr>
                     </tbody>
                 </table>
@@ -143,11 +143,11 @@
                 <h3>Número de conexiones</h3>
                 <p>
                     <?php
-                    if ($aVistaDatosUsuario['numConexiones'] == 1) {
+                    if ($aVistaDatosUsuarioInicioPrivado['numConexiones'] == 1) {
                         echo"Es la primera vez que te conectas.";
                     } else {
                         //Mostramos el numero de conexiones
-                        echo"<p>Te has conectado " . $aVistaDatosUsuario['numConexiones'] . " veces";
+                        echo"<p>Te has conectado " . $aVistaDatosUsuarioInicioPrivado['numConexiones'] . " veces";
                     }
                     ?>
                 </p>

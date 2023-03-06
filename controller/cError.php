@@ -1,7 +1,8 @@
 <?php
 /**
  * Description Muestra información del objeto error construido en la clase ErrorApp,
- * este se construirá con los errores ocurridos durante la ejecución de la aplicación. 
+ * este se construirá con los errores ocurridos durante la ejecución de la aplicación.
+ * 
  * @author Ricardo Santiago Tomé
  * @since 30/01/2023
  * @version 1.0
@@ -30,7 +31,7 @@ if(isset($_REQUEST['volver'])){
 }
 
 // Array con la información de la vista.
-$aVError = [
+$aVistaError = [
     'error' => $_SESSION['error']->getDescError(),
     'codigo' => $_SESSION['error']->getCodError(),
     'archivo' => $_SESSION['error']->getArchivoError(),
